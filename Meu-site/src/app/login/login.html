@@ -1,0 +1,252 @@
+<main class="login-page">
+
+  <section class="login-container">
+
+    <!-- CABEÇALHO -->
+
+    <div class="login-header">
+
+      <img src="logo.png" alt="" width="150">
+
+      <h1>
+        {{ modoCadastro ? 'Crie sua conta' : 'Olá seja bem vindo!' }}
+      </h1>
+
+      <p>
+        {{
+          modoCadastro
+            ? 'Preencha os dados abaixo para criar sua conta.'
+            : 'Entre na sua conta para continuar.'
+        }}
+      </p>
+
+    </div>
+
+
+    <!-- LOGIN COM GOOGLE -->
+
+    <button
+      type="button"
+      class="google-button"
+      (click)="loginGoogle()"
+    >
+
+      <span class="google-icon">
+        G
+      </span>
+
+      Continuar com Google
+
+    </button>
+
+
+    <!-- DIVISOR -->
+
+    <div class="divider">
+
+      <span></span>
+
+      <p>ou continue com e-mail</p>
+
+      <span></span>
+
+    </div>
+
+
+    <!-- FORMULÁRIO -->
+
+    <form
+      [formGroup]="formulario"
+      (ngSubmit)="entrar()"
+    >
+
+
+      <!-- NOME -->
+
+      @if (modoCadastro) {
+
+        <div class="form-group">
+
+          <label for="nome">
+            Nome
+          </label>
+
+          <input
+            id="nome"
+            type="text"
+            placeholder="Digite seu nome"
+            formControlName="nome"
+          />
+
+        </div>
+
+      }
+
+
+      <!-- EMAIL -->
+
+      <div class="form-group">
+
+        <label for="email">
+          E-mail
+        </label>
+
+        <input
+          id="email"
+          type="email"
+          placeholder="exemplo@email.com"
+          formControlName="email"
+        />
+
+        @if (
+          email?.invalid &&
+          (email?.touched || enviado)
+        ) {
+
+          <small class="error">
+
+            @if (email?.errors?.['required']) {
+              O e-mail é obrigatório.
+            }
+
+            @else if (
+              email?.errors?.['email'] ||
+              email?.errors?.['pattern']
+            ) {
+              Digite um e-mail válido.
+            }
+
+          </small>
+
+        }
+
+      </div>
+
+
+      <!-- SENHA -->
+
+      <div class="form-group">
+
+        <label for="senha">
+          Senha
+        </label>
+
+        <div class="password-container">
+
+          <input
+            id="senha"
+            [type]="mostrarSenha ? 'text' : 'password'"
+            placeholder="Digite sua senha"
+            formControlName="senha"
+          />
+
+          <button
+            type="button"
+            class="show-password"
+            (click)="alternarSenha()"
+          >
+
+            {{ mostrarSenha ? 'Ocultar' : 'Mostrar' }}
+
+          </button>
+
+        </div>
+
+
+        @if (
+          senha?.invalid &&
+          (senha?.touched || enviado)
+        ) {
+
+          <small class="error">
+
+            @if (senha?.errors?.['required']) {
+              A senha é obrigatória.
+            }
+
+            @else if (senha?.errors?.['minlength']) {
+              A senha precisa ter pelo menos 4 caracteres.
+            }
+
+          </small>
+
+        }
+
+      </div>
+
+
+      <!-- ESQUECEU A SENHA -->
+
+      @if (!modoCadastro) {
+
+        <div class="forgot-password">
+
+          <button type="button">
+            Esqueceu sua senha?
+          </button>
+
+        </div>
+
+      }
+
+
+      <!-- BOTÃO PRINCIPAL -->
+
+      <button
+        type="submit"
+        class="submit-button"
+      >
+
+        {{
+          modoCadastro
+            ? 'Criar conta'
+            : 'Entrar na conta'
+        }}
+
+      </button>
+
+
+    </form>
+
+
+    <!-- ALTERNAR LOGIN / CADASTRO -->
+
+    <div class="toggle-mode">
+
+      @if (!modoCadastro) {
+
+        <p>
+          Ainda não possui uma conta?
+
+          <button
+            type="button"
+            (click)="alternarModo()"
+          >
+            Criar conta
+          </button>
+
+        </p>
+
+      }
+
+      @else {
+
+        <p>
+          Já possui uma conta?
+
+          <button
+            type="button"
+            (click)="alternarModo()"
+          >
+            Fazer login
+          </button>
+
+        </p>
+
+      }
+
+    </div>
+
+  </section>
+
+</main>

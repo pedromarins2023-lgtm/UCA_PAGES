@@ -1,0 +1,60 @@
+<main class="tema-detalhe">
+
+  @if (tema) {
+
+    <a
+      routerLink="/home"
+      class="botao-voltar"
+    >
+      ← Voltar
+    </a>
+
+
+    <section class="tema-card">
+
+      <div class="tema-imagem">
+
+        <img
+          [src]="tema.imagem"
+          [alt]="tema.titulo"
+        >
+
+      </div>
+
+
+      <div class="tema-conteudo">
+
+        <h1>
+          {{ tema.titulo }}
+        </h1>
+
+        <p>
+          {{ tema.descricao }}
+        </p>
+
+      </div>
+
+    </section>
+
+  }
+
+  @else {
+
+    <section class="erro">
+
+      <h1>
+        Tema não encontrado
+      </h1>
+
+      <a
+        routerLink="/home"
+        class="botao-voltar"
+      >
+        Voltar para Home
+      </a>
+
+    </section>
+
+  }
+
+</main>

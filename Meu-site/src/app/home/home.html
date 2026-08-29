@@ -1,0 +1,1545 @@
+
+
+
+
+<!-- ========================================
+     HEADER
+======================================== -->
+
+<header
+  class="header"
+  [class.header-escondido]="!headerVisivel"
+>
+
+  <div class="header-container">
+
+    <!-- LOGO -->
+    <a
+      class="logo-container"
+      href="#inicio"
+    >
+
+      <img
+        src="logoguar.png"
+        alt="Logo"
+        class="logo"
+        
+      />
+
+      <span class="logo-nome">
+        GUARDIÕES DO MAR
+      </span>
+
+    </a>
+
+
+    <!-- MENU -->
+    <nav class="menu">
+
+      <a href="#inicio">
+        Início
+      </a>
+
+      <a href="https://guardioesdomar.org.br/sobre/">
+        Sobre
+      </a>
+
+      <a href="https://guardioesdomar.org.br/projetos/">
+        Projetos
+      </a>
+
+      <a href="https://guardioesdomar.org.br/contato/">
+        Contato
+      </a>
+      
+
+    </nav>
+
+
+    <!-- USUÁRIO -->
+    @if (authService.usuario(); as usuario) {
+
+      <div class="usuario-header">
+
+        <span class="usuario-ola">
+          Olá, {{ usuario.nome }}
+        </span>
+
+        <span class="usuario-email">
+          {{ usuario.email }}
+        </span>
+
+      </div>
+
+    }
+
+    @else {
+
+      <a
+        routerLink="/login"
+        class="header-button"
+      >
+        Entrar
+      </a>
+
+    }
+
+  </div>
+  
+
+</header>
+
+
+<!-- ========================================
+     HERO PRINCIPAL
+======================================== -->
+
+<main id="inicio">
+
+  <section class="hero">
+
+    <!-- ONDAS DO FUNDO -->
+    <div class="ondas">
+
+      <div class="onda onda-1"></div>
+
+      <div class="onda onda-2"></div>
+
+      <div class="onda onda-3"></div>
+
+    </div>
+
+
+    <!-- CONTEÚDO DO HERO -->
+    <div class="hero-container">
+
+
+      <!-- LADO ESQUERDO -->
+      <div class="hero-content">
+
+        <span class="hero-subtitulo">
+          🌱 PROJETO UÇÁ
+        </span>
+
+
+        <!-- TÍTULO -->
+        <h1>
+          Cuidar hoje,
+          <strong>preservar sempre.</strong>
+        </h1>
+
+
+        <!-- DESCRIÇÃO -->
+        <p class="hero-descricao">
+          Com foco na conservação de manguezais e na educação ambiental crítica, o UÇÁ promove a produção e a democratização do conhecimento científico por meio de exposições itinerantes e ações de restauração ecológica.
+
+Já restaurou 18,2 ha de manguezal e prevê a recuperação de mais 20 ha entre 2025 e 2028. A Operação LimpaOca, realizada dentro do projeto, removeu 55 toneladas de resíduos em 47 hectares, contratando povos tradicionais via PSA.
+
+O UÇÁ completou 13 anos de atuação em julho de 2025 e segue renovado.
+
+        </p>
+
+
+        <!-- BOTÕES -->
+        <div class="hero-botoes">
+
+          <a
+            href="https://guardioesdomar.org.br/projetos/andamento/uca/"
+            class="botao-principal"
+          >
+            SAIBA MAIS
+          </a>
+
+          <a
+            href="https://guardioesdomar.org.br/projetos/"
+            class="botao-secundario"
+          >
+            NOSSOS PROJETOS →
+          </a>
+<a
+  href="https://www.instagram.com/projetouca/"
+  target="_blank"
+  class="instagram-button"
+  aria-label="Instagram"
+>
+  <img
+    src="https://freepnglogo.com/images/all_img/1715965947instagram-logo-png%20(1).png"
+    alt="Instagram"
+  />
+</a>
+        </div>
+
+      </div>
+
+
+      <!-- ==================================
+           LADO DIREITO / IMAGEM
+      =================================== -->
+
+      <div class="hero-imagem-container">
+
+        <!--
+          TROQUE A IMAGEM ABAIXO
+          pela imagem que você quiser.
+        -->
+
+        <div class="imagem-moldura">
+
+          <img
+            src="https://tse3.mm.bing.net/th/id/OIP.6eEy42ZJUEREUT0IK1WnvwHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+            alt="Projeto ambiental"
+            class="hero-imagem"
+          />
+
+        </div>
+
+
+        <!-- ELEMENTOS DECORATIVOS -->
+
+        <div class="bolinha bolinha-1"></div>
+
+        <div class="bolinha bolinha-2"></div>
+
+        <div class="folha folha-1">
+          🍃
+        </div>
+
+        <div class="folha folha-2">
+          🌿
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       SOBRE
+  ======================================== -->
+
+  <section
+    id="sobre"
+    class="sobre"
+  >
+
+    <span class="sobre-icon">
+      🌍
+    </span>
+
+    <h2>
+      Olá, seja bem vindo!
+    </h2>
+
+    <p>
+      Desenvolvemos ações e projetos voltados
+      para a preservação ambiental, educação
+      e sustentabilidade.
+    </p>
+
+
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========================================
+     CONHEÇA O MANGUE
+======================================== -->
+
+<section class="temas" id="temas">
+
+  <!-- TÍTULO -->
+
+  <div class="temas-titulo">
+
+    <h2>
+      Conheça o Mangue
+    </h2>
+
+    <p>
+      Descubra a importância dos manguezais,
+      seus animais, suas comunidades e a
+      importância de sua preservação.
+    </p>
+
+  </div>
+
+
+  <!-- ========================================
+       JANELA CENTRAL DO CARROSSEL
+  ======================================== -->
+
+  <div class="cards-area">
+
+    <div class="cards-loop">
+
+      <div class="cards-track">
+
+
+        <!-- ==================================
+             CARD 1
+        ================================== -->
+
+        <article class="tema-card">
+
+          <div class="tema-imagem">
+
+            <img
+              src="https://guardioesdomar.org.br/wp-content/uploads/2024/03/mulher-projeto-uca-exibi-muda-replantio-manguezal-768x512.jpg"
+              alt="Manguezal"
+            >
+
+          </div>
+
+          <div class="tema-conteudo">
+
+            <h3>
+              O que é o Manguezal?
+            </h3>
+
+            <p>
+              Entenda o que são os manguezais,
+              suas características e por que esse
+              ecossistema é tão importante.
+            </p>
+
+            <a
+              routerLink="/tema/manguezal"
+              class="tema-botao"
+            >
+              Saber mais
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- ==================================
+             CARD 2
+        ================================== -->
+
+        <article class="tema-card">
+
+          <div class="tema-imagem">
+
+            <img
+              src="https://guardioesdomar.org.br/wp-content/uploads/2024/02/galeria-projeto-uca-1.jpg"
+              alt="Animais do mangue"
+            >
+
+          </div>
+
+          <div class="tema-conteudo">
+
+            <h3>
+              Animais que vivem no Mangue
+            </h3>
+
+            <p>
+              Conheça algumas das espécies que
+              encontram nos manguezais.
+            </p>
+
+            <a
+              routerLink="/tema/animais"
+              class="tema-botao"
+            >
+              Saber mais
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- ==================================
+             CARD 3
+        ================================== -->
+
+        <article class="tema-card">
+
+          <div class="tema-imagem">
+
+            <img
+              src="https://neomondo.org.br/w/wp-content/uploads/2020/03/projeto-uca-neomondo-sustentabilidade-cursos.jpg"
+              alt="Pescadores no mangue"
+            >
+
+          </div>
+
+          <div class="tema-conteudo">
+
+            <h3>
+              Vida dos Pescadores
+            </h3>
+
+            <p>
+              Conheça a relação das comunidades
+              tradicionais com os manguezais e
+              sua importância para a sobrevivência.
+            </p>
+
+            <a
+              routerLink="/tema/pescadores"
+              class="tema-botao"
+            >
+              Saber mais
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- ==================================
+             CARD 4
+        ================================== -->
+
+        <article class="tema-card">
+
+          <div class="tema-imagem">
+
+            <img
+              src="https://guardioesdomar.org.br/wp-content/uploads/2024/02/galeria-projeto-uca-6.jpg"
+              alt="Preservação do mangue"
+            >
+
+          </div>
+
+          <div class="tema-conteudo">
+
+            <h3>
+              Preservação do Mangue
+            </h3>
+
+            <p>
+              Descubra como a preservação dos
+              manguezais ajuda a proteger a natureza
+              e as comunidades costeiras.
+            </p>
+
+            <a
+              routerLink="/tema/preservacao"
+              class="tema-botao"
+            >
+              Saber mais
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- ==================================
+             CARD 5
+        ================================== -->
+
+        <article class="tema-card">
+
+          <div class="tema-imagem">
+
+            <img
+              src="https://i.pinimg.com/originals/a9/e9/0f/a9e90fe44569d5e6bb7e89817af6d0ad.jpg"
+              alt="Importância dos manguezais"
+            >
+
+          </div>
+
+          <div class="tema-conteudo">
+
+            <h3>
+              Importância Ambiental
+            </h3>
+
+            <p>
+              Saiba como os manguezais contribuem
+              para o equilíbrio ambiental e para a
+              proteção da vida marinha.
+            </p>
+
+            <a
+              routerLink="/tema/importancia"
+              class="tema-botao"
+            >
+              Saber mais
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- ========================================
+             REPETIÇÃO DOS CARDS
+             NECESSÁRIA PARA O LOOP
+        ======================================== -->
+
+
+        <!-- CARD 1 REPETIDO -->
+
+        <article class="tema-card">
+
+          <div class="tema-imagem">
+
+            <img
+              src="https://guardioesdomar.org.br/wp-content/uploads/2024/03/mulher-projeto-uca-exibi-muda-replantio-manguezal-768x512.jpg"
+              alt="Manguezal"
+            >
+
+          </div>
+
+          <div class="tema-conteudo">
+
+            <h3>
+              O que é o Manguezal?
+            </h3>
+
+            <p>
+              Entenda o que são os manguezais,
+              suas características e sua importância.
+            </p>
+
+            <a
+              routerLink="/tema/manguezal"
+              class="tema-botao"
+            >
+              Saber mais
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- CARD 2 REPETIDO -->
+
+        <article class="tema-card">
+
+          <div class="tema-imagem">
+
+            <img
+              src="https://guardioesdomar.org.br/wp-content/uploads/2024/02/galeria-projeto-uca-1.jpg"
+              alt="Animais do mangue"
+            >
+
+          </div>
+
+          <div class="tema-conteudo">
+
+            <h3>
+              Animais que vivem no Mangue
+            </h3>
+
+            <p>
+              Conheça as espécies que vivem
+              nesse importante ecossistema.
+            </p>
+
+            <a
+              routerLink="/tema/animais"
+              class="tema-botao"
+            >
+              Saber mais
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- CARD 3 REPETIDO -->
+
+        <article class="tema-card">
+
+          <div class="tema-imagem">
+
+            <img
+              src="https://neomondo.org.br/w/wp-content/uploads/2020/03/projeto-uca-neomondo-sustentabilidade-cursos.jpg"
+              alt="Pescadores no mangue"
+            >
+
+          </div>
+
+          <div class="tema-conteudo">
+
+            <h3>
+              Vida dos Pescadores
+            </h3>
+
+            <p>
+              Conheça a vida das comunidades
+              que dependem dos manguezais.
+            </p>
+
+            <a
+              routerLink="/tema/pescadores"
+              class="tema-botao"
+            >
+              Saber mais
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- CARD 4 REPETIDO -->
+
+        <article class="tema-card">
+
+          <div class="tema-imagem">
+
+            <img
+              src="https://guardioesdomar.org.br/wp-content/uploads/2024/02/galeria-projeto-uca-6.jpg"
+              alt="Preservação do mangue"
+            >
+
+          </div>
+
+          <div class="tema-conteudo">
+
+            <h3>
+              Preservação do Mangue
+            </h3>
+
+            <p>
+              Saiba como podemos ajudar a
+              preservar os manguezais.
+            </p>
+
+            <a
+              routerLink="/tema/preservacao"
+              class="tema-botao"
+            >
+              Saber mais
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- CARD 5 REPETIDO -->
+
+        <article class="tema-card">
+
+          <div class="tema-imagem">
+
+            <img
+              src="https://i.pinimg.com/originals/a9/e9/0f/a9e90fe44569d5e6bb7e89817af6d0ad.jpg"
+              alt="Importância ambiental"
+            >
+
+          </div>
+
+          <div class="tema-conteudo">
+
+            <h3>
+              Importância Ambiental
+            </h3>
+
+            <p>
+              Descubra a importância dos manguezais
+              para o meio ambiente.
+            </p>
+
+            <a
+              routerLink="/tema/importancia"
+              class="tema-botao"
+            >
+              Saber mais
+            </a>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ========================================
+     PROJETOS
+======================================== -->
+
+<section
+
+  id="projetos"
+  class="section"
+>
+
+
+  <!-- CARD 1 -->
+  <div class="card">
+
+    <!-- IMAGEM -->
+    <div class="card-imagem">
+
+      <img
+        src="https://guardioesdomar.org.br/wp-content/uploads/2024/03/mulher-projeto-uca-exibi-muda-replantio-manguezal-768x512.jpg"
+        alt="Projeto Guardiões do Mar"
+      />
+
+    </div>
+
+
+    <!-- TEXTO -->
+    <div class="card-conteudo">
+
+      <h1>
+        Quem Somos
+      </h1>
+
+     <h3> A Guardiões do Mar, organização do Terceiro Setor, é fruto de um extenso processo de identificação, diagnóstico e exploração do território que abraçamos. Desbravando caminhos desde sua oficialização, em 19 de março de 1998, tem marcado sua trajetória com um impacto crescente na sociobiodiversidade dos ecossistemas costeiros e na salvaguarda da Baía de Guanabara, localizada no estado do Rio de Janeiro/Brasil. </h3>
+      <br> 
+      <h3> Nesta jornada, destacam-se as ações integradas com o objetivo de combater o lixo costeiro e marinho, disseminar práticas sustentáveis e dedicar esforços à conservação e restauração dos manguezais. Nosso compromisso se estende ao fortalecimento de povos tradicionais, fomentando o empreendedorismo e promovendo ativamente o protagonismo juvenil e comunitário. </h3> 
+      <br> 
+      <h3> A Guardiões do Mar tem sido uma força catalisadora desde sua criação, institucionalizando e incubando diversas cooperativas engajadas em reciclagem, pesca responsável e reaproveitamento de resíduos sólidos pós-consumo, incluindo moda e artesanato. </h3> 
+      <br> 
+      <h3> Diante da urgência observada em 2012 quanto ao comprometimento da sociedade com o correto descarte de resíduos, abraçamos projetos ambientais com uma abordagem social aguçada. </h3> 
+      <br> 
+      <h3> A cada passo, continuamos incubando ideias e projetos. Entre 2021 e 2025, estamos tecendo novas narrativas com dez projetos, sendo oito dedicados à preservação e/ou conservação de manguezais. </h3>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+ <div style="display: flex; justify-content: space-around; gap: 40px; padding: 35px;font-family: Arial, sans-serif;">
+
+    <div style="width: 30%;">
+        <h1 style="color: rgb(255, 255, 255);text-align: center; font-size: 40px; margin-bottom: 15px;">
+            Missão
+        </h1>
+
+        <h3 style="font-size: 16px; line-height: 1.5;color: rgb(255, 255, 255);">
+            Promover a sociobiodiversidade e a socioeconomia marinha e costeira,
+            impulsionando ações educacionais, culturais, científicas e de
+            conservação. Contribuir para a inclusão, valorização e proteção das
+            comunidades em situação de vulnerabilidade socioambiental, com foco
+            na sensibilização da juventude por meio de nossos projetos.
+        </h3>
+    </div>
+
+
+    <div style="width: 30%;">
+        <h1 style="color: rgb(255, 255, 255); text-align: center; font-size: 40px; margin-bottom: 15px;">
+            Visão
+        </h1>
+
+        <h3 style="font-size: 16px; line-height: 1.5;color: rgb(255, 255, 255);">
+            Tornar-se referência nacional e internacional na defesa dos
+            ecossistemas marinhos, contribuindo para o desenvolvimento
+            sustentável da zona costeira. Ser reconhecida como organização
+            inovadora, eficiente e comprometida com a promoção da cidadania
+            junto às comunidades nos territórios de atuação.
+        </h3>
+    </div>
+
+
+    <div style="width: 30%;">
+        <h1 style="color: rgb(255, 255, 255);text-align: center; font-size: 40px; margin-bottom: 15px;">
+            Valores
+        </h1>
+
+        <h3 style="font-size: 16px; line-height: 1.5;color: rgb(255, 255, 255);">
+            Transparência, ética, conhecimento, inovação, cidadania,
+            responsabilidade, colaboração, resiliência e escuta atenta.
+        </h3>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- CARD 2 -->
+  <div class="card">
+
+    <!-- IMAGEM -->
+    <div class="card-imagem">
+
+      <img
+        src="https://guardioesdomar.org.br/wp-content/uploads/2024/02/galeria-projeto-uca-4.jpg"
+        alt="Preservação dos manguezais"
+      />
+
+    </div>
+
+
+    <!-- TEXTO -->
+    <div class="card-conteudo">
+
+      <h1>
+        O que fazemos
+      </h1>
+
+      <h3>
+      Nosso trabalho integra os pilares de Conservação (educação ambiental, ações de limpeza e formações contínuas), Restauração (plantio de mudas de mangue com mão de obra local e planejamento participativo), Pesquisa (biologia da conservação e soluções baseadas na natureza, com valorização dos saberes locais), e Educação (em ambientes formais e não formais, com foco na escuta atenta e valorização das comunidades).
+      </h3>
+<br> 
+      <h3>
+        Essa abordagem integral visa conservar os manguezais, orientando e fortalecendo as comunidades que ali residem. O diferencial está na contratação de mão de obra local, enraizada no conhecimento profundo e ancestral do ecossistema costeiro, com pescadores, caranguejeiros, quilombolas e grupos da agricultura familiar desempenhando papéis essenciais em atividades de limpeza, restauração e conservação por meio de trocas de saberes e conhecimento.
+
+      </h3>
+<br> 
+      <h3> 
+        Atuamos no Geoprocessamento e Sensoriamento Remoto, utilizando Sistemas de Informações Geográficas (SIG) para analisar ecossistemas costeiros, com ênfase na classificação avançada da cobertura de manguezal. Destacamos nossa expertise na análise espaço-temporal das mudanças na terra, utilizando técnicas avançadas de Sensoriamento Remoto e aprendizado de máquinas para quantificar a dinâmica espacial de manguezais em diferentes estados, abrangendo desde os degradados até os naturais e restaurados. Inclui a estimativa do estoque e sequestro de carbono nos ecossistemas de manguezais, contribuindo para uma gestão mais eficaz desses ambientes essenciais para a biodiversidade e a saúde do planeta.
+      </h3>
+
+    </div>
+
+  </div>
+
+
+  
+  
+ 
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ========================================
+       SOBRE
+  ======================================== -->
+
+  <section
+    id="sobre"
+    class="sobre"
+  >
+
+    
+
+        
+
+    <h2>
+      Notícias relacionadas
+    </h2>
+
+   <section class="noticias">
+
+    <div class="card-noticia">
+
+        <img src="https://guardioesdomar.org.br/wp-content/uploads/2024/02/galeria-projeto-uca-2-1024x683.jpg" alt="Restauração de manguezal">
+
+        <div class="conteudo-noticia">
+
+            <h2>
+                Projeto Uçá realiza ações de preservação dos manguezais
+            </h2>
+
+            <p>
+                A iniciativa promove a restauração e conservação dos
+                manguezais, fortalecendo a proteção ambiental.
+            </p>
+
+            <a href="https://guardioesdomar.org.br/manual-de-restauracao-de-manguezais-projeto-uca/">Leia Mais</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="card-noticia">
+
+        <img src="https://guardioesdomar.org.br/wp-content/uploads/2024/03/grupo-mulheres-projeto-uca.jpg" alt="Limpeza da Baía de Guanabara">
+
+        <div class="conteudo-noticia">
+
+            <h2>
+                Centenas de voluntários participam do Dia de Limpeza
+            </h2>
+
+            <p>
+                Voluntários se reuniram para realizar uma grande ação
+                de limpeza e conscientização ambiental.
+            </p>
+
+            <a href="https://guardioesdomar.org.br/centenas-de-voluntarios-participam-do-dia-de-limpeza-da-baia-de-guanabara/">Leia Mais</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="card-noticia">
+
+        <img src="https://guardioesdomar.org.br/wp-content/uploads/2024/03/mulher-projeto-uca-coleta-reciclaveis-manguezal.jpg" alt="Equipe do Projeto Uçá">
+
+        <div class="conteudo-noticia">
+
+            <h2>
+                Projeto Uçá retira toneladas de lixo dos manguezais
+            </h2>
+
+            <p>
+                A ação contribuiu para a preservação dos manguezais
+                e para a melhoria do ecossistema.
+            </p>
+
+            <a href="https://guardioesdomar.org.br/projeto-uca-retira-mais-de-cinco-toneladas-de-lixo-de-manguezais-da-baia-de-guanabara/">Leia Mais</a>
+
+        </div>
+
+    </div>
+   </section>
+
+  </section>
+
+  
+<!-- ========================================
+     VÍDEO
+======================================== -->
+
+<section class="video-section">
+
+  <div class="video-container">
+
+    <video
+      class="video"
+      controls
+      muted
+      loop
+      playsinline
+    >
+
+      <source
+        src="videoplayback.mp4"
+        type="video/mp4"
+      >
+
+      Seu navegador não suporta vídeos.
+
+    </video>
+
+  </div>
+
+</section>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========================================
+     PROJETOS
+======================================== -->
+
+<section
+  id="projetos"
+  class="section"
+>
+
+
+
+
+
+
+<!-- CARD 3 -->
+  <div class="card">
+
+    <!-- IMAGEM -->
+    <div class="card-imagem">
+
+      <img
+        src="https://guardioesdomar.org.br/wp-content/uploads/2024/03/clean-up-bay-2.jpg"
+        alt="Educação ambiental"
+      />
+
+    </div>
+
+
+    <!-- TEXTO -->
+    <div class="card-conteudo">
+
+      <h1>
+        Atuação em Redes
+      </h1>
+
+      <h3>
+        Atuamos e conectamos redes, a exemplo da cocriação da RENAMAN (Rede Nacional de Manguezais), da Rede Litoral Norte de São Paulo de Manguezais, da REDAGUA (Rede Águas da Guanabara, em parceria com os Projetos Coral Vivo, Guapiaçu, Meros do Brasil e UÇÁ, todos patrocinados pela Petrobras por meio do Programa Petrobras Socioambiental) e no apoio à criação e manutenção ativa da Rede ‘Nós da Guanabara’ (composta por pescadores artesanais, catadores de caranguejo, quilombolas e agricultores familiares) no recôncavo da Guanabara até os dias atuais. Coordena o Subcomitê Leste da Bacia Hidrográfica da Baía de Guanabara e participa do Movimento Viva Água – Baía de Guanabara (capitaneado pela Fundação Boticário, SEA, INEA e FIRJAN). Atuamos de forma participativa com as biorregiões da Serra da Estrela, da REGUA e da APA de Guapi-Mirim.
+      </h3>
+<br>
+      <h3>
+        A ONG Guardiões do Mar também é precursora em iniciativas de educação ambiental inclusiva, assegurando acessibilidade para pessoas com necessidades especiais e reconhecida por meio de termo de cooperação técnica com o Instituto Nacional de Educação de Surdos (INES) e Escola de Inclusão: Labs-STEAM da UFF (Universidade Federal Fluminense), intermediada pela equipe de acessibilidade do Coletivo Ateliê do Encontro.
+      </h3>
+
+    </div>
+  </div>
+
+
+
+
+<!-- ========================================
+     NOSSO IMPACTO
+======================================== -->
+
+<section
+  id="impacto"
+  class="impacto"
+>
+
+  <div class="impacto-container">
+
+
+    <!-- ========================================
+         TÍTULO
+    ======================================== -->
+
+    <div class="impacto-titulo">
+
+      <span class="impacto-subtitulo">
+        🌱 NOSSO IMPACTO
+      </span>
+
+      <h2>
+        Juntos podemos fazer a diferença
+      </h2>
+
+      <p>
+        Conheça alguns números que representam
+        o impacto das ações ambientais e sociais
+        realizadas pela Guardiões do Mar.
+      </p>
+
+    </div>
+
+
+    <!-- ========================================
+         CARDS
+    ======================================== -->
+
+    <div class="impacto-cards">
+
+
+      <!-- ========================================
+           HECTARES
+      ======================================== -->
+
+      <div class="impacto-card">
+
+        <div class="impacto-icone">
+          🌱
+        </div>
+
+        <div class="impacto-numero">
+
+          {{ hectares }}+
+
+        </div>
+
+        <h3>
+          Hectares restaurados
+        </h3>
+
+        <p>
+          Áreas de manguezais restauradas
+          através de ações ambientais.
+        </p>
+
+      </div>
+
+
+      <!-- ========================================
+           ÁRVORES
+      ======================================== -->
+
+      <div class="impacto-card">
+
+        <div class="impacto-icone">
+          🌳
+        </div>
+
+        <div class="impacto-numero">
+
+          {{ arvores | number }}
+
+        </div>
+
+        <h3>
+          Árvores plantadas
+        </h3>
+
+        <p>
+          Árvores plantadas contribuindo
+          para a recuperação ambiental.
+        </p>
+
+      </div>
+
+
+      <!-- ========================================
+           JOVENS
+      ======================================== -->
+
+      <div class="impacto-card">
+
+        <div class="impacto-icone">
+          👥
+        </div>
+
+        <div class="impacto-numero">
+
+          {{ jovens | number }}+
+
+        </div>
+
+        <h3>
+          Jovens impactados
+        </h3>
+
+        <p>
+          Jovens alcançados por ações
+          de educação ambiental.
+        </p>
+
+      </div>
+
+
+      <!-- ========================================
+           LIXO
+      ======================================== -->
+
+      <div class="impacto-card">
+
+        <div class="impacto-icone">
+          ♻️
+        </div>
+
+        <div class="impacto-numero">
+
+          {{ lixo }}
+
+        </div>
+
+        <h3>
+          Toneladas de lixo
+        </h3>
+
+        <p>
+          Resíduos retirados de áreas
+          relacionadas aos manguezais.
+        </p>
+
+      </div>
+
+
+    </div>
+
+
+    <!-- ========================================
+         FONTE
+    ======================================== -->
+
+    <p class="impacto-fonte">
+
+    
+
+    </p>
+
+
+  </div>
+
+</section>
+
+
+
+
+
+
+  <!-- CARD 4 -->
+  <div class="card">
+
+    <!-- IMAGEM -->
+    <div class="card-imagem">
+
+      <img
+        src="https://tse2.mm.bing.net/th/id/OIP.DkwgeMIehR1MKirp3pkafAHaJG?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+        alt="Educação ambiental"
+      />
+
+    </div>
+
+
+    <!-- TEXTO -->
+    <div class="card-conteudo">
+
+      
+
+      <h3>
+        Conectados a outros grandes centros de pesquisa mundial, estamos conduzindo — em colaboração com a The Rufford Foundation (Inglaterra) e com as Universidades Federais do Espírito Santo e do Rio Grande do Norte — uma pesquisa pioneira intitulada “Influência da Poluição Plástica nos Ecossistemas de Manguezais do Sudeste do Brasil”. Essa iniciativa visa examinar o impacto dos resíduos sólidos na estrutura dos manguezais, bem como investigar a presença de microplásticos no solo destas florestas.
+
+       </h3>
+<br>
+      <h3>
+        Somos parceiros oficiais no Brasil para a Década das Nações Unidas para Restauração de Ecossistemas (2021-2030). O movimento, liderado pelo Programa da ONU para o Meio Ambiente (PNUMA) e pela Organização da ONU para a Alimentação e Agricultura (FAO), passa não só por ações de restauração, mas por todo um planejamento estratégico em andamento, que visa preparar a juventude e lideranças tradicionais e comunitárias, em assuntos como emergências climáticas, racismo ambiental, resiliência e transformação socioambiental.
+
+        </h3>
+
+        <br>
+        <h3>
+          Participa também como signatária da Rede Oceano Limpo, um projeto fruto de uma parceria entre a Cátedra UNESCO para a Sustentabilidade do Oceano (IO-USP/IEA-USP) com o Fundo Brasileiro para a Biodiversidade (FUNBIO) e do movimento Plastic No Thanks, conectado a outras grandes coalizões internacionais para a aprovação de um acordo que objetiva reduzir a poluição de embalagens plásticas no planeta. E isso é só o começo!
+        </h3>
+
+    </div>
+  </div>
+
+
+  
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========================================
+       SOBRE
+  ======================================== -->
+
+  <section
+    id="sobre"
+    class="sobre"
+  >
+
+<section class="quiz-convite">
+
+  <div>
+
+    <span>🌱 DESAFIO AMBIENTAL</span>
+
+    <h2>
+      Você conhece os manguezais?
+    </h2>
+
+    <p>
+      Teste seus conhecimentos sobre os manguezais,
+      conservação ambiental e o trabalho dos Guardiões do Mar.
+    </p>
+
+    <a
+      routerLink="/quiz"
+      class="btn-quiz"
+    >
+      Iniciar Quiz →
+    </a>
+
+  </div>
+
+</section>
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- BOTÃO VOLTAR AO TOPO -->
+
+<button
+  class="voltar-topo"
+  [class.visivel]="mostrarBotaoTopo"
+  (click)="voltarAoTopo()"
+  aria-label="Voltar ao topo"
+>
+  ↑
+</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========================================
+     ENCERRAMENTO
+======================================== -->
+
+<section class="encerramento">
+
+  <div class="encerramento-conteudo">
+
+    <!-- FRASE FINAL -->
+    <h2>
+      Cuidar do manguezal é cuidar da vida. 
+    </h2>
+
+    <h2>
+      Obrigado por conhecer nosso projeto.
+    </h2>
+
+    <br><br>
+    <h3>Site criado por Pedro Marins</h3>
+
+    <!-- LOGO -->
+    <img
+      src="logo.png"
+      alt="Guardiões do Mar"
+      class="logo-final"
+      width="300"
+    >
+
+    <!-- MENSAGEM -->
+    <p class="mensagem-final">
+      Até a próxima!
+    </p>
+
+    <!-- BOTÃO -->
+    <button
+      class="botao-inicio"
+      (click)="voltarAoTopo()"
+    >
+      ↑ Voltar ao início
+    </button>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     FOOTER
+======================================== -->
+
+<app-footer></app-footer>

@@ -1,0 +1,285 @@
+/* =========================================
+   RESETS E FONTE GLOBAL
+   ========================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif; /* Fonte Arial aplicada em tudo como solicitado */
+}
+
+/* =========================================
+   FUNDO DA PÁGINA (DEGRADÊ)
+   ========================================= */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Degradê verde para azul. Você pode alterar os códigos hexadecimais depois */
+  background: linear-gradient(135deg, #128696 0%,
+        #075964 50%,
+        #002b33 100%); 
+  padding: 20px;
+}
+
+/* =========================================
+   CARD DE LOGIN/CADASTRO
+   ========================================= */
+.login-container {
+  background-color: #ffffff; /* Fundo branco do card */
+  width: 100%;
+  max-width: 550px;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow:0px 0px 30px rgba(255, 255, 255, 0.6);
+}
+
+/* =========================================
+   CABEÇALHO E TEXTOS
+   ========================================= */
+.login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-header .logo {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  color: #4CAF50; /* Cor verde para a logo */
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.login-header h1 {
+  font-size: 26px;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.login-header p {
+  font-size: 14px;
+  color: #666666;
+  line-height: 1.5;
+}
+
+/* =========================================
+   BOTÃO DO GOOGLE
+   ========================================= */
+.google-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #333333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.google-button:hover {
+  background-color: #f1f1f1;
+}
+
+.google-icon {
+  font-weight: bold;
+  font-size: 18px;
+  color: #db3c37; /* Cor típica do G do Google */
+  margin-right: 10px;
+}
+
+/* =========================================
+   DIVISOR ("ou continue com e-mail")
+   ========================================= */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+}
+
+.divider span {
+  flex: 1;
+  height: 1px;
+  background-color: #e0e0e0;
+}
+
+.divider p {
+  margin: 0 15px;
+  font-size: 13px;
+  color: #888888;
+}
+
+/* =========================================
+   FORMULÁRIO E INPUTS
+   ========================================= */
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #444444;
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  padding: 12px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333333;
+  transition: border-color 0.3s;
+  width: 100%;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #095870; /* Borda azul ao clicar no input */
+}
+
+/* =========================================
+   CAMPO DE SENHA (CONTAINER E BOTÃO)
+   ========================================= */
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-container input {
+  padding-right: 80px; /* Espaço para não encostar no botão "Mostrar" */
+}
+
+.show-password {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #0a5e6d; /* Azul */
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.show-password:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   MENSAGENS DE ERRO E ESQUECEU A SENHA
+   ========================================= */
+.error {
+  color: #d32f2f;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+}
+
+.forgot-password {
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+.forgot-password button {
+  background: none;
+  border: none;
+  color: #0b5563;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.forgot-password button:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   BOTÃO PRINCIPAL DE ENVIAR
+   ========================================= */
+.submit-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #08525f; /* Botão Azul */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background-color: #0b495c; /* Azul mais escuro no hover */
+}
+
+/* =========================================
+   ALTERNAR MODO (LOGIN / CADASTRO)
+   ========================================= */
+.toggle-mode {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.toggle-mode p {
+  font-size: 14px;
+  color: #666666;
+}
+
+.toggle-mode button {
+  background: none;
+  border: none;
+  color: #0b4152; /* Verde */
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.toggle-mode button:hover {
+  text-decoration: underline;
+}
+/* =========================================
+   RESPONSIVIDADE (ADAPTAÇÃO PARA CELULAR)
+   ========================================= */
+@media (max-width: 600px) {
+  
+  .login-page {
+    padding: 15px; /* Reduz a margem de fora na tela do celular */
+  }
+
+  .login-container {
+    padding: 25px 20px; /* Reduz o espaçamento interno do card branco */
+    border-radius: 10px;
+  }
+
+  .login-header h1 {
+    font-size: 22px; /* Diminui um pouquinho o título principal */
+  }
+
+  .login-header p {
+    font-size: 13px;
+  }
+
+  .form-group input {
+    padding: 10px; /* Deixa os campos de digitar um pouco mais compactos */
+  }
+
+  .submit-button, .google-button {
+    padding: 12px; /* Ajusta o tamanho dos botões */
+    font-size: 15px;
+  }
+
+  .password-container input {
+    padding-right: 70px; /* Reajusta o espaço do botão de "Mostrar" a senha */
+  }
+}

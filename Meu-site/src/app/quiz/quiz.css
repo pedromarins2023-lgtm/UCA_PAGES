@@ -1,0 +1,712 @@
+/* ========================================
+   PÁGINA
+======================================== */
+
+.quiz-page {
+
+  min-height: 100vh;
+
+  width: 100%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #040d11,
+      #07141d,
+      #030d10
+    );
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 40px 20px;
+
+  box-sizing: border-box;
+
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+
+}
+
+
+/* ========================================
+   TELA INICIAL
+======================================== */
+
+.quiz-intro {
+
+  width: 100%;
+
+  max-width: 700px;
+
+  text-align: center;
+
+  padding: 55px 40px;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  color: #17303b;
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.35);
+
+  animation: aparecer 0.7s ease;
+
+}
+
+
+.quiz-icon {
+
+  font-size: 65px;
+
+  margin-bottom: 15px;
+
+}
+
+
+.quiz-intro h1 {
+
+  margin: 0 0 20px;
+
+  font-size: 42px;
+
+  color: #26627a;
+
+}
+
+
+.quiz-intro p {
+
+  max-width: 580px;
+
+  margin: 0 auto;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+
+  color: #536266;
+
+}
+
+
+.quiz-info {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin: 30px 0;
+
+  color: #26667a;
+
+  font-weight: bold;
+
+}
+
+
+/* ========================================
+   BOTÃO INICIAR
+======================================== */
+
+.btn-iniciar {
+
+  border: none;
+
+  background: #317e8c;
+
+  color: white;
+
+  padding: 16px 35px;
+
+  border-radius: 12px;
+
+  font-size: 17px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+
+}
+
+
+.btn-iniciar:hover {
+
+  background: #24526d;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 25px rgba(49, 114, 140, 0.3);
+
+}
+
+
+/* ========================================
+   LINK VOLTAR
+======================================== */
+
+.voltar {
+
+  display: block;
+
+  margin-top: 25px;
+
+  color: #31778c;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  transition: 0.3s;
+
+}
+
+
+.voltar:hover {
+
+  color: #1d4757;
+
+}
+
+
+/* ========================================
+   CAIXA DO QUIZ
+======================================== */
+
+.quiz-box {
+
+  width: 100%;
+
+  max-width: 850px;
+
+  background: #ffffff;
+
+  color: #183037;
+
+  border-radius: 28px;
+
+  padding: 40px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.4);
+
+  animation: aparecer 0.6s ease;
+
+}
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.quiz-header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 18px;
+
+}
+
+
+.numero-pergunta {
+
+  color: #31728c;
+
+  font-weight: bold;
+
+}
+
+
+.quiz-header strong {
+
+  color: #173b2c;
+
+}
+
+
+/* ========================================
+   BARRA
+======================================== */
+
+.barra {
+
+  width: 100%;
+
+  height: 9px;
+
+  background: #e3ebe6;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+}
+
+
+.barra-progresso {
+
+  height: 100%;
+
+  background: #31778c;
+
+  border-radius: 20px;
+
+  transition: width 0.4s ease;
+
+}
+
+
+/* ========================================
+   PERGUNTA
+======================================== */
+
+.pergunta-area {
+
+  padding-top: 35px;
+
+}
+
+
+.pergunta-area h2 {
+
+  margin: 0 0 30px;
+
+  font-size: 28px;
+
+  line-height: 1.4;
+
+}
+
+
+/* ========================================
+   ALTERNATIVAS
+======================================== */
+
+.alternativas {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+
+}
+
+
+.alternativa {
+
+  width: 100%;
+
+  min-height: 65px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 12px 18px;
+
+  background: #f5f8f6;
+
+  border: 2px solid #dce7e0;
+
+  border-radius: 15px;
+
+  color: #233e45;
+
+  text-align: left;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    border 0.2s ease,
+    background 0.2s ease;
+
+}
+
+
+.alternativa:hover {
+
+  transform: translateX(5px);
+
+  border-color: #5c93a8;
+
+  background: #edf7f0;
+
+}
+
+
+/* ========================================
+   LETRA
+======================================== */
+
+.letra {
+
+  min-width: 36px;
+
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #dcebe1;
+
+  color: #286873;
+
+  font-weight: bold;
+
+}
+
+
+/* ========================================
+   SELECIONADA
+======================================== */
+
+.alternativa.selecionada {
+
+  border-color: #31778c;
+
+  background: #edf8f0;
+
+}
+
+
+/* ========================================
+   CORRETA
+======================================== */
+
+.alternativa.correta {
+
+  border-color: #318c55;
+
+  background: #dff3e5;
+
+}
+
+
+.alternativa.correta .letra {
+
+  background: #318c55;
+
+  color: white;
+
+}
+
+
+/* ========================================
+   ERRADA
+======================================== */
+
+.alternativa.errada {
+
+  border-color: #d66b6b;
+
+  background: #fbeaea;
+
+}
+
+
+.alternativa.errada .letra {
+
+  background: #d66b6b;
+
+  color: white;
+
+}
+
+
+/* ========================================
+   PRÓXIMA
+======================================== */
+
+.btn-proxima {
+
+  display: block;
+
+  margin: 30px 0 0 auto;
+
+  border: none;
+
+  background: #31728c;
+
+  color: white;
+
+  padding: 15px 28px;
+
+  border-radius: 12px;
+
+  font-weight: bold;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+}
+
+
+.btn-proxima:hover {
+
+  background: #245c6d;
+
+  transform: translateY(-2px);
+
+}
+
+
+/* ========================================
+   RESULTADO
+======================================== */
+
+.resultado {
+
+  width: 100%;
+
+  max-width: 650px;
+
+  background: white;
+
+  color: #17303b;
+
+  text-align: center;
+
+  padding: 55px 40px;
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.4);
+
+  animation: aparecer 0.7s ease;
+
+}
+
+
+.resultado-icon {
+
+  font-size: 65px;
+
+}
+
+
+.resultado-label {
+
+  display: block;
+
+  margin-top: 15px;
+
+  color: #31778c;
+
+  font-size: 13px;
+
+  font-weight: bold;
+
+  letter-spacing: 2px;
+
+}
+
+
+.resultado h1 {
+
+  margin: 10px 0 25px;
+
+  font-size: 40px;
+
+}
+
+
+.pontuacao {
+
+  margin-bottom: 5px;
+
+}
+
+
+.pontuacao strong {
+
+  font-size: 75px;
+
+  color: #31778c;
+
+}
+
+
+.pontuacao span {
+
+  font-size: 30px;
+
+  color: #83938a;
+
+}
+
+
+.porcentagem {
+
+  font-size: 20px;
+
+  font-weight: bold;
+
+  color: #52655b;
+
+}
+
+
+.mensagem {
+
+  max-width: 500px;
+
+  margin: 25px auto;
+
+  color: #5a6b62;
+
+  line-height: 1.7;
+
+}
+
+
+.resultado-botoes {
+
+  margin-top: 30px;
+
+}
+
+
+/* ========================================
+   ANIMAÇÃO
+======================================== */
+
+@keyframes aparecer {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(25px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+}
+
+
+/* ========================================
+   RESPONSIVO
+======================================== */
+
+@media (max-width: 600px) {
+
+  .quiz-page {
+
+    padding: 20px 12px;
+
+  }
+
+
+  .quiz-intro,
+  .quiz-box,
+  .resultado {
+
+    padding: 35px 22px;
+
+    border-radius: 22px;
+
+  }
+
+
+  .quiz-intro h1 {
+
+    font-size: 31px;
+
+  }
+
+
+  .quiz-intro p {
+
+    font-size: 16px;
+
+  }
+
+
+  .quiz-info {
+
+    flex-direction: column;
+
+    gap: 5px;
+
+  }
+
+
+  .quiz-info span:nth-child(2) {
+
+    display: none;
+
+  }
+
+
+  .pergunta-area h2 {
+
+    font-size: 22px;
+
+  }
+
+
+  .alternativa {
+
+    font-size: 15px;
+
+    min-height: 60px;
+
+  }
+
+
+  .resultado h1 {
+
+    font-size: 32px;
+
+  }
+
+
+  .pontuacao strong {
+
+    font-size: 60px;
+
+  }
+
+}

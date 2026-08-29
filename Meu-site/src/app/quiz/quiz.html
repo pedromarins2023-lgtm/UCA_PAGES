@@ -1,0 +1,255 @@
+<div class="quiz-page">
+
+  <!-- ========================================
+       TELA INICIAL
+  ======================================== -->
+
+  @if (!quizIniciado) {
+
+    <div class="quiz-intro">
+
+      <div class="quiz-icon">
+        🌱
+      </div>
+
+      <h1>
+        Quiz Guardiões do Mar
+      </h1>
+
+      <p>
+        Teste seus conhecimentos sobre a organização,
+        os manguezais e a importância da conservação ambiental.
+      </p>
+
+      <div class="quiz-info">
+
+        <span>10 questões</span>
+
+        <span>•</span>
+
+        <span>Conhecimento ambiental</span>
+
+      </div>
+
+      <button
+        class="btn-iniciar"
+        (click)="iniciarQuiz()"
+      >
+        Iniciar Quiz
+      </button>
+
+      <a
+        routerLink="/home"
+        class="voltar"
+      >
+        ← Voltar para o início
+      </a>
+
+    </div>
+
+  }
+
+
+  <!-- ========================================
+       QUIZ
+  ======================================== -->
+
+  @if (quizIniciado && !quizFinalizado) {
+
+    <div class="quiz-box">
+
+
+      <!-- CABEÇALHO -->
+
+      <div class="quiz-header">
+
+        <div>
+
+          <span class="numero-pergunta">
+            Pergunta {{ perguntaAtual + 1 }}
+            de {{ perguntas.length }}
+          </span>
+
+        </div>
+
+        <strong>
+          {{ pontuacao }} pontos
+        </strong>
+
+      </div>
+
+
+      <!-- BARRA DE PROGRESSO -->
+
+      <div class="barra">
+
+        <div
+          class="barra-progresso"
+          [style.width.%]="progresso"
+        ></div>
+
+      </div>
+
+
+      <!-- PERGUNTA -->
+
+      <div class="pergunta-area">
+
+        <h2>
+          {{ pergunta.pergunta }}
+        </h2>
+
+
+        <!-- ALTERNATIVAS -->
+
+        <div class="alternativas">
+
+          @for (
+            alternativa of pergunta.alternativas;
+            track $index
+          ) {
+
+            <button
+              class="alternativa"
+
+              [class.selecionada]="
+                respostaSelecionada === $index
+              "
+
+              [class.correta]="
+                respostaRespondida &&
+                $index === pergunta.correta
+              "
+
+              [class.errada]="
+                respostaRespondida &&
+                respostaSelecionada === $index &&
+                $index !== pergunta.correta
+              "
+
+              (click)="selecionarResposta($index)"
+            >
+
+              <span class="letra">
+                {{ ['A', 'B', 'C', 'D'][$index] }}
+              </span>
+
+              <span>
+                {{ alternativa }}
+              </span>
+
+            </button>
+
+          }
+
+        </div>
+
+
+        <!-- BOTÃO PRÓXIMA -->
+
+        @if (respostaRespondida) {
+
+          <button
+            class="btn-proxima"
+            (click)="proximaPergunta()"
+          >
+
+            @if (
+              perguntaAtual <
+              perguntas.length - 1
+            ) {
+
+              Próxima pergunta →
+
+            } @else {
+
+              Ver resultado
+
+            }
+
+          </button>
+
+        }
+
+      </div>
+
+    </div>
+
+  }
+
+
+  <!-- ========================================
+       RESULTADO
+  ======================================== -->
+
+  @if (quizFinalizado) {
+
+    <div class="resultado">
+
+
+      <div class="resultado-icon">
+        🌿
+      </div>
+
+
+      <span class="resultado-label">
+        QUIZ FINALIZADO
+      </span>
+
+
+      <h1>
+        Seu resultado
+      </h1>
+
+
+      <div class="pontuacao">
+
+        <strong>
+          {{ pontuacao }}
+        </strong>
+
+        <span>
+          / {{ perguntas.length }}
+        </span>
+
+      </div>
+
+
+      <div class="porcentagem">
+
+        {{ porcentagemFinal }}% de acerto
+
+      </div>
+
+
+      <p class="mensagem">
+
+        {{ mensagemFinal }}
+
+      </p>
+
+
+      <div class="resultado-botoes">
+
+        <button
+          class="btn-iniciar"
+          (click)="reiniciarQuiz()"
+        >
+          Fazer novamente
+        </button>
+
+
+        <a
+          routerLink="/home"
+          class="voltar"
+        >
+          ← Voltar para o início
+        </a>
+
+      </div>
+
+    </div>
+
+  }
+
+</div>
