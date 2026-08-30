@@ -1,6 +1,6 @@
-/* ========================================
+/* =========================================================
    CONFIGURAÇÕES GERAIS
-======================================== */
+========================================================= */
 
 :host {
   display: block;
@@ -19,9 +19,27 @@
 }
 
 
-/* ========================================
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
    HEADER
-======================================== */
+========================================================= */
 
 .header {
   position: fixed;
@@ -45,20 +63,19 @@
 }
 
 
-/* ESCONDER HEADER */
+/* HEADER ESCONDIDO */
 
 .header-escondido {
   transform: translateY(-110%);
 }
 
 
-/* ========================================
+/* =========================================================
    CONTAINER HEADER
-======================================== */
+========================================================= */
 
 .header-container {
   width: 100%;
-
   max-width: 1300px;
 
   height: 76px;
@@ -72,14 +89,12 @@
   align-items: center;
 
   justify-content: space-between;
-
-  box-sizing: border-box;
 }
 
 
-/* ========================================
+/* =========================================================
    LOGO
-======================================== */
+========================================================= */
 
 .logo-container {
   display: flex;
@@ -91,12 +106,13 @@
   color: white;
 
   text-decoration: none;
+
+  flex-shrink: 0;
 }
 
 
 .logo {
   width: 45px;
-
   height: 45px;
 
   object-fit: contain;
@@ -112,9 +128,9 @@
 }
 
 
-/* ========================================
+/* =========================================================
    MENU
-======================================== */
+========================================================= */
 
 .menu {
   display: flex;
@@ -145,8 +161,6 @@
 }
 
 
-/* LINHA DO MENU */
-
 .menu a::after {
   content: '';
 
@@ -171,9 +185,9 @@
 }
 
 
-/* ========================================
+/* =========================================================
    BOTÃO ENTRAR
-======================================== */
+========================================================= */
 
 .header-button {
   display: inline-flex;
@@ -196,6 +210,8 @@
 
   font-weight: bold;
 
+  white-space: nowrap;
+
   transition: 0.25s ease;
 }
 
@@ -207,9 +223,9 @@
 }
 
 
-/* ========================================
+/* =========================================================
    USUÁRIO
-======================================== */
+========================================================= */
 
 .usuario-header {
   display: flex;
@@ -219,6 +235,8 @@
   align-items: flex-end;
 
   gap: 3px;
+
+  min-width: 0;
 }
 
 
@@ -246,9 +264,9 @@
 }
 
 
-/* ========================================
+/* =========================================================
    HERO
-======================================== */
+========================================================= */
 
 .hero {
   position: relative;
@@ -269,10 +287,6 @@
 }
 
 
-/*
-   CAMADA MAIS VERDE
-*/
-
 .hero::before {
   content: '';
 
@@ -291,15 +305,16 @@
 }
 
 
-/* ========================================
+/* =========================================================
    CONTAINER HERO
-======================================== */
+========================================================= */
 
 .hero-container {
   position: relative;
 
   z-index: 10;
 
+  width: 100%;
   max-width: 1250px;
 
   min-height: 820px;
@@ -308,11 +323,9 @@
 
   padding: 120px 40px 180px;
 
-  box-sizing: border-box;
-
   display: grid;
 
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
 
   align-items: center;
 
@@ -320,12 +333,14 @@
 }
 
 
-/* ========================================
+/* =========================================================
    TEXTO HERO
-======================================== */
+========================================================= */
 
 .hero-content {
   max-width: 650px;
+
+  min-width: 0;
 }
 
 
@@ -377,9 +392,9 @@
 }
 
 
-/* ========================================
-   BOTÕES
-======================================== */
+/* =========================================================
+   BOTÕES HERO
+========================================================= */
 
 .hero-botoes {
   display: flex;
@@ -389,6 +404,20 @@
   gap: 20px;
 
   flex-wrap: wrap;
+}
+
+
+.botao-principal,
+.botao-secundario {
+  min-height: 50px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
 }
 
 
@@ -447,9 +476,9 @@
 }
 
 
-/* ========================================
-   IMAGEM
-======================================== */
+/* =========================================================
+   IMAGEM HERO
+========================================================= */
 
 .hero-imagem-container {
   position: relative;
@@ -468,7 +497,6 @@
   position: relative;
 
   width: 370px;
-
   height: 480px;
 
   padding: 8px;
@@ -492,7 +520,6 @@
 
 .hero-imagem {
   width: 100%;
-
   height: 100%;
 
   display: block;
@@ -505,9 +532,9 @@
 }
 
 
-/* ========================================
-   BOLINHAS DECORATIVAS
-======================================== */
+/* =========================================================
+   BOLINHAS
+========================================================= */
 
 .bolinha {
   position: absolute;
@@ -520,11 +547,9 @@
 
 .bolinha-1 {
   width: 70px;
-
   height: 70px;
 
   right: 10px;
-
   top: 90px;
 
   background:
@@ -541,11 +566,9 @@
 
 .bolinha-2 {
   width: 55px;
-
   height: 55px;
 
   left: 30px;
-
   bottom: 100px;
 
   background:
@@ -560,9 +583,9 @@
 }
 
 
-/* ========================================
+/* =========================================================
    FOLHAS
-======================================== */
+========================================================= */
 
 .folha {
   position: absolute;
@@ -574,13 +597,13 @@
       0 8px 10px rgba(0, 0, 0, 0.2)
     );
 
-  animation: flutuar 4s ease-in-out infinite;
+  animation:
+    flutuar 4s ease-in-out infinite;
 }
 
 
 .folha-1 {
   top: 120px;
-
   left: 0;
 
   transform: rotate(-20deg);
@@ -589,7 +612,6 @@
 
 .folha-2 {
   right: 20px;
-
   bottom: 100px;
 
   transform: rotate(20deg);
@@ -602,29 +624,31 @@
 
   0%,
   100% {
-    transform: translateY(0) rotate(-10deg);
+    transform:
+      translateY(0)
+      rotate(-10deg);
   }
 
   50% {
-    transform: translateY(-12px) rotate(5deg);
+    transform:
+      translateY(-12px)
+      rotate(5deg);
   }
 
 }
 
 
-/* ========================================
+/* =========================================================
    ONDAS
-======================================== */
+========================================================= */
 
 .ondas {
   position: absolute;
 
   left: 0;
-
   bottom: -1px;
 
   width: 100%;
-
   height: 220px;
 
   z-index: 5;
@@ -649,7 +673,8 @@
 
   height: 270px;
 
-  background: rgba(100, 197, 235, 0.45);
+  background:
+    rgba(100, 197, 235, 0.45);
 
   transform: rotate(-4deg);
 }
@@ -660,7 +685,8 @@
 
   height: 260px;
 
-  background: rgba(7, 56, 88, 0.45);
+  background:
+    rgba(7, 56, 88, 0.45);
 
   transform: rotate(3deg);
 }
@@ -677,18 +703,14 @@
 }
 
 
-/* ========================================
+/* =========================================================
    SOBRE
-======================================== */
+========================================================= */
 
 .sobre {
   min-height: 400px;
 
   padding: 100px 30px;
-
-  box-sizing: border-box;
-
-  
 
   color: var(--azul-escuro);
 
@@ -727,25 +749,36 @@
 }
 
 
-/* ========================================
+/* =========================================================
    SEÇÕES
-======================================== */
+========================================================= */
 
 .section {
+  width: 100%;
+
   min-height: 500px;
 
   padding: 100px 30px;
 
-  box-sizing: border-box;
-
   display: flex;
+
+  flex-direction: column;
 
   align-items: center;
 
   justify-content: center;
 
-  background: linear-gradient(180deg, #014855 0%, #075964 50%, #053247d7 100%);
-background-repeat:no-repeat;
+  gap: 50px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #014855 0%,
+      #075964 50%,
+      #053247 100%
+    );
+
+  background-repeat: no-repeat;
 
   color: var(--azul-escuro);
 
@@ -760,130 +793,115 @@ background-repeat:no-repeat;
 }
 
 
-/*noicias*/
-
-
-
-
-
-/* =========================
-   CARDS DE NOTÍCIAS
-========================= */
+/* =========================================================
+   NOTÍCIAS
+========================================================= */
 
 .noticias {
-    width: 90%;
-    max-width: 1200px;
+  width: 100%;
 
-    margin: 50px auto;
+  max-width: 1200px;
 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  margin: 50px auto;
 
-    gap: 50px;
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 40px;
 }
 
-
-/* CARD */
 
 .card-noticia {
-    background: white;
+  min-width: 0;
 
-    border-radius: 15px;
+  background: white;
 
-    overflow: hidden;
+  border-radius: 15px;
 
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
 
-    transition: 0.3s;
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.15);
+
+  transition: 0.3s;
 }
 
-
-/* Efeito ao passar o mouse */
 
 .card-noticia:hover {
-    transform: translateY(-8px);
+  transform: translateY(-8px);
 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
-
-/* FOTO */
 
 .card-noticia img {
-    width: 100%;
-    height: 210px;
+  width: 100%;
+  height: 210px;
 
-    object-fit: cover;
+  object-fit: cover;
 
-    display: block;
+  display: block;
 }
 
-
-/* CONTEÚDO */
 
 .conteudo-noticia {
-    padding: 25px;
+  padding: 25px;
 }
 
-
-/* TÍTULO */
 
 .conteudo-noticia h2 {
-    margin-top: 0;
+  margin-top: 0;
 
-    font-size: 24px;
+  font-size: 24px;
 
-    line-height: 1.1;
+  line-height: 1.1;
 
-    color: #09465ea9;
+  color: #09465e;
 }
 
-
-/* TEXTO */
 
 .conteudo-noticia p {
-    font-size: 17px;
+  font-size: 17px;
 
-    line-height: 1.7;
+  line-height: 1.7;
 
-    color: #444;
+  color: #444;
 }
 
 
-/* LINK */
-
 .conteudo-noticia a {
-    display: inline-block;
+  display: inline-block;
 
-    margin-top: 10px;
+  margin-top: 10px;
 
-    color: #075bb5;
+  color: #075bb5;
 
-    font-size: 16px;
+  font-size: 16px;
 
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 
 .conteudo-noticia a:hover {
-    color: #003b78;
+  color: #003b78;
 }
 
 
-
-/* ========================================
-   CARD QUEM SOMOS
-======================================== */
+/* =========================================================
+   CARD QUEM SOMOS / PROJETOS
+========================================================= */
 
 .card {
   width: 100%;
+
   max-width: 1200px;
 
   margin: 60px auto;
 
   padding: 45px;
-
-  box-sizing: border-box;
 
   background: #ffffff;
 
@@ -891,17 +909,17 @@ background-repeat:no-repeat;
 
   display: grid;
 
-  grid-template-columns: 380px 1fr;
+  grid-template-columns:
+    minmax(280px, 380px)
+    minmax(0, 1fr);
 
   gap: 50px;
 
   align-items: start;
+
+  overflow: hidden;
 }
 
-
-/* ========================================
-   IMAGEM
-======================================== */
 
 .card-imagem {
   width: 100%;
@@ -916,7 +934,6 @@ background-repeat:no-repeat;
 
 .card-imagem img {
   width: 100%;
-
   height: 100%;
 
   object-fit: cover;
@@ -925,11 +942,9 @@ background-repeat:no-repeat;
 }
 
 
-/* ========================================
-   CONTEÚDO
-======================================== */
-
 .card-conteudo {
+  min-width: 0;
+
   color: #064555d0;
 }
 
@@ -937,11 +952,24 @@ background-repeat:no-repeat;
 .card-conteudo h1 {
   margin: 0 0 30px;
 
-  color: #07435fc5;
+  color: #07435f;
 
   font-size: 40px;
 
   font-weight: 700;
+
+  line-height: 1.15;
+}
+
+
+.card-conteudo h3 {
+  color: #28545a;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+
+  font-weight: normal;
 }
 
 
@@ -953,23 +981,21 @@ background-repeat:no-repeat;
   font-size: 16px;
 
   line-height: 1.7;
-
-  font-weight: normal;
-}
-.section {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
 }
 
 
+/* =========================================================
+   INSTAGRAM
+========================================================= */
 
 .instagram-button {
   width: 50px;
   height: 50px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   border-radius: 50%;
@@ -980,6 +1006,7 @@ background-repeat:no-repeat;
     background 0.3s ease,
     transform 0.3s ease;
 }
+
 
 .instagram-button img {
   width: 28px;
@@ -992,13 +1019,13 @@ background-repeat:no-repeat;
     transform 0.3s ease;
 }
 
-/* PASSOU O MOUSE */
 
 .instagram-button:hover {
   background: #0a6e86;
 
   transform: translateY(-4px);
 }
+
 
 .instagram-button:hover img {
   filter: brightness(0) invert(1);
@@ -1007,13 +1034,9 @@ background-repeat:no-repeat;
 }
 
 
-
-
-
-
-/* ========================================
+/* =========================================================
    BOTÃO VOLTAR AO TOPO
-======================================== */
+========================================================= */
 
 .voltar-topo {
   position: fixed;
@@ -1041,6 +1064,7 @@ background-repeat:no-repeat;
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   cursor: pointer;
@@ -1061,56 +1085,25 @@ background-repeat:no-repeat;
 }
 
 
-/* BOTÃO APARECE */
-
 .voltar-topo.visivel {
-
   opacity: 1;
 
   visibility: visible;
 
   transform: translateY(0);
-
 }
 
 
-/* MOUSE EM CIMA */
-
 .voltar-topo:hover {
-
   background: #0395a8;
 
   transform: translateY(-5px);
-
 }
 
 
-/* ========================================
-   CELULAR
-======================================== */
-
-@media (max-width: 600px) {
-
-  .voltar-topo {
-
-    width: 45px;
-    height: 45px;
-
-    right: 18px;
-    bottom: 18px;
-
-    font-size: 22px;
-
-  }
-
-}
-
-
-
-
-/* ========================================
-   CONHEÇA O MANGUE
-======================================== */
+/* =========================================================
+   TEMAS
+========================================================= */
 
 .temas {
   width: 100%;
@@ -1125,10 +1118,6 @@ background-repeat:no-repeat;
 }
 
 
-/* ========================================
-   TÍTULO
-======================================== */
-
 .temas-titulo {
   width: 100%;
 
@@ -1138,10 +1127,9 @@ background-repeat:no-repeat;
 
   padding: 0 20px;
 
-  box-sizing: border-box;
-
   text-align: center;
 }
+
 
 .temas-titulo h2 {
   margin: 0 0 15px;
@@ -1152,6 +1140,7 @@ background-repeat:no-repeat;
 
   font-weight: 700;
 }
+
 
 .temas-titulo p {
   margin: 0;
@@ -1164,9 +1153,9 @@ background-repeat:no-repeat;
 }
 
 
-/* ========================================
-   JANELA CENTRAL
-======================================== */
+/* =========================================================
+   ÁREA DOS CARDS
+========================================================= */
 
 .cards-area {
   width: 1200px;
@@ -1180,18 +1169,11 @@ background-repeat:no-repeat;
   position: relative;
 
   overflow: hidden;
-
-  box-sizing: border-box;
 }
 
 
-/* ========================================
-   CARROSSEL
-======================================== */
-
 .cards-loop {
   width: 100%;
-
   height: 100%;
 
   overflow: hidden;
@@ -1201,10 +1183,6 @@ background-repeat:no-repeat;
   align-items: center;
 }
 
-
-/* ========================================
-   TRILHO DOS CARDS
-======================================== */
 
 .cards-track {
   display: flex;
@@ -1217,22 +1195,21 @@ background-repeat:no-repeat;
 
   padding: 0 10px;
 
-  animation: loop-mangue 40s linear infinite;
+  animation:
+    loop-mangue 40s linear infinite;
 
   will-change: transform;
 }
 
-
-/* PAUSA AO PASSAR O MOUSE */
 
 .cards-area:hover .cards-track {
   animation-play-state: paused;
 }
 
 
-/* ========================================
-   CARD
-======================================== */
+/* =========================================================
+   CARD TEMA
+========================================================= */
 
 .tema-card {
   width: 330px;
@@ -1258,10 +1235,6 @@ background-repeat:no-repeat;
 }
 
 
-/* ========================================
-   HOVER DO CARD
-======================================== */
-
 .tema-card:hover {
   transform: translateY(-10px);
 
@@ -1270,9 +1243,9 @@ background-repeat:no-repeat;
 }
 
 
-/* ========================================
-   IMAGEM
-======================================== */
+/* =========================================================
+   IMAGEM TEMA
+========================================================= */
 
 .tema-imagem {
   width: 100%;
@@ -1284,9 +1257,9 @@ background-repeat:no-repeat;
   background: #dfe8e3;
 }
 
+
 .tema-imagem img {
   width: 100%;
-
   height: 100%;
 
   display: block;
@@ -1298,22 +1271,19 @@ background-repeat:no-repeat;
 }
 
 
-/* ZOOM DA IMAGEM */
-
 .tema-card:hover .tema-imagem img {
   transform: scale(1.08);
 }
 
 
-/* ========================================
-   CONTEÚDO
-======================================== */
+/* =========================================================
+   CONTEÚDO TEMA
+========================================================= */
 
 .tema-conteudo {
   padding: 22px;
-
-  box-sizing: border-box;
 }
+
 
 .tema-conteudo h3 {
   margin: 0 0 10px;
@@ -1327,6 +1297,7 @@ background-repeat:no-repeat;
   line-height: 1.3;
 }
 
+
 .tema-conteudo p {
   margin: 0 0 18px;
 
@@ -1338,9 +1309,9 @@ background-repeat:no-repeat;
 }
 
 
-/* ========================================
+/* =========================================================
    BOTÃO SABER MAIS
-======================================== */
+========================================================= */
 
 .tema-botao {
   display: inline-flex;
@@ -1368,6 +1339,7 @@ background-repeat:no-repeat;
     transform 0.25s ease;
 }
 
+
 .tema-botao:hover {
   background: #2f5d6b;
 
@@ -1375,9 +1347,9 @@ background-repeat:no-repeat;
 }
 
 
-/* ========================================
-   LOOP INFINITO
-======================================== */
+/* =========================================================
+   LOOP
+========================================================= */
 
 @keyframes loop-mangue {
 
@@ -1392,101 +1364,11 @@ background-repeat:no-repeat;
 }
 
 
-/* ========================================
-   TABLET
-======================================== */
-
-@media (max-width: 900px) {
-
-  .cards-area {
-    max-width: 94%;
-
-    height: 410px;
-  }
-
-  .tema-card {
-    width: 300px;
-
-    min-width: 300px;
-
-    height: 360px;
-  }
-
-}
-
-
-/* ========================================
-   CELULAR
-======================================== */
-
-@media (max-width: 600px) {
-
-  .temas {
-    padding: 70px 0 80px;
-  }
-
-
-  .temas-titulo {
-    margin-bottom: 35px;
-  }
-
-
-  .temas-titulo h2 {
-    font-size: 32px;
-  }
-
-
-  .temas-titulo p {
-    font-size: 14px;
-  }
-
-
-  .cards-area {
-    width: 94%;
-
-    max-width: 94%;
-
-    height: 390px;
-  }
-
-
-  .tema-card {
-    width: 280px;
-
-    min-width: 280px;
-
-    height: 350px;
-  }
-
-
-  .tema-imagem {
-    height: 170px;
-  }
-
-
-  .tema-conteudo {
-    padding: 18px;
-  }
-
-
-  .tema-conteudo h3 {
-    font-size: 18px;
-  }
-
-
-  .tema-conteudo p {
-    font-size: 13px;
-  }
-
-}
-
-
-/* ========================================
+/* =========================================================
    CONTADOR DE IMPACTO
-======================================== */
+========================================================= */
 
 .impacto {
-
   width: 100%;
 
   padding: 100px 30px;
@@ -1500,7 +1382,6 @@ background-repeat:no-repeat;
 
 
 .impacto-container {
-
   width: 100%;
 
   max-width: 1200px;
@@ -1509,12 +1390,7 @@ background-repeat:no-repeat;
 }
 
 
-/* ========================================
-   TÍTULO
-======================================== */
-
 .impacto-titulo {
-
   text-align: center;
 
   max-width: 700px;
@@ -1524,7 +1400,6 @@ background-repeat:no-repeat;
 
 
 .impacto-subtitulo {
-
   display: inline-block;
 
   margin-bottom: 15px;
@@ -1540,7 +1415,6 @@ background-repeat:no-repeat;
 
 
 .impacto-titulo h2 {
-
   margin: 0 0 18px;
 
   font-size: clamp(30px, 4vw, 46px);
@@ -1552,7 +1426,6 @@ background-repeat:no-repeat;
 
 
 .impacto-titulo p {
-
   margin: 0;
 
   color: #a9b8b8;
@@ -1563,23 +1436,21 @@ background-repeat:no-repeat;
 }
 
 
-/* ========================================
-   CARDS
-======================================== */
+/* =========================================================
+   CARDS IMPACTO
+========================================================= */
 
 .impacto-cards {
-
   display: grid;
 
   grid-template-columns:
-    repeat(4, 1fr);
+    repeat(4, minmax(0, 1fr));
 
   gap: 20px;
 }
 
 
 .impacto-card {
-
   padding: 35px 25px;
 
   text-align: center;
@@ -1590,20 +1461,13 @@ background-repeat:no-repeat;
 
   border: 1px solid #dce8df;
 
-  box-sizing: border-box;
-
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
 
-/* ========================================
-   HOVER
-======================================== */
-
 .impacto-card:hover {
-
   transform: translateY(-10px);
 
   box-shadow:
@@ -1611,14 +1475,8 @@ background-repeat:no-repeat;
 }
 
 
-/* ========================================
-   ÍCONE
-======================================== */
-
 .impacto-icone {
-
   width: 60px;
-
   height: 60px;
 
   margin: 0 auto 20px;
@@ -1637,12 +1495,7 @@ background-repeat:no-repeat;
 }
 
 
-/* ========================================
-   NÚMERO
-======================================== */
-
 .impacto-numero {
-
   color: #398383;
 
   font-size: 48px;
@@ -1655,12 +1508,7 @@ background-repeat:no-repeat;
 }
 
 
-/* ========================================
-   TÍTULO DO CARD
-======================================== */
-
 .impacto-card h3 {
-
   margin: 0 0 12px;
 
   color: #182c3c;
@@ -1669,12 +1517,7 @@ background-repeat:no-repeat;
 }
 
 
-/* ========================================
-   DESCRIÇÃO
-======================================== */
-
 .impacto-card p {
-
   margin: 0;
 
   color: #656f75;
@@ -1685,130 +1528,33 @@ background-repeat:no-repeat;
 }
 
 
-/* ========================================
-   TABLET
-======================================== */
-
-@media (max-width: 900px) {
-
-  .impacto-cards {
-
-    grid-template-columns:
-      repeat(2, 1fr);
-  }
-
-}
-
-
-/* ========================================
-   CELULAR
-======================================== */
-
-@media (max-width: 550px) {
-
-  .impacto {
-
-    padding: 70px 20px;
-  }
-
-
-  .impacto-titulo {
-
-    margin-bottom: 40px;
-  }
-
-
-  .impacto-cards {
-
-    grid-template-columns: 1fr;
-
-    gap: 16px;
-  }
-
-
-  .impacto-card {
-
-    padding: 30px 20px;
-  }
-
-
-  .impacto-numero {
-
-    font-size: 42px;
-  }
-
-}
-
-/* ========================================
-   SEÇÃO DO VÍDEO
-======================================== */
+/* =========================================================
+   VÍDEO
+========================================================= */
 
 .video-section {
-
   width: 100%;
 
-  padding: 60px 20px;
-
-  box-sizing: border-box;
+  padding: 90px 20px;
 
   display: flex;
 
   justify-content: center;
 
   align-items: center;
-}
-
-
-/* ========================================
-   CONTAINER
-======================================== */
-
-.video-container {
-
-  width: 100%;
-
-  max-width: 900px;
-
-  display: flex;
-
-  justify-content: center;
-
-}
-
-
-/* ========================================
-   ÁREA DO VÍDEO
-======================================== */
-
-.video-section {
-
-  width: 100%;
-
-  padding: 90px 20px;
-
-  box-sizing: border-box;
-
-  display: flex;
-
-  justify-content: center;
 
   background: #050a0e;
 }
 
 
-/* ========================================
-   CONTAINER DO VÍDEO
-======================================== */
-
 .video-container {
+  position: relative;
 
   width: 100%;
 
   max-width: 1050px;
 
   padding: 15px;
-
-  box-sizing: border-box;
 
   background: #ffffff;
 
@@ -1817,20 +1563,13 @@ background-repeat:no-repeat;
   box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.35);
 
-  position: relative;
-
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
 
-/* ========================================
-   BORDA DECORATIVA
-======================================== */
-
 .video-container::before {
-
   content: "";
 
   position: absolute;
@@ -1847,12 +1586,7 @@ background-repeat:no-repeat;
 }
 
 
-/* ========================================
-   VÍDEO
-======================================== */
-
 .video {
-
   position: relative;
 
   z-index: 1;
@@ -1870,16 +1604,10 @@ background-repeat:no-repeat;
   border-radius: 20px;
 
   background: #000;
-
 }
 
 
-/* ========================================
-   EFEITO AO PASSAR O MOUSE
-======================================== */
-
 .video-container:hover {
-
   transform: translateY(-6px);
 
   box-shadow:
@@ -1887,87 +1615,18 @@ background-repeat:no-repeat;
 }
 
 
-/* ========================================
-   TELA MENOR
-======================================== */
-
-@media (max-width: 800px) {
-
-  .video-section {
-
-    padding: 70px 20px;
-
-  }
-
-  .video-container {
-
-    padding: 10px;
-
-    border-radius: 22px;
-
-  }
-
-  .video-container::before {
-
-    border-radius: 25px;
-
-  }
-
-  .video {
-
-    border-radius: 16px;
-
-  }
-
-}
-
-
-/* ========================================
-   CELULAR
-======================================== */
-
-@media (max-width: 500px) {
-
-  .video-section {
-
-    padding: 50px 15px;
-
-  }
-
-  .video-container {
-
-    padding: 8px;
-
-    border-radius: 18px;
-
-  }
-
-  .video-container::before {
-
-    border-radius: 21px;
-
-    border-width: 2px;
-
-  }
-
-  .video {
-
-    border-radius: 13px;
-
-  }
-
-}
-
+/* =========================================================
+   QUIZ
+========================================================= */
 
 .quiz-convite {
+  width: 100%;
 
   max-width: 1000px;
 
   margin: 80px auto;
 
   padding: 55px;
-
-  box-sizing: border-box;
 
   background: #ffffff;
 
@@ -1979,12 +1638,10 @@ background-repeat:no-repeat;
 
   box-shadow:
     0 20px 50px rgba(0, 0, 0, 0.25);
-
 }
 
 
 .quiz-convite span {
-
   color: #31728c;
 
   font-size: 13px;
@@ -1992,21 +1649,17 @@ background-repeat:no-repeat;
   font-weight: bold;
 
   letter-spacing: 2px;
-
 }
 
 
 .quiz-convite h2 {
-
   margin: 12px 0;
 
   font-size: 36px;
-
 }
 
 
 .quiz-convite p {
-
   max-width: 650px;
 
   margin: 0 auto 30px;
@@ -2014,13 +1667,15 @@ background-repeat:no-repeat;
   color: #606b70;
 
   line-height: 1.7;
-
 }
 
 
 .btn-quiz {
+  display: inline-flex;
 
-  display: inline-block;
+  align-items: center;
+
+  justify-content: center;
 
   padding: 15px 30px;
 
@@ -2035,83 +1690,77 @@ background-repeat:no-repeat;
   font-weight: bold;
 
   transition: 0.3s;
-
 }
 
 
 .btn-quiz:hover {
-
   background: #245e6d;
 
   transform: translateY(-3px);
-
 }
 
 
-
-
-
-
-/* ========================================
+/* =========================================================
    ENCERRAMENTO
-======================================== */
+========================================================= */
 
 .encerramento {
   width: 100%;
+
   min-height: 420px;
 
   display: flex;
+
   justify-content: center;
+
   align-items: center;
 
   text-align: center;
 
   padding: 80px 20px;
-
-  box-sizing: border-box;
 }
 
 
 .encerramento-conteudo {
+  width: 100%;
+
   max-width: 700px;
 
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
 }
 
-
-/* FRASE */
 
 .encerramento h2 {
   margin: 0 0 18px;
 
   font-size: 34px;
+
   font-weight: 700;
 
-  color: #366274c5;
+  color: #366274;
 
   line-height: 1.3;
 }
 
-
-/* TEXTO */
 
 .encerramento p {
   margin: 0;
 
   font-size: 18px;
 
-  color: #213b4dcb;
+  color: #213b4d;
 
   line-height: 1.6;
 }
 
 
-/* LOGO */
-
 .logo-final {
   width: 1000px;
+
   max-width: 60%;
 
   height: auto;
@@ -2120,29 +1769,24 @@ background-repeat:no-repeat;
 
   object-fit: contain;
 
-  transition: transform 0.4s ease;
+  transition:
+    transform 0.4s ease;
 }
 
-
-/* PEQUENA ANIMAÇÃO DA LOGO */
 
 .logo-final:hover {
   transform: scale(1.06);
 }
 
 
-/* MENSAGEM FINAL */
-
 .mensagem-final {
   margin-bottom: 25px !important;
 
-  color: #336780c5 !important;
+  color: #336780 !important;
 
   font-weight: 600;
 }
 
-
-/* BOTÃO */
 
 .botao-inicio {
   border: none;
@@ -2151,11 +1795,12 @@ background-repeat:no-repeat;
 
   border-radius: 30px;
 
-  background: #23415abe;
+  background: #23415a;
 
   color: #fdfdfd;
 
   font-size: 15px;
+
   font-weight: 600;
 
   cursor: pointer;
@@ -2167,8 +1812,6 @@ background-repeat:no-repeat;
 }
 
 
-/* HOVER */
-
 .botao-inicio:hover {
   transform: translateY(-4px);
 
@@ -2178,170 +1821,106 @@ background-repeat:no-repeat;
 }
 
 
+/* =========================================================
+   TABLET
+========================================================= */
 
+@media (max-width: 1100px) {
 
+  .header-container {
+    padding: 0 25px;
+  }
 
 
+  .menu {
+    gap: 22px;
+  }
 
 
+  .hero-container {
+    gap: 30px;
+  }
 
 
+  .imagem-moldura {
+    width: 320px;
+    height: 420px;
+  }
 
 
+  .card {
+    grid-template-columns:
+      minmax(250px, 330px)
+      minmax(0, 1fr);
 
+    padding: 35px;
 
+    gap: 35px;
+  }
 
 
+  .card-imagem {
+    height: 520px;
+  }
 
 
+  .noticias {
+    gap: 25px;
+  }
 
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ========================================
-   RESPONSIVO - TABLET
-======================================== */
+/* =========================================================
+   TABLET PEQUENO
+========================================================= */
 
 @media (max-width: 900px) {
 
   .header-container {
+    height: 70px;
+
     padding: 0 20px;
   }
 
 
   .menu {
-    gap: 18px;
+    gap: 15px;
+  }
+
+
+  .menu a {
+    font-size: 13px;
+  }
+
+
+  .header-button {
+    padding: 9px 15px;
+
+    font-size: 13px;
+  }
+
+
+  /* HERO */
+
+  .hero {
+    min-height: auto;
   }
 
 
   .hero-container {
+    min-height: auto;
+
     grid-template-columns: 1fr;
 
     text-align: center;
 
-    padding-top: 120px;
+    padding:
+      120px
+      30px
+      180px;
 
-    gap: 20px;
+    gap: 30px;
   }
 
 
@@ -2369,29 +1948,68 @@ background-repeat:no-repeat;
 
   .imagem-moldura {
     width: 300px;
-
     height: 390px;
+  }
+
+
+  /* NOTÍCIAS */
+
+  .noticias {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  /* CARD */
+
+  .card {
+    grid-template-columns: 1fr;
+
+    max-width: 700px;
+  }
+
+
+  .card-imagem {
+    height: 400px;
+  }
+
+
+  .card-conteudo h1 {
+    font-size: 34px;
+  }
+
+
+  /* IMPACTO */
+
+  .impacto-cards {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 
 }
 
 
-/* ========================================
-   RESPONSIVO - CELULAR
-======================================== */
+/* =========================================================
+   CELULAR
+========================================================= */
 
 @media (max-width: 600px) {
+
+  /* =====================================================
+     HEADER
+  ===================================================== */
 
   .header-container {
     height: 65px;
 
-    padding: 0 16px;
+    padding: 0 14px;
+
+    gap: 10px;
   }
 
 
   .logo {
     width: 38px;
-
     height: 38px;
   }
 
@@ -2406,35 +2024,84 @@ background-repeat:no-repeat;
   }
 
 
+  .usuario-header {
+    margin-left: auto;
+
+    align-items: flex-end;
+  }
+
+
+  .usuario-ola {
+    font-size: 12px;
+  }
+
+
+  .usuario-email {
+    max-width: 125px;
+
+    font-size: 9px;
+  }
+
+
+  .header-button {
+    padding: 8px 13px;
+
+    font-size: 12px;
+  }
+
+
+  /* =====================================================
+     HERO
+  ===================================================== */
+
   .hero {
-    min-height: 850px;
+    min-height: auto;
   }
 
 
   .hero-container {
-    min-height: 850px;
+    min-height: auto;
 
     padding:
       100px
-      20px
-      160px;
+      18px
+      150px;
+
+    gap: 25px;
+  }
+
+
+  .hero-subtitulo {
+    margin-bottom: 14px;
+
+    font-size: 14px;
   }
 
 
   .hero h1 {
-    font-size: 42px;
+    margin-bottom: 20px;
+
+    font-size: clamp(34px, 10vw, 42px);
+
+    line-height: 1.08;
   }
 
 
   .hero-descricao {
-    font-size: 16px;
+    margin-bottom: 25px;
+
+    font-size: 15px;
+
+    line-height: 1.6;
   }
 
 
   .hero-botoes {
+    width: 100%;
+
     flex-direction: column;
 
-    width: 100%;
+    gap: 12px;
   }
 
 
@@ -2442,102 +2109,671 @@ background-repeat:no-repeat;
   .botao-secundario {
     width: 100%;
 
-    text-align: center;
-
-    box-sizing: border-box;
+    padding: 14px 20px;
   }
 
 
   .hero-imagem-container {
-    min-height: 350px;
+    min-height: 330px;
   }
 
 
   .imagem-moldura {
-    width: 240px;
+    width: min(240px, 70vw);
 
-    height: 310px;
+    height: min(310px, 82vw);
+
+    border-radius: 23px;
+  }
+
+
+  .hero-imagem {
+    border-radius: 17px;
   }
 
 
   .bolinha-1 {
-    width: 45px;
+    width: 42px;
+    height: 42px;
 
-    height: 45px;
+    right: 8px;
 
-    right: 15px;
+    top: 40px;
   }
 
 
   .bolinha-2 {
-    width: 40px;
+    width: 38px;
+    height: 38px;
 
-    height: 40px;
+    left: 8px;
 
-    left: 10px;
+    bottom: 50px;
   }
 
 
   .folha {
-    font-size: 38px;
+    font-size: 34px;
   }
 
 
+  .folha-1 {
+    left: 5px;
+    top: 40px;
+  }
+
+
+  .folha-2 {
+    right: 5px;
+    bottom: 50px;
+  }
+
+
+  /* =====================================================
+     ONDAS
+  ===================================================== */
+
+  .ondas {
+    height: 130px;
+  }
+
+
+  .onda-1 {
+    bottom: -75px;
+
+    height: 150px;
+  }
+
+
+  .onda-2 {
+    bottom: -90px;
+
+    height: 145px;
+  }
+
+
+  .onda-3 {
+    bottom: -105px;
+
+    height: 160px;
+  }
+
+
+  /* =====================================================
+     SOBRE
+  ===================================================== */
+
   .sobre {
-    padding: 70px 25px;
+    min-height: auto;
+
+    padding:
+      65px
+      20px;
+  }
+
+
+  .sobre-icon {
+    font-size: 34px;
   }
 
 
   .sobre h2 {
-    font-size: 32px;
+    font-size: 30px;
+  }
+
+
+  .sobre p {
+    font-size: 15px;
+
+    line-height: 1.65;
+  }
+
+
+  /* =====================================================
+     SEÇÕES
+  ===================================================== */
+
+  .section {
+    min-height: auto;
+
+    padding:
+      65px
+      15px;
+
+    gap: 30px;
+  }
+
+
+  .section h2 {
+    font-size: 30px;
+
+    text-align: center;
+  }
+
+
+  /* =====================================================
+     NOTÍCIAS
+  ===================================================== */
+
+  .noticias {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+
+    margin:
+      30px
+      auto;
+  }
+
+
+  .card-noticia {
+    width: 100%;
+  }
+
+
+  .card-noticia img {
+    height: 200px;
+  }
+
+
+  .conteudo-noticia {
+    padding: 20px;
+  }
+
+
+  .conteudo-noticia h2 {
+    font-size: 21px;
+  }
+
+
+  .conteudo-noticia p {
+    font-size: 15px;
+
+    line-height: 1.6;
+  }
+
+
+  /* =====================================================
+     CARD
+  ===================================================== */
+
+  .card {
+    width: 100%;
+
+    max-width: 100%;
+
+    margin:
+      30px
+      0;
+
+    padding: 20px;
+
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    border-radius: 20px;
+  }
+
+
+  .card-imagem {
+    width: 100%;
+
+    height: 300px;
+
+    border-radius: 16px;
+  }
+
+
+  .card-conteudo h1 {
+    margin-bottom: 20px;
+
+    font-size: 29px;
+
+    line-height: 1.2;
+  }
+
+
+  .card-conteudo h3 {
+    font-size: 15px;
+
+    line-height: 1.65;
+  }
+
+
+  .card-conteudo p {
+    font-size: 15px;
+
+    line-height: 1.65;
+  }
+
+
+  /* =====================================================
+     TEMAS
+  ===================================================== */
+
+  .temas {
+    padding:
+      65px
+      0
+      75px;
+  }
+
+
+  .temas-titulo {
+    padding:
+      0
+      18px;
+
+    margin-bottom: 30px;
+  }
+
+
+  .temas-titulo h2 {
+    font-size: 30px;
+
+    line-height: 1.2;
+  }
+
+
+  .temas-titulo p {
+    font-size: 14px;
+
+    line-height: 1.6;
+  }
+
+
+  .cards-area {
+    width: 100%;
+
+    max-width: 100%;
+
+    height: 370px;
+  }
+
+
+  .tema-card {
+    width: 275px;
+
+    min-width: 275px;
+
+    height: 345px;
+
+    border-radius: 19px;
+  }
+
+
+  .tema-imagem {
+    height: 165px;
+  }
+
+
+  .tema-conteudo {
+    padding: 17px;
+  }
+
+
+  .tema-conteudo h3 {
+    font-size: 18px;
+  }
+
+
+  .tema-conteudo p {
+    font-size: 13px;
+
+    line-height: 1.5;
+  }
+
+
+  .tema-botao {
+    padding:
+      9px
+      17px;
+
+    font-size: 12px;
+  }
+
+
+  /* =====================================================
+     IMPACTO
+  ===================================================== */
+
+  .impacto {
+    padding:
+      70px
+      18px;
+  }
+
+
+  .impacto-titulo {
+    margin-bottom: 35px;
+  }
+
+
+  .impacto-subtitulo {
+    font-size: 12px;
+
+    letter-spacing: 1.5px;
+  }
+
+
+  .impacto-titulo h2 {
+    font-size: 30px;
+
+    line-height: 1.2;
+  }
+
+
+  .impacto-titulo p {
+    font-size: 14px;
+
+    line-height: 1.6;
+  }
+
+
+  .impacto-cards {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+
+  .impacto-card {
+    padding:
+      28px
+      18px;
+  }
+
+
+  .impacto-icone {
+    width: 55px;
+    height: 55px;
+
+    font-size: 25px;
+  }
+
+
+  .impacto-numero {
+    font-size: 40px;
+  }
+
+
+  .impacto-card h3 {
+    font-size: 18px;
+  }
+
+
+  .impacto-card p {
+    font-size: 13px;
+  }
+
+
+  /* =====================================================
+     VÍDEO
+  ===================================================== */
+
+  .video-section {
+    padding:
+      50px
+      12px;
+  }
+
+
+  .video-container {
+    padding: 7px;
+
+    border-radius: 18px;
+  }
+
+
+  .video-container::before {
+    inset: -2px;
+
+    border-radius: 21px;
+
+    border-width: 2px;
+  }
+
+
+  .video {
+    border-radius: 13px;
+
+    aspect-ratio: 16 / 9;
+  }
+
+
+  /* =====================================================
+     QUIZ
+  ===================================================== */
+
+  .quiz-convite {
+    width: 100%;
+
+    margin:
+      45px
+      auto;
+
+    padding:
+      30px
+      20px;
+
+    border-radius: 20px;
+  }
+
+
+  .quiz-convite span {
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+  }
+
+
+  .quiz-convite h2 {
+    font-size: 28px;
+
+    line-height: 1.2;
+  }
+
+
+  .quiz-convite p {
+    font-size: 14px;
+
+    line-height: 1.6;
+  }
+
+
+  .btn-quiz {
+    width: 100%;
+
+    padding:
+      14px
+      20px;
+  }
+
+
+  /* =====================================================
+     BOTÃO TOPO
+  ===================================================== */
+
+  .voltar-topo {
+    width: 45px;
+    height: 45px;
+
+    right: 15px;
+    bottom: 15px;
+
+    font-size: 21px;
+  }
+
+
+  /* =====================================================
+     ENCERRAMENTO
+  ===================================================== */
+
+  .encerramento {
+    min-height: auto;
+
+    padding:
+      65px
+      20px;
+  }
+
+
+  .encerramento h2 {
+    font-size: 27px;
+
+    line-height: 1.25;
+  }
+
+
+  .encerramento p {
+    font-size: 15px;
+
+    line-height: 1.6;
+  }
+
+
+  .logo-final {
+    width: 100%;
+
+    max-width: 80%;
+
+    margin:
+      25px
+      0
+      15px;
+  }
+
+
+  .mensagem-final {
+    font-size: 15px;
+  }
+
+
+  .botao-inicio {
+    width: 100%;
+
+    max-width: 260px;
+
+    padding:
+      13px
+      20px;
   }
 
 }
 
 
+/* =========================================================
+   CELULARES MUITO PEQUENOS
+   320px - 380px
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .header-container {
+    padding: 0 10px;
+  }
 
 
+  .logo {
+    width: 34px;
+    height: 34px;
+  }
 
 
+  .usuario-ola {
+    font-size: 11px;
+  }
 
 
+  .usuario-email {
+    max-width: 105px;
+
+    font-size: 8px;
+  }
 
 
+  .header-button {
+    padding:
+      7px
+      10px;
+
+    font-size: 11px;
+  }
 
 
+  .hero-container {
+    padding:
+      95px
+      15px
+      140px;
+  }
 
 
+  .hero h1 {
+    font-size: 32px;
+  }
 
 
+  .hero-descricao {
+    font-size: 14px;
+  }
 
 
+  .imagem-moldura {
+    width: 210px;
+
+    height: 275px;
+  }
 
 
+  .tema-card {
+    width: 260px;
+
+    min-width: 260px;
+  }
 
 
+  .card {
+    padding: 16px;
+  }
 
 
+  .card-imagem {
+    height: 260px;
+  }
 
 
+  .quiz-convite h2 {
+    font-size: 25px;
+  }
 
 
+  .impacto-numero {
+    font-size: 36px;
+  }
+
+}
 
 
+/* =========================================================
+   REDUZIR ANIMAÇÕES PARA QUEM PREFERE MENOS MOVIMENTO
+========================================================= */
 
+@media (prefers-reduced-motion: reduce) {
 
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
 
+    animation-duration: 0.01ms !important;
 
+    animation-iteration-count: 1 !important;
 
+    transition-duration: 0.01ms !important;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
+}
