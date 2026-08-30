@@ -55,6 +55,24 @@
 
     </nav>
 
+    <button
+  class="menu-mobile-button"
+  (click)="menuMobileAberto = !menuMobileAberto"
+  aria-label="Abrir menu"
+>
+  ☰
+</button>
+
+<nav
+  class="menu-mobile"
+  [class.menu-mobile-aberto]="menuMobileAberto"
+>
+  <a href="#inicio" (click)="fecharMenuMobile()">Início</a>
+  <a href="#sobre" (click)="fecharMenuMobile()">Sobre</a>
+  <a href="#projetos" (click)="fecharMenuMobile()">Projetos</a>
+  <a href="#contato" (click)="fecharMenuMobile()">Contato</a>
+</nav>
+
 
     <!-- USUÁRIO -->
     @if (authService.usuario(); as usuario) {

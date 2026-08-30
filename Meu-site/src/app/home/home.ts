@@ -27,13 +27,46 @@ import { Footer } from '../shared/footer/footer';
 })
 export class Home implements AfterViewInit {
 
+  // ========================================
+  // AUTENTICAÇÃO
+  // ========================================
+
   authService = inject(AuthService);
+
+
+  // ========================================
+  // MENU MOBILE
+  // ========================================
+
+  menuMobileAberto = false;
+
+
+  fecharMenuMobile(): void {
+
+    this.menuMobileAberto = false;
+
+  }
+
+
+  // ========================================
+  // HEADER
+  // ========================================
 
   headerVisivel = true;
 
   private ultimaPosicaoScroll = 0;
 
+
+  // ========================================
+  // BOTÃO VOLTAR AO TOPO
+  // ========================================
+
   mostrarBotaoTopo = false;
+
+
+  // ========================================
+  // TEMA
+  // ========================================
 
   temaEscuro = true;
 
@@ -77,7 +110,9 @@ export class Home implements AfterViewInit {
     const posicaoAtual = window.scrollY;
 
 
+    // ========================================
     // BOTÃO TOPO
+    // ========================================
 
     if (posicaoAtual > 400) {
 
@@ -90,7 +125,9 @@ export class Home implements AfterViewInit {
     }
 
 
+    // ========================================
     // HEADER
+    // ========================================
 
     if (posicaoAtual <= 50) {
 
@@ -177,11 +214,13 @@ export class Home implements AfterViewInit {
       1500
     );
 
+
     this.animarContador(
       'arvores',
       this.valorArvores,
       2200
     );
+
 
     this.animarContador(
       'jovens',
@@ -189,16 +228,18 @@ export class Home implements AfterViewInit {
       2200
     );
 
+
     this.animarContador(
       'lixo',
       this.valorLixo,
       1500
     );
+
   }
 
 
   // ========================================
-  // ANIMAÇÃO
+  // ANIMAÇÃO DOS CONTADORES
   // ========================================
 
   private animarContador(
@@ -268,6 +309,7 @@ export class Home implements AfterViewInit {
     requestAnimationFrame(
       atualizar
     );
+
   }
 
 
