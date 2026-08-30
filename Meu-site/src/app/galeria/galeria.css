@@ -1,0 +1,524 @@
+/* ========================================
+   GALERIA DO PROJETO UÇÁ
+======================================== */
+
+:host {
+
+  display: block;
+
+  font-family: Arial, sans-serif;
+
+  --verde: #23667a;
+  --verde-claro: #3f87a8;
+
+  --fundo: #f4f8f5;
+
+  --texto: #182e35;
+  --texto-suave: #6c7a7d;
+
+  --branco: #ffffff;
+
+}
+
+
+/* ========================================
+   PÁGINA
+======================================== */
+
+.galeria-page {
+
+  min-height: 100vh;
+
+  background: var(--fundo);
+
+  color: var(--texto);
+
+  padding: 40px 6% 80px;
+
+}
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.galeria-header {
+
+  max-width: 1000px;
+
+  margin: 0 auto 55px;
+
+  text-align: center;
+
+}
+
+
+.botao-voltar {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 35px;
+
+  padding: 11px 18px;
+
+  border-radius: 30px;
+
+  background: #ffffff;
+
+  color: var(--texto);
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: bold;
+
+  box-shadow:
+    0 6px 20px rgba(20, 45, 60, 0.08);
+
+  transition: 0.3s ease;
+
+}
+
+
+.botao-voltar:hover {
+
+  transform: translateY(-3px);
+
+  color: var(--verde);
+
+}
+
+
+.galeria-tag {
+
+  display: inline-block;
+
+  margin-bottom: 15px;
+
+  padding: 8px 15px;
+
+  border-radius: 30px;
+
+  background: #e9f1f5;
+
+  color: var(--verde);
+
+  font-size: 11px;
+
+  font-weight: bold;
+
+  letter-spacing: 1px;
+
+}
+
+
+.galeria-header h1 {
+
+  margin: 0;
+
+  font-size: clamp(42px, 6vw, 70px);
+
+  line-height: 1.05;
+
+}
+
+
+.galeria-header h1 strong {
+
+  color: var(--verde);
+
+}
+
+
+.galeria-header p {
+
+  max-width: 650px;
+
+  margin: 20px auto 0;
+
+  color: var(--texto-suave);
+
+  font-size: 17px;
+
+  line-height: 1.7;
+
+}
+
+
+/* ========================================
+   GALERIA / MOSAICO
+======================================== */
+
+.galeria-container {
+
+  max-width: 1150px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  grid-auto-rows: 230px;
+
+  gap: 14px;
+
+}
+
+
+/* ========================================
+   FOTOS
+======================================== */
+
+.foto {
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background: #dce6e9;
+
+  box-shadow:
+    0 8px 25px rgba(20, 47, 60, 0.1);
+
+  cursor: pointer;
+
+}
+
+
+/* imagem */
+
+.foto img {
+
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.6s ease,
+    filter 0.6s ease;
+
+}
+
+
+/* ========================================
+   TAMANHOS DO MOSAICO
+======================================== */
+
+.foto-grande {
+
+  grid-column: span 2;
+
+  grid-row: span 1;
+
+}
+
+
+.foto-alta {
+
+  grid-row: span 2;
+
+}
+
+
+.foto-larga {
+
+  grid-column: span 2;
+
+}
+
+
+/* ========================================
+   OVERLAY
+======================================== */
+
+.foto::after {
+
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(10, 31, 35, 0.8),
+      rgba(10, 31, 35, 0.05) 65%
+    );
+
+  opacity: 0;
+
+  transition: opacity 0.4s ease;
+
+}
+
+
+/* ========================================
+   TEXTO DA FOTO
+======================================== */
+
+.foto-overlay {
+
+  position: absolute;
+
+  left: 22px;
+
+  right: 22px;
+
+  bottom: 20px;
+
+  z-index: 2;
+
+  color: white;
+
+  opacity: 0;
+
+  transform: translateY(15px);
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+
+}
+
+
+.foto-overlay span {
+
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 11px;
+
+  font-weight: bold;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+}
+
+
+.foto-overlay h2 {
+
+  margin: 0;
+
+  font-size: 20px;
+
+  line-height: 1.2;
+
+}
+
+
+/* ========================================
+   HOVER
+======================================== */
+
+.foto:hover img {
+
+  transform: scale(1.08);
+
+  filter: brightness(0.85);
+
+}
+
+
+.foto:hover::after {
+
+  opacity: 1;
+
+}
+
+
+.foto:hover .foto-overlay {
+
+  opacity: 1;
+
+  transform: translateY(0);
+
+}
+
+
+/* ========================================
+   GALERIA FINAL
+======================================== */
+
+.galeria-final {
+
+  max-width: 700px;
+
+  margin: 90px auto 0;
+
+  padding: 50px 30px;
+
+  text-align: center;
+
+  border-radius: 28px;
+
+  background: white;
+
+  box-shadow:
+    0 15px 45px rgba(20, 45, 60, 0.1);
+
+}
+
+
+.galeria-final > span {
+
+  font-size: 45px;
+
+}
+
+
+.galeria-final h2 {
+
+  margin: 15px 0 10px;
+
+  font-size: 30px;
+
+}
+
+
+.galeria-final p {
+
+  margin-bottom: 25px;
+
+  color: var(--texto-suave);
+
+  line-height: 1.7;
+
+}
+
+
+.botao-home {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 13px 23px;
+
+  border-radius: 30px;
+
+  background: var(--verde);
+
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  transition: 0.3s ease;
+
+}
+
+
+.botao-home:hover {
+
+  background: var(--verde-claro);
+
+  transform: translateY(-3px);
+
+}
+
+
+/* ========================================
+   RESPONSIVO
+======================================== */
+
+@media (max-width: 900px) {
+
+  .galeria-container {
+
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-auto-rows: 220px;
+
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .galeria-page {
+
+    padding:
+      30px 18px 60px;
+
+  }
+
+
+  .galeria-header {
+
+    margin-bottom: 35px;
+
+  }
+
+
+  .galeria-header h1 {
+
+    font-size: 42px;
+
+  }
+
+
+  .galeria-header p {
+
+    font-size: 15px;
+
+  }
+
+
+  .galeria-container {
+
+    grid-template-columns: 1fr;
+
+    grid-auto-rows: 230px;
+
+    gap: 12px;
+
+  }
+
+
+  .foto-grande,
+  .foto-alta,
+  .foto-larga {
+
+    grid-column: span 1;
+
+    grid-row: span 1;
+
+  }
+
+
+  .foto-overlay {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+
+  .foto::after {
+
+    opacity: 1;
+
+  }
+
+}

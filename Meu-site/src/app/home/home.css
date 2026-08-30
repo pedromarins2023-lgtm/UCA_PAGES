@@ -2185,6 +2185,54 @@ a {
 }
 
 
+.botao-galeria {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  width: fit-content;
+
+  margin: 25px auto 35px;
+
+  padding: 14px 26px;
+
+  border-radius: 30px;
+
+  background: #23617a;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 15px;
+
+  font-weight: bold;
+
+  box-shadow:
+    0 8px 22px rgba(35, 122, 87, 0.25);
+
+  transition: 0.3s ease;
+}
+
+
+.botao-galeria:hover {
+
+  background: #3f8aa8;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 28px rgba(35, 97, 122, 0.35);
+
+}
+
 
 
 
