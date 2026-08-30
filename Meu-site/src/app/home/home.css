@@ -2776,4 +2776,141 @@ a {
     transition-duration: 0.01ms !important;
   }
 
+}/* ========================================
+   MISSÃO, VISÃO E VALORES
+======================================== */
+
+.missao-visao-valores {
+  width: 100%;
+  max-width: 1300px;
+
+  margin: 20px auto 60px;
+
+  padding: 35px;
+
+  box-sizing: border-box;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 50px;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.bloco-mvv {
+  width: 100%;
+
+  min-width: 0;
+
+  box-sizing: border-box;
+
+  text-align: center;
+}
+
+
+/* TÍTULOS */
+
+.bloco-mvv h1 {
+  margin: 0 0 15px;
+
+  color: #ffffff;
+
+  font-size: 40px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+}
+
+
+/* TEXTOS */
+
+.bloco-mvv h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  line-height: 1.5;
+
+  font-weight: 600;
+
+  overflow-wrap: break-word;
+
+  word-wrap: break-word;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+  .missao-visao-valores {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 40px;
+
+    padding: 30px 25px;
+  }
+
+  .bloco-mvv h1 {
+    font-size: 34px;
+  }
+
+}
+
+
+/* ========================================
+   CELULAR
+======================================== */
+
+@media (max-width: 600px) {
+
+  .missao-visao-valores {
+    width: 100%;
+
+    max-width: 100%;
+
+    margin: 20px auto 40px;
+
+    padding: 20px;
+
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    box-sizing: border-box;
+  }
+
+
+  .bloco-mvv {
+    width: 100%;
+
+    max-width: 100%;
+
+    min-width: 0;
+  }
+
+
+  .bloco-mvv h1 {
+    font-size: 32px;
+
+    margin-bottom: 12px;
+  }
+
+
+  .bloco-mvv h3 {
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+  }
+
 }
