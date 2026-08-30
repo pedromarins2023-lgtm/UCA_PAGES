@@ -1,0 +1,841 @@
+/* ========================================
+   VIDA NO MANGUEZAL
+======================================== */
+
+:host {
+  display: block;
+
+  font-family: Arial, sans-serif;
+
+  --verde: #235e7a;
+  --verde-claro: #3f87a8;
+  --verde-suave: #e9f5ef;
+
+  --fundo: #f4f8f5;
+
+  --texto: #182e35;
+  --texto-suave: #6c767d;
+
+  --branco: #ffffff;
+
+  --sombra:
+    0 15px 45px rgba(20, 45, 60, 0.12);
+}
+
+
+/* ========================================
+   PÁGINA
+======================================== */
+
+.vida-page {
+
+  position: relative;
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background: var(--fundo);
+
+  color: var(--texto);
+
+}
+
+
+/* ========================================
+   FUNDO
+======================================== */
+
+.fundo {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(63, 161, 168, 0.14),
+      transparent 35%
+    ),
+
+    radial-gradient(
+      circle at 15% 80%,
+      rgba(35, 102, 122, 0.1),
+      transparent 35%
+    );
+}
+
+
+/* ========================================
+   BOTÃO VOLTAR
+======================================== */
+
+.botao-voltar {
+
+  position: fixed;
+
+  top: 25px;
+  left: 25px;
+
+  z-index: 30;
+
+  padding: 11px 18px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.85);
+
+  color: var(--texto);
+
+  font-size: 14px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.08);
+
+  backdrop-filter: blur(10px);
+
+  transition: 0.3s ease;
+}
+
+
+.botao-voltar:hover {
+
+  transform: translateX(-3px);
+
+  background: var(--branco);
+
+}
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.cabecalho-vida {
+
+  position: relative;
+
+  z-index: 2;
+
+  text-align: center;
+
+  padding:
+
+    120px
+
+    30px
+
+    40px;
+}
+
+
+.subtitulo {
+
+  display: inline-block;
+
+  margin-bottom: 15px;
+
+  padding: 8px 14px;
+
+  border-radius: 30px;
+
+  background: var(--verde-suave);
+
+  color: var(--verde);
+
+  font-size: 12px;
+
+  font-weight: bold;
+
+  letter-spacing: 1px;
+}
+
+
+.cabecalho-vida h1 {
+
+  margin: 0;
+
+  font-size: clamp(42px, 6vw, 72px);
+
+  line-height: 1.05;
+
+  font-weight: 700;
+}
+
+
+.cabecalho-vida h1 strong {
+
+  color: var(--verde);
+
+}
+
+
+.cabecalho-vida p {
+
+  max-width: 600px;
+
+  margin: 20px auto 0;
+
+  color: var(--texto-suave);
+
+  font-size: 17px;
+
+  line-height: 1.7;
+}
+
+
+/* ========================================
+   BOTÃO EXPLORAR
+======================================== */
+
+.botao-abrir-aba {
+
+  position: fixed;
+
+  left: 25px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  z-index: 20;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 16px 20px;
+
+  border: none;
+
+  border-radius: 0 18px 18px 0;
+
+  background: var(--verde);
+
+  color: white;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow:
+    8px 12px 30px rgba(20, 73, 80, 0.2);
+
+  transition: 0.3s ease;
+}
+
+
+.botao-abrir-aba:hover {
+
+  padding-left: 25px;
+
+  background: var(--verde-claro);
+
+}
+
+
+.botao-abrir-aba .icone {
+
+  font-size: 20px;
+}
+
+
+.botao-abrir-aba .seta {
+
+  font-size: 18px;
+
+  transition: 0.3s ease;
+}
+
+
+.botao-abrir-aba:hover .seta {
+
+  transform: translateX(5px);
+
+}
+
+
+/* ========================================
+   ABA LATERAL
+======================================== */
+
+.aba-lateral {
+
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  z-index: 100;
+
+  width: min(430px, 90vw);
+
+  height: 100vh;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  box-shadow:
+    15px 0 45px rgba(0, 0, 0, 0.15);
+
+  backdrop-filter: blur(20px);
+
+  transform: translateX(-105%);
+
+  transition:
+    transform 0.45s cubic-bezier(.2,.8,.2,1);
+
+  overflow-y: auto;
+}
+
+
+.aba-lateral.aba-aberta {
+
+  transform: translateX(0);
+
+}
+
+
+/* ========================================
+   HEADER DA ABA
+======================================== */
+
+.aba-header {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 30px 25px 20px;
+
+  border-bottom:
+    1px solid rgba(0, 0, 0, 0.06);
+}
+
+
+.aba-header span {
+
+  color: var(--verde);
+
+  font-size: 11px;
+
+  font-weight: bold;
+
+  letter-spacing: 1px;
+}
+
+
+.aba-header h2 {
+
+  margin: 5px 0 0;
+
+  font-size: 28px;
+}
+
+
+.botao-fechar {
+
+  width: 42px;
+
+  height: 42px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #f1f4f2;
+
+  color: var(--texto);
+
+  font-size: 25px;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+
+.botao-fechar:hover {
+
+  transform: rotate(90deg);
+
+  background: var(--verde);
+
+  color: white;
+
+}
+
+
+/* ========================================
+   CONTEÚDO
+======================================== */
+
+.aba-conteudo {
+
+  padding: 25px;
+}
+
+
+/* ========================================
+   CATEGORIA
+======================================== */
+
+.categoria {
+
+  margin-bottom: 35px;
+}
+
+
+.categoria-titulo {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+
+.categoria-icone {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 45px;
+
+  height: 45px;
+
+  border-radius: 14px;
+
+  background: var(--verde-suave);
+
+  font-size: 22px;
+}
+
+
+.categoria-titulo h3 {
+
+  margin: 0;
+
+  font-size: 18px;
+}
+
+
+.categoria-titulo p {
+
+  margin: 3px 0 0;
+
+  color: var(--texto-suave);
+
+  font-size: 12px;
+}
+
+
+/* ========================================
+   GRID DE ESPÉCIES
+======================================== */
+
+.especies-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 16px;
+}
+
+
+.especie {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 8px;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--texto);
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: bold;
+}
+
+
+.especie img {
+
+  width: 78px;
+
+  height: 78px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 3px solid white;
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.14);
+
+  transition: 0.3s ease;
+}
+
+
+.especie:hover img {
+
+  transform:
+    translateY(-5px)
+    scale(1.06);
+
+  border-color: var(--verde-claro);
+
+  box-shadow:
+    0 10px 25px rgba(35, 97, 122, 0.25);
+}
+
+
+.especie span {
+
+  max-width: 90px;
+
+  text-align: center;
+
+  line-height: 1.3;
+}
+
+
+/* ========================================
+   DETALHE DA ESPÉCIE
+======================================== */
+
+.detalhe-especie {
+
+  animation:
+    aparecer 0.35s ease;
+}
+
+
+@keyframes aparecer {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateX(15px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+  }
+
+}
+
+
+/* ========================================
+   BOTÃO VOLTAR ESPÉCIES
+======================================== */
+
+.botao-voltar-especies {
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--verde);
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  padding: 5px 0 20px;
+
+}
+
+
+/* ========================================
+   IMAGEM DETALHE
+======================================== */
+
+.detalhe-imagem {
+
+  width: 100%;
+
+  height: 250px;
+
+  overflow: hidden;
+
+  border-radius: 22px;
+
+  box-shadow: var(--sombra);
+}
+
+
+.detalhe-imagem img {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* ========================================
+   TEXTO DETALHE
+======================================== */
+
+.detalhe-texto {
+
+  padding-top: 22px;
+}
+
+
+.detalhe-tag {
+
+  display: inline-block;
+
+  padding: 6px 10px;
+
+  border-radius: 20px;
+
+  background: var(--verde-suave);
+
+  color: var(--verde);
+
+  font-size: 10px;
+
+  font-weight: bold;
+
+  letter-spacing: 1px;
+}
+
+
+.detalhe-texto h2 {
+
+  margin: 10px 0 3px;
+
+  font-size: 28px;
+}
+
+
+.nome-cientifico {
+
+  margin: 0;
+
+  color: var(--texto-suave);
+
+  font-style: italic;
+
+  font-size: 14px;
+}
+
+
+.linha {
+
+  width: 50px;
+
+  height: 3px;
+
+  margin: 18px 0;
+
+  border-radius: 10px;
+
+  background: var(--verde);
+}
+
+
+.descricao {
+
+  color: #536064;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* ========================================
+   INTRODUÇÃO
+======================================== */
+
+.introducao {
+
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  justify-content: center;
+
+  padding: 50px 30px 100px;
+}
+
+
+.introducao-card {
+
+  max-width: 700px;
+
+  padding: 50px;
+
+  text-align: center;
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.85);
+
+  box-shadow: var(--sombra);
+
+  backdrop-filter: blur(15px);
+}
+
+
+.introducao-card > span {
+
+  font-size: 55px;
+}
+
+
+.introducao-card h2 {
+
+  margin: 15px 0 10px;
+
+  font-size: 30px;
+}
+
+
+.introducao-card p {
+
+  color: var(--texto-suave);
+
+  line-height: 1.7;
+}
+
+
+.botao-explorar {
+
+  margin-top: 20px;
+
+  padding: 13px 22px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: var(--verde);
+
+  color: white;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+
+.botao-explorar:hover {
+
+  transform: translateY(-3px);
+
+  background: var(--verde-claro);
+}
+
+
+/* ========================================
+   RESPONSIVO
+======================================== */
+
+@media (max-width: 600px) {
+
+  .cabecalho-vida {
+
+    padding-top: 100px;
+
+  }
+
+
+  .cabecalho-vida h1 {
+
+    font-size: 42px;
+
+  }
+
+
+  .botao-abrir-aba {
+
+    left: 0;
+
+    padding: 14px 16px;
+
+    font-size: 12px;
+
+  }
+
+
+  .aba-lateral {
+
+    width: 92vw;
+
+  }
+
+
+  .especies-grid {
+
+    grid-template-columns:
+      repeat(3, 1fr);
+
+    gap: 12px;
+
+  }
+
+
+  .especie img {
+
+    width: 65px;
+
+    height: 65px;
+
+  }
+
+
+  .introducao-card {
+
+    padding: 35px 22px;
+
+  }
+
+}

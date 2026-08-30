@@ -26,6 +26,19 @@ export const routes: Routes = [
 
 
   // ========================================
+  // VIDA NO MANGUEZAL
+  // ========================================
+
+  {
+    path: 'vida-manguezal',
+
+    loadComponent: () =>
+      import('./shared/vida-manguezal/vida-manguezal')
+        .then(m => m.VidaManguezal)
+  },
+
+
+  // ========================================
   // QUIZ
   // ========================================
 
@@ -63,8 +76,7 @@ export const routes: Routes = [
 
 
   // ========================================
-  // QUALQUER ROTA NÃO EXISTENTE
-  // SEMPRE POR ÚLTIMO
+  // ROTA NÃO EXISTENTE
   // ========================================
 
   {

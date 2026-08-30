@@ -2117,6 +2117,106 @@ a {
 
 }
 
+/* ========================================
+   BOTÃO VIDA NO MANGUEZAL
+======================================== */
+
+.botao-vida-manguezal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: fit-content;
+
+  margin: 25px auto 30px;
+
+  padding: 14px 24px;
+
+  background: #23537a;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 30px;
+
+  text-decoration: none;
+
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+
+  box-shadow: 0 8px 20px rgba(35, 122, 87, 0.25);
+
+  transition: all 0.3s ease;
+}
+
+
+/* Ícone */
+
+.botao-vida-manguezal span:first-child {
+  font-size: 18px;
+}
+
+
+/* Seta */
+
+.botao-vida-manguezal .seta {
+  font-size: 18px;
+
+  transition: transform 0.3s ease;
+}
+
+
+/* EFEITO AO PASSAR O MOUSE */
+
+.botao-vida-manguezal:hover {
+  background: #3f8aa8;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 12px 25px rgba(35, 102, 122, 0.35);
+}
+
+
+/* Movimento da seta */
+
+.botao-vida-manguezal:hover .seta {
+  transform: translateX(4px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* =========================================================
    CELULAR

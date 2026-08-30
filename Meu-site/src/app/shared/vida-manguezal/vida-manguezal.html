@@ -1,0 +1,352 @@
+<!-- ========================================
+     VIDA NO MANGUEZAL
+======================================== -->
+
+<main class="vida-page">
+
+  <!-- FUNDO -->
+  <div class="fundo"></div>
+
+
+  <!-- ========================================
+       BOTÃO VOLTAR PARA HOME
+  ======================================== -->
+
+  <button
+    class="botao-voltar"
+    type="button"
+    (click)="voltarParaHome()"
+  >
+    ← Voltar
+  </button>
+
+
+  <!-- ========================================
+       CABEÇALHO
+  ======================================== -->
+
+  <section class="cabecalho-vida">
+
+    <span class="subtitulo">
+      🌿 BIODIVERSIDADE
+    </span>
+
+    <h1>
+      Vida no <strong>manguezal</strong>
+    </h1>
+
+    <p>
+      Conheça algumas das espécies que fazem
+      parte desse importante ecossistema.
+    </p>
+
+  </section>
+
+
+  <!-- ========================================
+       BOTÃO PARA ABRIR A ABA
+  ======================================== -->
+
+  @if (!abaAberta) {
+
+    <button
+      class="botao-abrir-aba"
+      type="button"
+      (click)="abrirAba()"
+    >
+
+      <span class="icone">
+        🌿
+      </span>
+
+      <span>
+        Explorar espécies
+      </span>
+
+      <span class="seta">
+        →
+      </span>
+
+    </button>
+
+  }
+
+
+  <!-- ========================================
+       ABA LATERAL
+  ======================================== -->
+
+  <aside
+    class="aba-lateral"
+    [class.aba-aberta]="abaAberta"
+  >
+
+    <!-- ======================================
+         CABEÇALHO DA ABA
+    ======================================= -->
+
+    <div class="aba-header">
+
+      <div>
+
+        <span>
+          🌱 BIODIVERSIDADE
+        </span>
+
+        <h2>
+          Espécies
+        </h2>
+
+      </div>
+
+
+      <button
+        class="botao-fechar"
+        type="button"
+        (click)="fecharAba()"
+        aria-label="Fechar aba"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <!-- ======================================
+         CONTEÚDO DA ABA
+    ======================================= -->
+
+    <div class="aba-conteudo">
+
+
+      <!-- ====================================
+           LISTA DE ESPÉCIES
+      ===================================== -->
+
+      @if (!especieSelecionada) {
+
+
+        <!-- ==================================
+             ÁRVORES
+        =================================== -->
+
+        <section class="categoria">
+
+          <div class="categoria-titulo">
+
+            <span class="categoria-icone">
+              🌳
+            </span>
+
+            <div>
+
+              <h3>
+                Árvores
+              </h3>
+
+              <p>
+                Espécies características do manguezal
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="especies-grid">
+
+            @for (especie of arvores; track especie.nome) {
+
+              <button
+                class="especie"
+                type="button"
+                (click)="selecionarEspecie(especie)"
+              >
+
+                <img
+                  [src]="especie.imagem"
+                  [alt]="especie.nome"
+                />
+
+                <span>
+                  {{ especie.nome }}
+                </span>
+
+              </button>
+
+            }
+
+          </div>
+
+        </section>
+
+
+        <!-- ==================================
+             ANIMAIS
+        =================================== -->
+
+        <section class="categoria">
+
+          <div class="categoria-titulo">
+
+            <span class="categoria-icone">
+              🦀
+            </span>
+
+            <div>
+
+              <h3>
+                Animais
+              </h3>
+
+              <p>
+                Espécies que vivem no manguezal
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="especies-grid">
+
+            @for (especie of animais; track especie.nome) {
+
+              <button
+                class="especie"
+                type="button"
+                (click)="selecionarEspecie(especie)"
+              >
+
+                <img
+                  [src]="especie.imagem"
+                  [alt]="especie.nome"
+                />
+
+                <span>
+                  {{ especie.nome }}
+                </span>
+
+              </button>
+
+            }
+
+          </div>
+
+        </section>
+
+      }
+
+
+      <!-- ====================================
+           DETALHES DA ESPÉCIE
+      ===================================== -->
+
+      @if (especieSelecionada; as especie) {
+
+        <section class="detalhe-especie">
+
+
+          <!-- ==================================
+               VOLTAR PARA LISTA
+          =================================== -->
+
+          <button
+            class="botao-voltar-especies"
+            type="button"
+            (click)="voltarParaEspecies()"
+          >
+            ← Todas as espécies
+          </button>
+
+
+          <!-- ==================================
+               IMAGEM
+          =================================== -->
+
+          <div class="detalhe-imagem">
+
+            <img
+              [src]="especie.imagem"
+              [alt]="especie.nome"
+            />
+
+          </div>
+
+
+          <!-- ==================================
+               INFORMAÇÕES
+          =================================== -->
+
+          <div class="detalhe-texto">
+
+            <span class="detalhe-tag">
+              ESPÉCIE
+            </span>
+
+            <h2>
+              {{ especie.nome }}
+            </h2>
+
+            <p class="nome-cientifico">
+              {{ especie.nomeCientifico }}
+            </p>
+
+            <div class="linha"></div>
+
+            <p class="descricao">
+              {{ especie.descricao }}
+            </p>
+
+          </div>
+
+        </section>
+
+      }
+
+    </div>
+
+  </aside>
+
+
+  <!-- ========================================
+       CONTEÚDO PRINCIPAL
+  ======================================== -->
+
+  <section class="introducao">
+
+    <div class="introducao-card">
+
+      <span class="introducao-icone">
+        <img src="logo.png" alt="" width="300">
+      </span>
+
+      <h2>
+        Um ecossistema cheio de vida
+      </h2>
+
+      <p>
+        Os manguezais abrigam uma grande
+        diversidade de plantas e animais.
+        Explore as espécies e descubra
+        a importância de cada uma delas.
+      </p>
+
+
+      @if (!abaAberta) {
+
+        <button
+          class="botao-explorar"
+          type="button"
+          (click)="abrirAba()"
+        >
+          Conhecer espécies →
+        </button>
+
+      }
+
+    </div>
+
+  </section>
+
+</main>

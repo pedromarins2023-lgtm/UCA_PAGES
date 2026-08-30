@@ -43,6 +43,7 @@ export class Home implements AfterViewInit {
 
   menuMobileAberto = false;
 
+
   fecharMenuMobile(): void {
     this.menuMobileAberto = false;
   }
@@ -144,6 +145,7 @@ export class Home implements AfterViewInit {
 
 
     // Guarda a posição atual
+
     this.ultimaPosicaoScroll =
       posicaoAtual;
 
