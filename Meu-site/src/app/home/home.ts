@@ -6,20 +6,23 @@ import {
 } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-
 import { RouterLink } from '@angular/router';
 
 import { AuthService } from '../auth';
 import { Footer } from '../shared/footer/footer';
+import { GarrinhaChat } from '../shared/garrinha-chat/garrinha-chat';
+
 
 @Component({
   selector: 'app-home',
+
   standalone: true,
 
   imports: [
     CommonModule,
     RouterLink,
-    Footer
+    Footer,
+    GarrinhaChat
   ],
 
   templateUrl: './home.html',
@@ -40,11 +43,8 @@ export class Home implements AfterViewInit {
 
   menuMobileAberto = false;
 
-
   fecharMenuMobile(): void {
-
     this.menuMobileAberto = false;
-
   }
 
 
@@ -105,24 +105,17 @@ export class Home implements AfterViewInit {
   // ========================================
 
   @HostListener('window:scroll')
-  aoRolarPagina() {
+  aoRolarPagina(): void {
 
     const posicaoAtual = window.scrollY;
 
 
     // ========================================
-    // BOTÃO TOPO
+    // BOTÃO VOLTAR AO TOPO
     // ========================================
 
-    if (posicaoAtual > 400) {
-
-      this.mostrarBotaoTopo = true;
-
-    } else {
-
-      this.mostrarBotaoTopo = false;
-
-    }
+    this.mostrarBotaoTopo =
+      posicaoAtual > 400;
 
 
     // ========================================
@@ -150,8 +143,10 @@ export class Home implements AfterViewInit {
     }
 
 
+    // Guarda a posição atual
     this.ultimaPosicaoScroll =
       posicaoAtual;
+
   }
 
 
@@ -159,15 +154,14 @@ export class Home implements AfterViewInit {
   // CONTADOR
   // ========================================
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
 
     const secaoImpacto =
       document.querySelector('#impacto');
 
+
     if (!secaoImpacto) {
-
       return;
-
     }
 
 
@@ -199,6 +193,7 @@ export class Home implements AfterViewInit {
 
 
     observer.observe(secaoImpacto);
+
   }
 
 
@@ -206,7 +201,7 @@ export class Home implements AfterViewInit {
   // INICIAR CONTADORES
   // ========================================
 
-  private iniciarContadores() {
+  private iniciarContadores(): void {
 
     this.animarContador(
       'hectares',
@@ -252,19 +247,19 @@ export class Home implements AfterViewInit {
     valorFinal: number,
 
     duracao: number
-  ) {
+
+  ): void {
 
     const inicio =
       performance.now();
 
 
     const atualizar =
-      (tempoAtual: number) => {
+      (tempoAtual: number): void => {
 
         const progresso =
           Math.min(
-            (tempoAtual - inicio) /
-            duracao,
+            (tempoAtual - inicio) / duracao,
             1
           );
 
@@ -279,8 +274,7 @@ export class Home implements AfterViewInit {
 
         const valorAtual =
           Math.floor(
-            progressoSuave *
-            valorFinal
+            progressoSuave * valorFinal
           );
 
 
@@ -317,7 +311,7 @@ export class Home implements AfterViewInit {
   // VOLTAR AO TOPO
   // ========================================
 
-  voltarAoTopo() {
+  voltarAoTopo(): void {
 
     window.scrollTo({
 

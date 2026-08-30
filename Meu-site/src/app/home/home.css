@@ -325,7 +325,9 @@ a {
 
   display: grid;
 
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  grid-template-columns:
+    minmax(0, 1.1fr)
+    minmax(0, 0.9fr);
 
   align-items: center;
 
@@ -1036,16 +1038,20 @@ a {
 
 /* =========================================================
    BOTÃO VOLTAR AO TOPO
+   LADO ESQUERDO
 ========================================================= */
 
-.voltar-topo {
+.voltar-topo,
+.botao-topo {
   position: fixed;
 
-  right: 25px;
+  left: 25px;
+  right: auto;
+
   bottom: 25px;
 
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
 
   border: none;
 
@@ -1069,13 +1075,16 @@ a {
 
   cursor: pointer;
 
-  z-index: 999;
+  z-index: 9500;
 
   opacity: 0;
 
   visibility: hidden;
 
   transform: translateY(20px);
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.25);
 
   transition:
     opacity 0.3s ease,
@@ -1085,7 +1094,10 @@ a {
 }
 
 
-.voltar-topo.visivel {
+/* BOTÃO VISÍVEL */
+
+.voltar-topo.visivel,
+.botao-topo.visivel {
   opacity: 1;
 
   visibility: visible;
@@ -1094,11 +1106,26 @@ a {
 }
 
 
-.voltar-topo:hover {
+/* HOVER */
+
+.voltar-topo:hover,
+.botao-topo:hover {
   background: #0395a8;
 
   transform: translateY(-5px);
 }
+
+
+/* =========================================================
+   ESPAÇO RESERVADO PARA O GARRINHA
+========================================================= */
+
+/*
+   O Garrinha ficará no lado direito.
+
+   O CSS abaixo garante que o botão de voltar
+   ao topo fique separado dele.
+*/
 
 
 /* =========================================================
@@ -1822,6 +1849,101 @@ a {
 
 
 /* =========================================================
+   MISSÃO, VISÃO E VALORES
+========================================================= */
+
+.missao-visao-valores {
+  width: 100%;
+
+  max-width: 1300px;
+
+  margin: 20px auto 60px;
+
+  padding: 35px;
+
+  box-sizing: border-box;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 50px;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.bloco-mvv {
+  width: 100%;
+
+  min-width: 0;
+
+  box-sizing: border-box;
+
+  text-align: center;
+}
+
+
+.bloco-mvv h1 {
+  margin: 0 0 15px;
+
+  color: #ffffff;
+
+  font-size: 40px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+}
+
+
+.bloco-mvv h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  line-height: 1.5;
+
+  font-weight: 600;
+
+  overflow-wrap: break-word;
+
+  word-wrap: break-word;
+}
+
+
+/* =========================================================
+   MENU MOBILE
+========================================================= */
+
+.menu-mobile-button {
+  display: none;
+
+  border: none;
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 30px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  padding: 5px;
+}
+
+
+.menu-mobile {
+  display: none;
+}
+
+
+/* =========================================================
    TABLET
 ========================================================= */
 
@@ -1901,8 +2023,6 @@ a {
   }
 
 
-  /* HERO */
-
   .hero {
     min-height: auto;
   }
@@ -1952,15 +2072,11 @@ a {
   }
 
 
-  /* NOTÍCIAS */
-
   .noticias {
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
   }
 
-
-  /* CARD */
 
   .card {
     grid-template-columns: 1fr;
@@ -1979,11 +2095,24 @@ a {
   }
 
 
-  /* IMPACTO */
-
   .impacto-cards {
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
+  }
+
+
+  .missao-visao-valores {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 40px;
+
+    padding: 30px 25px;
+  }
+
+
+  .bloco-mvv h1 {
+    font-size: 34px;
   }
 
 }
@@ -2005,6 +2134,8 @@ a {
     padding: 0 14px;
 
     gap: 10px;
+
+    position: relative;
   }
 
 
@@ -2024,8 +2155,28 @@ a {
   }
 
 
+  .menu-mobile-button {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    order: 2;
+  }
+
+
   .usuario-header {
+    order: 3;
+
     margin-left: auto;
+
+    margin-right: 5px;
 
     align-items: flex-end;
   }
@@ -2047,6 +2198,92 @@ a {
     padding: 8px 13px;
 
     font-size: 12px;
+  }
+
+
+  /* =====================================================
+     MENU MOBILE
+  ===================================================== */
+
+  .menu-mobile {
+    position: absolute;
+
+    top: 65px;
+
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background:
+      rgba(14, 44, 59, 0.98);
+
+    border-top:
+      1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+      0 10px 30px rgba(0, 0, 0, 0.25);
+
+    transform: translateY(-10px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0.25s ease;
+
+    z-index: 999;
+  }
+
+
+  .menu-mobile.menu-mobile-aberto {
+    transform: translateY(0);
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+  }
+
+
+  .menu-mobile a {
+    width: 100%;
+
+    padding: 18px 25px;
+
+    box-sizing: border-box;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.08);
+
+    transition:
+      background 0.2s ease,
+      padding-left 0.2s ease;
+  }
+
+
+  .menu-mobile a:hover {
+    background:
+      rgba(255, 255, 255, 0.08);
+
+    padding-left: 32px;
   }
 
 
@@ -2081,7 +2318,8 @@ a {
   .hero h1 {
     margin-bottom: 20px;
 
-    font-size: clamp(34px, 10vw, 42px);
+    font-size:
+      clamp(34px, 10vw, 42px);
 
     line-height: 1.08;
   }
@@ -2109,7 +2347,9 @@ a {
   .botao-secundario {
     width: 100%;
 
-    padding: 14px 20px;
+    padding:
+      14px
+      20px;
   }
 
 
@@ -2119,9 +2359,11 @@ a {
 
 
   .imagem-moldura {
-    width: min(240px, 70vw);
+    width:
+      min(240px, 70vw);
 
-    height: min(310px, 82vw);
+    height:
+      min(310px, 82vw);
 
     border-radius: 23px;
   }
@@ -2594,17 +2836,26 @@ a {
 
 
   /* =====================================================
-     BOTÃO TOPO
+     BOTÃO VOLTAR AO TOPO
+     ESQUERDA
   ===================================================== */
 
-  .voltar-topo {
-    width: 45px;
-    height: 45px;
+  .voltar-topo,
+  .botao-topo {
 
-    right: 15px;
-    bottom: 15px;
+    left: 18px;
 
-    font-size: 21px;
+    right: auto;
+
+    bottom: 18px;
+
+    width: 48px;
+
+    height: 48px;
+
+    font-size: 22px;
+
+    z-index: 9500;
   }
 
 
@@ -2660,6 +2911,55 @@ a {
     padding:
       13px
       20px;
+  }
+
+
+  /* =====================================================
+     MISSÃO, VISÃO E VALORES
+  ===================================================== */
+
+  .missao-visao-valores {
+    width: 100%;
+
+    max-width: 100%;
+
+    margin:
+      20px
+      auto
+      40px;
+
+    padding: 20px;
+
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    box-sizing: border-box;
+  }
+
+
+  .bloco-mvv {
+    width: 100%;
+
+    max-width: 100%;
+
+    min-width: 0;
+  }
+
+
+  .bloco-mvv h1 {
+    font-size: 32px;
+
+    margin-bottom: 12px;
+  }
+
+
+  .bloco-mvv h3 {
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
   }
 
 }
@@ -2755,11 +3055,28 @@ a {
     font-size: 36px;
   }
 
+
+  /* BOTÃO TOPO */
+
+  .voltar-topo,
+  .botao-topo {
+
+    left: 14px;
+
+    bottom: 15px;
+
+    width: 45px;
+
+    height: 45px;
+
+    font-size: 20px;
+  }
+
 }
 
 
 /* =========================================================
-   REDUZIR ANIMAÇÕES PARA QUEM PREFERE MENOS MOVIMENTO
+   REDUZIR ANIMAÇÕES
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -2767,6 +3084,7 @@ a {
   *,
   *::before,
   *::after {
+
     scroll-behavior: auto !important;
 
     animation-duration: 0.01ms !important;
@@ -2774,289 +3092,6 @@ a {
     animation-iteration-count: 1 !important;
 
     transition-duration: 0.01ms !important;
-  }
-
-}/* ========================================
-   MISSÃO, VISÃO E VALORES
-======================================== */
-
-.missao-visao-valores {
-  width: 100%;
-  max-width: 1300px;
-
-  margin: 20px auto 60px;
-
-  padding: 35px;
-
-  box-sizing: border-box;
-
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 50px;
-
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-
-.bloco-mvv {
-  width: 100%;
-
-  min-width: 0;
-
-  box-sizing: border-box;
-
-  text-align: center;
-}
-
-
-/* TÍTULOS */
-
-.bloco-mvv h1 {
-  margin: 0 0 15px;
-
-  color: #ffffff;
-
-  font-size: 40px;
-
-  line-height: 1.2;
-
-  font-weight: 700;
-}
-
-
-/* TEXTOS */
-
-.bloco-mvv h3 {
-  margin: 0;
-
-  color: #ffffff;
-
-  font-size: 16px;
-
-  line-height: 1.5;
-
-  font-weight: 600;
-
-  overflow-wrap: break-word;
-
-  word-wrap: break-word;
-}
-
-
-/* ========================================
-   TABLET
-======================================== */
-
-@media (max-width: 900px) {
-
-  .missao-visao-valores {
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 40px;
-
-    padding: 30px 25px;
-  }
-
-  .bloco-mvv h1 {
-    font-size: 34px;
-  }
-
-}
-
-
-/* ========================================
-   CELULAR
-======================================== */
-
-@media (max-width: 600px) {
-
-  .missao-visao-valores {
-    width: 100%;
-
-    max-width: 100%;
-
-    margin: 20px auto 40px;
-
-    padding: 20px;
-
-    grid-template-columns: 1fr;
-
-    gap: 45px;
-
-    box-sizing: border-box;
-  }
-
-
-  .bloco-mvv {
-    width: 100%;
-
-    max-width: 100%;
-
-    min-width: 0;
-  }
-
-
-  .bloco-mvv h1 {
-    font-size: 32px;
-
-    margin-bottom: 12px;
-  }
-
-
-  .bloco-mvv h3 {
-    font-size: 16px;
-
-    line-height: 1.6;
-
-    overflow-wrap: anywhere;
-  }
-
-}
-/* ========================================
-   MENU MOBILE
-======================================== */
-
-.menu-mobile-button {
-  display: none;
-
-  border: none;
-  background: transparent;
-
-  color: white;
-
-  font-size: 30px;
-
-  line-height: 1;
-
-  cursor: pointer;
-
-  padding: 5px;
-}
-
-
-/* MENU MOBILE ESCONDIDO */
-
-.menu-mobile {
-  display: none;
-}
-
-
-/* ========================================
-   MENU NO CELULAR
-======================================== */
-
-@media (max-width: 600px) {
-
-  .menu-mobile-button {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 45px;
-    height: 45px;
-
-    flex-shrink: 0;
-
-    order: 2;
-  }
-
-
-  .header-container {
-    position: relative;
-  }
-
-
-  .usuario-header {
-    order: 3;
-
-    margin-left: auto;
-
-    margin-right: 5px;
-  }
-
-
-  .menu-mobile {
-    position: absolute;
-
-    top: 65px;
-    left: 0;
-
-    width: 100%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    background: rgba(14, 44, 59, 0.98);
-
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-
-    box-shadow:
-      0 10px 30px rgba(0, 0, 0, 0.25);
-
-    transform: translateY(-10px);
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    pointer-events: none;
-
-    transition:
-      opacity 0.25s ease,
-      transform 0.25s ease,
-      visibility 0.25s ease;
-
-    z-index: 999;
-  }
-
-
-  /* MENU ABERTO */
-
-  .menu-mobile.menu-mobile-aberto {
-    transform: translateY(0);
-
-    opacity: 1;
-
-    visibility: visible;
-
-    pointer-events: auto;
-  }
-
-
-  /* LINKS */
-
-  .menu-mobile a {
-    width: 100%;
-
-    padding: 18px 25px;
-
-    box-sizing: border-box;
-
-    color: white;
-
-    text-decoration: none;
-
-    font-size: 16px;
-
-    font-weight: 600;
-
-    border-bottom:
-      1px solid rgba(255, 255, 255, 0.08);
-
-    transition:
-      background 0.2s ease,
-      padding-left 0.2s ease;
-  }
-
-
-  .menu-mobile a:hover {
-    background: rgba(255, 255, 255, 0.08);
-
-    padding-left: 32px;
   }
 
 }

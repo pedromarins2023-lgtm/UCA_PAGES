@@ -1,0 +1,201 @@
+<div class="garrinha-container">
+
+  <!-- =====================================
+       BOTÃO DO GARRINHA
+       ===================================== -->
+
+  <button
+    class="garrinha-botao"
+    type="button"
+    (click)="abrirChat()"
+    *ngIf="!aberto"
+    aria-label="Abrir Garrinha"
+  >
+
+    <img
+      src="garrinha.png"
+      alt="Garrinha"
+    >
+
+    <span class="garrinha-seta">
+      ←
+    </span>
+
+  </button>
+
+
+  <!-- =====================================
+       PAINEL LATERAL
+       ===================================== -->
+
+  <aside
+    class="garrinha-chat"
+    [class.aberto]="aberto"
+    aria-label="Chat do Garrinha"
+  >
+
+    <!-- CABEÇALHO -->
+
+    <div class="garrinha-header">
+
+      <div class="garrinha-identidade">
+
+        <img
+          src="garrinha.png"
+          alt="Garrinha"
+        >
+
+        <div class="garrinha-titulo">
+
+          <strong>Garrinha</strong>
+
+          <small>
+            Tire sua dúvida
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <!-- FECHAR -->
+
+      <button
+        class="fechar"
+        type="button"
+        (click)="fecharChat()"
+        aria-label="Fechar chat"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <!-- =====================================
+         CONTEÚDO
+         ===================================== -->
+
+    <div class="garrinha-conteudo">
+
+
+      <!-- MENSAGEM INICIAL -->
+
+      <div
+        class="mensagem"
+        *ngIf="!respostaSelecionada"
+      >
+
+        <img
+          src="garrinha.png"
+          alt="Garrinha"
+        >
+
+        <div class="mensagem-balao">
+
+          <strong>Olá! Eu sou o Garrinha! 🦀</strong>
+
+          <span>
+            Como posso ajudar você?
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================
+           PERGUNTAS
+           ===================================== -->
+
+      <div
+        class="perguntas"
+        *ngIf="!respostaSelecionada"
+      >
+
+        <p class="perguntas-titulo">
+          Escolha uma pergunta:
+        </p>
+
+
+        <button
+          type="button"
+          *ngFor="let item of perguntas"
+          (click)="selecionarPergunta(item)"
+        >
+
+          <span>
+            {{ item.pergunta }}
+          </span>
+
+          <strong>
+            →
+          </strong>
+
+        </button>
+
+      </div>
+
+
+      <!-- =====================================
+           RESPOSTA
+           ===================================== -->
+
+      <div
+        class="resposta"
+        *ngIf="respostaSelecionada"
+      >
+
+        <div class="resposta-garrinha">
+
+          <img
+            src="garrinha.png"
+            alt="Garrinha"
+          >
+
+        </div>
+
+
+        <div class="resposta-balao">
+
+          <p>
+            {{ respostaSelecionada }}
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- VOLTAR PARA PERGUNTAS -->
+
+      <button
+        class="voltar"
+        type="button"
+        *ngIf="respostaSelecionada"
+        (click)="voltarPerguntas()"
+      >
+
+        ←
+        Voltar para perguntas
+
+      </button>
+
+    </div>
+
+
+    <!-- =====================================
+         RODAPÉ DO CHAT
+         ===================================== -->
+
+    <div class="garrinha-footer">
+
+      <span>
+        🦀 Garrinha está aqui para ajudar
+      </span>
+
+    </div>
+
+  </aside>
+
+</div>
