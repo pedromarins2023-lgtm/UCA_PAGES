@@ -335,6 +335,53 @@ a {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hero-fundo {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-image: url('/fundo.jpg');
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  z-index: 0;
+}
+
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 35, 45, 0.808) 0%,
+      rgba(0, 45, 55, 0.651) 45%,
+      rgba(0, 30, 28, 0.61) 100%
+    );
+
+  z-index: 1;
+
+  pointer-events: none;
+}
 /* =========================================================
    TEXTO HERO
 ========================================================= */
@@ -534,110 +581,10 @@ a {
 }
 
 
-/* =========================================================
-   BOLINHAS
-========================================================= */
-
-.bolinha {
-  position: absolute;
-
-  border-radius: 50%;
-
-  pointer-events: none;
-}
 
 
-.bolinha-1 {
-  width: 70px;
-  height: 70px;
-
-  right: 10px;
-  top: 90px;
-
-  background:
-    radial-gradient(
-      circle at 30% 30%,
-      white,
-      #b9e7e5
-    );
-
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.15);
-}
 
 
-.bolinha-2 {
-  width: 55px;
-  height: 55px;
-
-  left: 30px;
-  bottom: 100px;
-
-  background:
-    radial-gradient(
-      circle at 30% 30%,
-      #34d3d3,
-      #075b70
-    );
-
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-
-/* =========================================================
-   FOLHAS
-========================================================= */
-
-.folha {
-  position: absolute;
-
-  font-size: 55px;
-
-  filter:
-    drop-shadow(
-      0 8px 10px rgba(0, 0, 0, 0.2)
-    );
-
-  animation:
-    flutuar 4s ease-in-out infinite;
-}
-
-
-.folha-1 {
-  top: 120px;
-  left: 0;
-
-  transform: rotate(-20deg);
-}
-
-
-.folha-2 {
-  right: 20px;
-  bottom: 100px;
-
-  transform: rotate(20deg);
-
-  animation-delay: 1s;
-}
-
-
-@keyframes flutuar {
-
-  0%,
-  100% {
-    transform:
-      translateY(0)
-      rotate(-10deg);
-  }
-
-  50% {
-    transform:
-      translateY(-12px)
-      rotate(5deg);
-  }
-
-}
 
 
 /* =========================================================
@@ -776,8 +723,8 @@ a {
     linear-gradient(
       180deg,
       #014855 0%,
-      #075964 50%,
-      #053247 100%
+      #22404e 50%,
+      #254e5a 100%
     );
 
   background-repeat: no-repeat;
