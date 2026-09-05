@@ -2236,6 +2236,236 @@ a {
 
 
 
+/* ========================================
+   BOTÕES DE ÁUDIO
+======================================== */
+
+.texto-audio {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin: 20px 0 25px;
+
+}
+
+
+/* ========================================
+   BOTÃO OUVIR
+======================================== */
+
+.botao-audio {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 12px 18px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background: #23697a;
+
+  color: white;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 14px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 18px rgba(35, 112, 122, 0.25);
+
+  transition: 0.3s ease;
+
+}
+
+
+.botao-audio:hover {
+
+  transform: translateY(-3px);
+
+  background: #3f82a8;
+
+  box-shadow:
+    0 10px 25px rgba(35, 105, 122, 0.3);
+
+}
+
+
+/* ========================================
+   BOTÃO PAUSAR
+======================================== */
+
+.botao-pause {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 11px 16px;
+
+  border: 2px solid #235e7a;
+
+  border-radius: 30px;
+
+  background: white;
+
+  color: #23697a;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 13px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+
+}
+
+
+.botao-pause:hover:not(:disabled) {
+
+  transform: translateY(-3px);
+
+  background: #e9f5ef;
+
+}
+
+
+.botao-pause:disabled {
+
+  opacity: 0.45;
+
+  cursor: not-allowed;
+
+}
+
+
+/* ========================================
+   ÍCONE PAUSE
+======================================== */
+
+.icone-pause {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 25px;
+
+  height: 25px;
+
+  border-radius: 50%;
+
+  background: #23537a;
+
+  color: white;
+
+  font-size: 11px;
+
+  transition: 0.3s ease;
+
+}
+
+
+.botao-pause.pausado .icone-pause {
+
+  transform: scale(1.12);
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .texto-audio {
+
+    flex-wrap: wrap;
+
+  }
+
+  .botao-audio,
+  .botao-pause {
+
+    font-size: 12px;
+
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
 
 
 

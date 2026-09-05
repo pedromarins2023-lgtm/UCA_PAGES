@@ -45,7 +45,9 @@ export class Home implements AfterViewInit {
 
 
   fecharMenuMobile(): void {
+
     this.menuMobileAberto = false;
+
   }
 
 
@@ -102,68 +104,47 @@ export class Home implements AfterViewInit {
 
 
   // ========================================
-  // SCROLL
+  // LEITURA EM VOZ ALTA
   // ========================================
 
-  @HostListener('window:scroll')
-  aoRolarPagina(): void {
+  falaAtual: SpeechSynthesisUtterance | null = null;
 
-    const posicaoAtual = window.scrollY;
+  audioFalando = false;
 
-
-    // ========================================
-    // BOTÃO VOLTAR AO TOPO
-    // ========================================
-
-    this.mostrarBotaoTopo =
-      posicaoAtual > 400;
-
-
-    // ========================================
-    // HEADER
-    // ========================================
-
-    if (posicaoAtual <= 50) {
-
-      this.headerVisivel = true;
-
-    }
-
-    else if (
-      posicaoAtual > this.ultimaPosicaoScroll
-    ) {
-
-      this.headerVisivel = false;
-
-    }
-
-    else {
-
-      this.headerVisivel = true;
-
-    }
-
-
-    // Guarda a posição atual
-
-    this.ultimaPosicaoScroll =
-      posicaoAtual;
-
-  }
+  audioPausado = false;
 
 
   // ========================================
-  // CONTADOR
+  // VOZ SELECIONADA
+  // ========================================
+
+  private vozSelecionada: SpeechSynthesisVoice | null = null;
+
+  private vozesDisponiveis: SpeechSynthesisVoice[] = [];
+
+
+  // ========================================
+  // INICIALIZAÇÃO
   // ========================================
 
   ngAfterViewInit(): void {
+
+    // Carrega as vozes disponíveis
+    this.carregarVozes();
+
+
+    // ========================================
+    // CONTADOR DE IMPACTO
+    // ========================================
 
     const secaoImpacto =
       document.querySelector('#impacto');
 
 
     if (!secaoImpacto) {
+
       return;
+
     }
 
 
@@ -195,6 +176,329 @@ export class Home implements AfterViewInit {
 
 
     observer.observe(secaoImpacto);
+
+  }
+
+
+  // ========================================
+  // CARREGAR VOZES DO NAVEGADOR
+  // ========================================
+
+  private carregarVozes(): void {
+
+    const carregar = (): void => {
+
+      this.vozesDisponiveis =
+        window.speechSynthesis.getVoices();
+
+
+      // ========================================
+      // PROCURA UMA VOZ FEMININA EM PT-BR
+      // ========================================
+
+      this.vozSelecionada =
+        this.vozesDisponiveis.find(
+
+          voz =>
+
+            voz.lang.toLowerCase() === 'pt-br' &&
+
+            (
+
+              voz.name.toLowerCase().includes('female') ||
+
+              voz.name.toLowerCase().includes('feminina') ||
+
+              voz.name.toLowerCase().includes('female') ||
+
+              voz.name.toLowerCase().includes('francisca') ||
+
+              voz.name.toLowerCase().includes('brenda') ||
+
+              voz.name.toLowerCase().includes('elza') ||
+
+              voz.name.toLowerCase().includes('giovanna') ||
+
+              voz.name.toLowerCase().includes('leila') ||
+
+              voz.name.toLowerCase().includes('manuela') ||
+
+              voz.name.toLowerCase().includes('thalia') ||
+
+              voz.name.toLowerCase().includes('yara')
+
+            )
+
+        )
+
+        // ========================================
+        // CASO NÃO ENCONTRE,
+        // PROCURA MICROSOFT / GOOGLE
+        // ========================================
+
+        ??
+
+        this.vozesDisponiveis.find(
+
+          voz =>
+
+            voz.lang.toLowerCase() === 'pt-br' &&
+
+            (
+
+              voz.name.toLowerCase().includes('microsoft') ||
+
+              voz.name.toLowerCase().includes('google')
+
+            )
+
+        )
+
+        // ========================================
+        // CASO NÃO ENCONTRE,
+        // PEGA QUALQUER PT-BR
+        // ========================================
+
+        ??
+
+        this.vozesDisponiveis.find(
+
+          voz =>
+
+            voz.lang.toLowerCase() === 'pt-br'
+
+        )
+
+        ??
+
+        null;
+
+    };
+
+
+    // Algumas versões do navegador
+    // carregam as vozes depois
+
+    carregar();
+
+
+    window.speechSynthesis.onvoiceschanged =
+      carregar;
+
+  }
+
+
+  // ========================================
+  // INICIAR LEITURA EM VOZ ALTA
+  // ========================================
+
+  lerTexto(texto: string): void {
+
+    // Cancela qualquer leitura anterior
+    window.speechSynthesis.cancel();
+
+
+    // ========================================
+    // CRIA A FALA
+    // ========================================
+
+    const fala =
+      new SpeechSynthesisUtterance(texto);
+
+
+    // ========================================
+    // PORTUGUÊS DO BRASIL
+    // ========================================
+
+    fala.lang = 'pt-BR';
+
+
+    // ========================================
+    // VOZ SELECIONADA
+    // ========================================
+
+    if (this.vozSelecionada) {
+
+      fala.voice =
+        this.vozSelecionada;
+
+    }
+
+
+    // ========================================
+    // VELOCIDADE
+    // ========================================
+
+    fala.rate = 0.88;
+
+
+    // ========================================
+    // TOM
+    // ========================================
+
+    fala.pitch = 1.05;
+
+
+    // ========================================
+    // VOLUME
+    // ========================================
+
+    fala.volume = 1;
+
+
+    // Guarda a fala atual
+
+    this.falaAtual = fala;
+
+
+    // ========================================
+    // QUANDO COMEÇAR
+    // ========================================
+
+    fala.onstart = () => {
+
+      this.audioFalando = true;
+
+      this.audioPausado = false;
+
+    };
+
+
+    // ========================================
+    // QUANDO TERMINAR
+    // ========================================
+
+    fala.onend = () => {
+
+      this.audioFalando = false;
+
+      this.audioPausado = false;
+
+      this.falaAtual = null;
+
+    };
+
+
+    // ========================================
+    // SE DER ERRO
+    // ========================================
+
+    fala.onerror = () => {
+
+      this.audioFalando = false;
+
+      this.audioPausado = false;
+
+      this.falaAtual = null;
+
+    };
+
+
+    // ========================================
+    // INICIA A LEITURA
+    // ========================================
+
+    window.speechSynthesis.speak(fala);
+
+  }
+
+
+  // ========================================
+  // PAUSAR / CONTINUAR LEITURA
+  // ========================================
+
+  pausarOuContinuar(): void {
+
+    // Se não estiver lendo,
+    // não faz nada
+
+    if (!this.audioFalando) {
+
+      return;
+
+    }
+
+
+    // ========================================
+    // CONTINUAR
+    // ========================================
+
+    if (
+      window.speechSynthesis.paused
+    ) {
+
+      window.speechSynthesis.resume();
+
+      this.audioPausado = false;
+
+    }
+
+
+    // ========================================
+    // PAUSAR
+    // ========================================
+
+    else {
+
+      window.speechSynthesis.pause();
+
+      this.audioPausado = true;
+
+    }
+
+  }
+
+
+  // ========================================
+  // SCROLL
+  // ========================================
+
+  @HostListener('window:scroll')
+
+  aoRolarPagina(): void {
+
+    const posicaoAtual =
+      window.scrollY;
+
+
+    // ========================================
+    // BOTÃO VOLTAR AO TOPO
+    // ========================================
+
+    this.mostrarBotaoTopo =
+      posicaoAtual > 400;
+
+
+    // ========================================
+    // HEADER
+    // ========================================
+
+    if (posicaoAtual <= 50) {
+
+      this.headerVisivel = true;
+
+    }
+
+    else if (
+      posicaoAtual >
+      this.ultimaPosicaoScroll
+    ) {
+
+      this.headerVisivel = false;
+
+    }
+
+    else {
+
+      this.headerVisivel = true;
+
+    }
+
+
+    // Guarda a posição atual
+
+    this.ultimaPosicaoScroll =
+      posicaoAtual;
 
   }
 
@@ -240,6 +544,7 @@ export class Home implements AfterViewInit {
   // ========================================
 
   private animarContador(
+
     tipo:
       | 'hectares'
       | 'arvores'
@@ -261,8 +566,14 @@ export class Home implements AfterViewInit {
 
         const progresso =
           Math.min(
-            (tempoAtual - inicio) / duracao,
+
+            (
+              tempoAtual -
+              inicio
+            ) / duracao,
+
             1
+
           );
 
 
@@ -276,7 +587,8 @@ export class Home implements AfterViewInit {
 
         const valorAtual =
           Math.floor(
-            progressoSuave * valorFinal
+            progressoSuave *
+            valorFinal
           );
 
 

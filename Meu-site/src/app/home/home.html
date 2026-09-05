@@ -201,7 +201,7 @@ O UÇÁ completou 13 anos de atuação em julho de 2025 e segue renovado.
           pela imagem que você quiser.
         -->
 
-        <div class="imagem-moldura">
+      
 
           <img
             src="https://tse3.mm.bing.net/th/id/OIP.6eEy42ZJUEREUT0IK1WnvwHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
@@ -209,28 +209,14 @@ O UÇÁ completou 13 anos de atuação em julho de 2025 e segue renovado.
             class="hero-imagem"
           />
 
-        </div>
-
-
-        <!-- ELEMENTOS DECORATIVOS -->
-
-        <div class="bolinha bolinha-1"></div>
-
-        <div class="bolinha bolinha-2"></div>
-
-        <div class="folha folha-1">
-          🍃
-        </div>
-
-        <div class="folha folha-2">
-          🌿
-        </div>
+    
 
       </div>
-
     </div>
-
   </section>
+    
+
+  
 
 
   <!-- ========================================
@@ -360,7 +346,7 @@ O UÇÁ completou 13 anos de atuação em julho de 2025 e segue renovado.
 >
   <span>🌿</span>
   Conhecer a vida no manguezal
-  <span class="seta">→</span>
+  <span class="seta"></span>
 
 </a>
 
@@ -377,7 +363,7 @@ O UÇÁ completou 13 anos de atuação em julho de 2025 e segue renovado.
 >
   <span>📸</span>
   Ver galeria
-  <span>→</span>
+  <span></span>
 </a>
 
 
@@ -858,13 +844,86 @@ O UÇÁ completou 13 anos de atuação em julho de 2025 e segue renovado.
 
     </div>
 
+  
+
 
     <!-- TEXTO -->
     <div class="card-conteudo">
+      <div class="card-conteudo">
+
+ 
+
+
+
+
+
+  <div class="texto-audio">
+
+    <button
+      class="botao-audio"
+      type="button"
+      (click)="lerTexto(
+        'Quem somos. A Guardiões do Mar, organização do Terceiro Setor, é fruto de um extenso processo de identificação, diagnóstico e exploração do território que abraçamos. Desbravando caminhos desde sua oficialização, em 19 de março de 1998, tem marcado sua trajetória com um impacto crescente na sociobiodiversidade dos ecossistemas costeiros e na salvaguarda da Baía de Guanabara, localizada no estado do Rio de Janeiro/Brasil.
+
+Nesta jornada, destacam-se as ações integradas com o objetivo de combater o lixo costeiro e marinho, disseminar práticas sustentáveis e dedicar esforços à conservação e restauração dos manguezais. Nosso compromisso se estende ao fortalecimento de povos tradicionais, fomentando o empreendedorismo e promovendo ativamente o protagonismo juvenil e comunitário.
+
+A Guardiões do Mar tem sido uma força catalisadora desde sua criação, institucionalizando e incubando diversas cooperativas engajadas em reciclagem, pesca responsável e reaproveitamento de resíduos sólidos pós-consumo, incluindo moda e artesanato.
+
+Diante da urgência observada em 2012 quanto ao comprometimento da sociedade com o correto descarte de resíduos, abraçamos projetos ambientais com uma abordagem social aguçada.
+
+A cada passo, continuamos incubando ideias e projetos. Entre 2021 e 2025, estamos tecendo novas narrativas com dez projetos, sendo oito dedicados à preservação e/ou conservação de manguezais.'
+      )"
+    >
+
+      🔊
+
+      <span>
+        Ouvir texto
+      </span>
+
+    </button>
+
+
+    <button
+      class="botao-pause"
+      type="button"
+      [class.pausado]="audioPausado"
+      [disabled]="!audioFalando"
+      (click)="pausarOuContinuar()"
+    >
+
+      <span class="icone-pause">
+
+        @if (audioPausado) {
+          ▶
+        } @else {
+          ⏸
+        }
+
+      </span>
+
+      <span>
+
+        @if (audioPausado) {
+          Continuar
+        } @else {
+          Pausar
+        }
+
+      </span>
+
+    </button>
+
+  </div>
 
       <h1>
         Quem Somos
       </h1>
+
+
+
+
+
 
      <h3> A Guardiões do Mar, organização do Terceiro Setor, é fruto de um extenso processo de identificação, diagnóstico e exploração do território que abraçamos. Desbravando caminhos desde sua oficialização, em 19 de março de 1998, tem marcado sua trajetória com um impacto crescente na sociobiodiversidade dos ecossistemas costeiros e na salvaguarda da Baía de Guanabara, localizada no estado do Rio de Janeiro/Brasil. </h3>
       <br> 
@@ -877,6 +936,8 @@ O UÇÁ completou 13 anos de atuação em julho de 2025 e segue renovado.
       <h3> A cada passo, continuamos incubando ideias e projetos. Entre 2021 e 2025, estamos tecendo novas narrativas com dez projetos, sendo oito dedicados à preservação e/ou conservação de manguezais. </h3>
     </div>
 
+    
+  </div>
   </div>
 
 
@@ -982,6 +1043,70 @@ O UÇÁ completou 13 anos de atuação em julho de 2025 e segue renovado.
 
     <!-- TEXTO -->
     <div class="card-conteudo">
+
+
+
+
+
+
+
+
+
+      
+  <div class="texto-audio">
+
+    <button
+      class="botao-audio"
+      type="button"
+      (click)="lerTexto(
+        ' O que fazemos. Nosso trabalho integra os pilares de Conservação (educação ambiental, ações de limpeza e formações contínuas), Restauração (plantio de mudas de mangue com mão de obra local e planejamento participativo), Pesquisa (biologia da conservação e soluções baseadas na natureza, com valorização dos saberes locais), e Educação (em ambientes formais e não formais, com foco na escuta atenta e valorização das comunidades).
+
+Essa abordagem integral visa conservar os manguezais, orientando e fortalecendo as comunidades que ali residem. O diferencial está na contratação de mão de obra local, enraizada no conhecimento profundo e ancestral do ecossistema costeiro, com pescadores, caranguejeiros, quilombolas e grupos da agricultura familiar desempenhando papéis essenciais em atividades de limpeza, restauração e conservação por meio de trocas de saberes e conhecimento.
+
+Atuamos no Geoprocessamento e Sensoriamento Remoto, utilizando Sistemas de Informações Geográficas (SIG) para analisar ecossistemas costeiros, com ênfase na classificação avançada da cobertura de manguezal. Destacamos nossa expertise na análise espaço-temporal das mudanças na terra, utilizando técnicas avançadas de Sensoriamento Remoto e aprendizado de máquinas para quantificar a dinâmica espacial de manguezais em diferentes estados, abrangendo desde os degradados até os naturais e restaurados. Inclui a estimativa do estoque e sequestro de carbono nos ecossistemas de manguezais, contribuindo para uma gestão mais eficaz desses ambientes essenciais para a biodiversidade e a saúde do planeta.'
+      )"
+    >
+
+      🔊
+
+      <span>
+        Ouvir texto
+      </span>
+
+    </button>
+
+
+    <button
+      class="botao-pause"
+      type="button"
+      [class.pausado]="audioPausado"
+      [disabled]="!audioFalando"
+      (click)="pausarOuContinuar()"
+    >
+
+      <span class="icone-pause">
+
+        @if (audioPausado) {
+          ▶
+        } @else {
+          ⏸
+        }
+
+      </span>
+
+      <span>
+
+        @if (audioPausado) {
+          Continuar
+        } @else {
+          Pausar
+        }
+
+      </span>
+
+    </button>
+
+  </div>
 
       <h1>
         O que fazemos
@@ -1201,6 +1326,62 @@ O UÇÁ completou 13 anos de atuação em julho de 2025 e segue renovado.
     <!-- TEXTO -->
     <div class="card-conteudo">
 
+
+
+
+      
+  <div class="texto-audio">
+
+    <button
+      class="botao-audio"
+      type="button"
+      (click)="lerTexto(
+        ' Atuação em Redes. Atuamos e conectamos redes, a exemplo da cocriação da RENAMAN (Rede Nacional de Manguezais), da Rede Litoral Norte de São Paulo de Manguezais, da REDAGUA (Rede Águas da Guanabara, em parceria com os Projetos Coral Vivo, Guapiaçu, Meros do Brasil e UÇÁ, todos patrocinados pela Petrobras por meio do Programa Petrobras Socioambiental) e no apoio à criação e manutenção ativa da Rede ‘Nós da Guanabara’ (composta por pescadores artesanais, catadores de caranguejo, quilombolas e agricultores familiares) no recôncavo da Guanabara até os dias atuais. Coordena o Subcomitê Leste da Bacia Hidrográfica da Baía de Guanabara e participa do Movimento Viva Água – Baía de Guanabara (capitaneado pela Fundação Boticário, SEA, INEA e FIRJAN). Atuamos de forma participativa com as biorregiões da Serra da Estrela, da REGUA e da APA de Guapi-Mirim.
+
+A ONG Guardiões do Mar também é precursora em iniciativas de educação ambiental inclusiva, assegurando acessibilidade para pessoas com necessidades especiais e reconhecida por meio de termo de cooperação técnica com o Instituto Nacional de Educação de Surdos (INES) e Escola de Inclusão: Labs-STEAM da UFF (Universidade Federal Fluminense), intermediada pela equipe de acessibilidade do Coletivo Ateliê do Encontro.'
+      )"
+    >
+
+      🔊
+
+      <span>
+        Ouvir texto
+      </span>
+
+    </button>
+
+
+    <button
+      class="botao-pause"
+      type="button"
+      [class.pausado]="audioPausado"
+      [disabled]="!audioFalando"
+      (click)="pausarOuContinuar()"
+    >
+
+      <span class="icone-pause">
+
+        @if (audioPausado) {
+          ▶
+        } @else {
+          ⏸
+        }
+
+      </span>
+
+      <span>
+
+        @if (audioPausado) {
+          Continuar
+        } @else {
+          Pausar
+        }
+
+      </span>
+
+    </button>
+
+  </div>
       <h1>
         Atuação em Redes
       </h1>
@@ -1413,6 +1594,59 @@ O UÇÁ completou 13 anos de atuação em julho de 2025 e segue renovado.
     <!-- TEXTO -->
     <div class="card-conteudo">
 
+  <div class="texto-audio">
+
+    <button
+      class="botao-audio"
+      type="button"
+      (click)="lerTexto(
+        'Conectados a outros grandes centros de pesquisa mundial, estamos conduzindo — em colaboração com a The Rufford Foundation (Inglaterra) e com as Universidades Federais do Espírito Santo e do Rio Grande do Norte — uma pesquisa pioneira intitulada “Influência da Poluição Plástica nos Ecossistemas de Manguezais do Sudeste do Brasil”. Essa iniciativa visa examinar o impacto dos resíduos sólidos na estrutura dos manguezais, bem como investigar a presença de microplásticos no solo destas florestas.
+
+Somos parceiros oficiais no Brasil para a Década das Nações Unidas para Restauração de Ecossistemas (2021-2030). O movimento, liderado pelo Programa da ONU para o Meio Ambiente (PNUMA) e pela Organização da ONU para a Alimentação e Agricultura (FAO), passa não só por ações de restauração, mas por todo um planejamento estratégico em andamento, que visa preparar a juventude e lideranças tradicionais e comunitárias, em assuntos como emergências climáticas, racismo ambiental, resiliência e transformação socioambiental.
+
+Participa também como signatária da Rede Oceano Limpo, um projeto fruto de uma parceria entre a Cátedra UNESCO para a Sustentabilidade do Oceano (IO-USP/IEA-USP) com o Fundo Brasileiro para a Biodiversidade (FUNBIO) e do movimento Plastic No Thanks, conectado a outras grandes coalizões internacionais para a aprovação de um acordo que objetiva reduzir a poluição de embalagens plásticas no planeta. E isso é só o começo!')"
+    >
+
+      🔊
+
+      <span>
+        Ouvir texto
+      </span>
+
+    </button>
+
+
+    <button
+      class="botao-pause"
+      type="button"
+      [class.pausado]="audioPausado"
+      [disabled]="!audioFalando"
+      (click)="pausarOuContinuar()"
+    >
+
+      <span class="icone-pause">
+
+        @if (audioPausado) {
+          ▶
+        } @else {
+          ⏸
+        }
+
+      </span>
+
+      <span>
+
+        @if (audioPausado) {
+          Continuar
+        } @else {
+          Pausar
+        }
+
+      </span>
+
+    </button>
+
+  </div>
       
 
       <h3>
@@ -1481,7 +1715,7 @@ O UÇÁ completou 13 anos de atuação em julho de 2025 e segue renovado.
       routerLink="/quiz"
       class="btn-quiz"
     >
-      Iniciar Quiz →
+      Iniciar Quiz 
     </a>
 
   </div>
@@ -1599,7 +1833,7 @@ O UÇÁ completou 13 anos de atuação em julho de 2025 e segue renovado.
       class="botao-inicio"
       (click)="voltarAoTopo()"
     >
-      ↑ Voltar ao início
+       Voltar ao início
     </button>
 
   </div>
