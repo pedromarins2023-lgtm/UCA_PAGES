@@ -19,6 +19,7 @@
 }
 
 
+
 /* =========================================================
    RESET
 ========================================================= */
@@ -278,7 +279,7 @@ a {
   background:
     linear-gradient(
       120deg,
-      #046b63 0%,
+      #046b63c0 0%,
       #054f58 45%,
       #035846 100%
     );
@@ -2358,9 +2359,264 @@ a {
 
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+.manguezal-interativo {
+  padding: 100px 5%;
+  background: #ffffff;
+  text-align: center;
 }
 
 
+.manguezal-titulo {
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
+
+.manguezal-titulo span {
+  color: #087f8c;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+
+.manguezal-titulo h2 {
+  color: #073b4c;
+  font-size: 42px;
+  margin: 12px 0;
+}
+
+
+.manguezal-titulo p {
+  color: #52666d;
+  font-size: 17px;
+}
+
+
+/* IMAGEM */
+
+.imagem-interativa {
+  position: relative;
+  width: min(1200px, 100%);
+  margin: auto;
+}
+.manguezal-imagem {
+  width: 100%;
+  max-width: 1400px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.imagem-manguezal {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* PONTOS */
+
+.ponto {
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  border: 3px solid white;
+
+  background: #087f8c;
+
+  cursor: pointer;
+
+  font-size: 20px;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, .25);
+
+  transition: .25s;
+
+  z-index: 5;
+}
+
+
+.ponto:hover {
+  transform:
+    translate(-50%, -50%)
+    scale(1.2);
+
+  background: #0b6570;
+}
+
+
+/* EFEITO PULSANDO */
+
+.ponto::after {
+
+  content: '';
+
+  position: absolute;
+
+  inset: -7px;
+
+  border-radius: 50%;
+
+  border: 2px solid #087f8c;
+
+  animation: pulsar 1.8s infinite;
+
+}
+
+
+@keyframes pulsar {
+
+  0% {
+    transform: scale(.8);
+    opacity: .8;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+
+}
+
+
+/* OVERLAY */
+
+.info-overlay {
+
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(2, 35, 43, .72);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 20px;
+
+  z-index: 999;
+}
+
+
+/* CARD */
+
+.info-card {
+
+  position: relative;
+
+  width: min(500px, 100%);
+
+  background: white;
+
+  border-radius: 22px;
+
+  padding: 40px;
+
+  text-align: left;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, .3);
+
+  animation: aparecer .3s ease;
+}
+
+
+@keyframes aparecer {
+
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+}
+
+
+.fechar-info {
+
+  position: absolute;
+
+  top: 15px;
+  right: 18px;
+
+  border: none;
+
+  background: transparent;
+
+  font-size: 32px;
+
+  cursor: pointer;
+
+  color: #073b4c;
+}
+
+
+.info-icone {
+
+  font-size: 50px;
+
+  margin-bottom: 10px;
+}
+
+
+.info-card h3 {
+
+  font-size: 28px;
+
+  color: #073b4c;
+
+  margin-bottom: 15px;
+}
+
+
+.info-card p {
+
+  color: #53666c;
+
+  line-height: 1.7;
+
+  font-size: 16px;
+}
 
 
 

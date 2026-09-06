@@ -1,5 +1,5 @@
 /* =========================================
-   RESETS E FONTE GLOBAL
+   RESET E FONTE
    ========================================= */
 * {
   box-sizing: border-box;
@@ -90,7 +90,7 @@
 .google-icon {
   font-weight: bold;
   font-size: 18px;
-  color: #db3c37; /* Cor típica do G do Google */
+  color: #1c687ac5; /* Cor típica do G do Google */
   margin-right: 10px;
 }
 

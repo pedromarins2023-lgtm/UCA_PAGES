@@ -45,9 +45,7 @@ export class Home implements AfterViewInit {
 
 
   fecharMenuMobile(): void {
-
     this.menuMobileAberto = false;
-
   }
 
 
@@ -104,6 +102,110 @@ export class Home implements AfterViewInit {
 
 
   // ========================================
+  // INFORMAÇÕES DO MANGUEZAL
+  // ========================================
+
+  informacaoSelecionada: any = null;
+
+
+  informacoesManguezal: {
+    [key: string]: {
+      icone: string;
+      titulo: string;
+      texto: string;
+    }
+  } = {
+
+    caranguejo: {
+      icone: '🦀',
+      titulo: 'Caranguejos',
+      texto:
+        'Os caranguejos são alguns dos animais mais característicos dos manguezais. Eles ajudam na decomposição da matéria orgânica e na movimentação do solo, contribuindo para o equilíbrio do ecossistema.'
+    },
+
+
+    arvores: {
+      icone: '🌳',
+      titulo: 'Árvores do manguezal',
+      texto:
+        'As árvores dos manguezais possuem adaptações especiais que permitem sua sobrevivência em ambientes com água salgada e solo lodoso. Suas raízes também oferecem abrigo para diversas espécies.'
+    },
+
+
+    aves: {
+      icone: '🐦',
+      titulo: 'Aves',
+      texto:
+        'Os manguezais são importantes áreas de alimentação, reprodução e abrigo para diversas espécies de aves. Muitas delas dependem desse ambiente durante parte de seu ciclo de vida.'
+    },
+
+
+    pescador: {
+      icone: '🚣',
+      titulo: 'Comunidades tradicionais',
+      texto:
+        'Diversas comunidades tradicionais possuem uma relação histórica com os manguezais. A pesca, a coleta de caranguejos e outras atividades fazem parte da cultura e da economia dessas comunidades.'
+    },
+
+
+    peixes: {
+      icone: '🐟',
+      titulo: 'Peixes',
+      texto:
+        'Os manguezais funcionam como áreas de alimentação, reprodução e crescimento para diversas espécies de peixes. Por isso, são fundamentais para a manutenção da vida marinha e para a pesca.'
+    },
+
+
+    agua: {
+      icone: '💧',
+      titulo: 'Água',
+      texto:
+        'A água dos manguezais apresenta características próprias devido à influência das marés e à mistura entre água doce e salgada. Esse ambiente é essencial para inúmeras espécies.'
+    },
+
+
+    raizes: {
+      icone: '🌱',
+      titulo: 'Raízes do mangue',
+      texto:
+        'As raízes das árvores de mangue ajudam a estabilizar o solo, reduzir a erosão e criar ambientes onde pequenos animais podem se proteger e encontrar alimento.'
+    },
+
+
+    maré: {
+      icone: '🌊',
+      titulo: 'Marés',
+      texto:
+        'As marés fazem parte do funcionamento natural dos manguezais. O movimento da água influencia a distribuição de nutrientes, organismos e sedimentos dentro do ecossistema.'
+    }
+
+  };
+
+
+  // ========================================
+  // ABRIR INFORMAÇÃO
+  // ========================================
+
+  abrirInformacao(tipo: string): void {
+
+    this.informacaoSelecionada =
+      this.informacoesManguezal[tipo];
+
+  }
+
+
+  // ========================================
+  // FECHAR INFORMAÇÃO
+  // ========================================
+
+  fecharInformacao(): void {
+
+    this.informacaoSelecionada = null;
+
+  }
+
+
+  // ========================================
   // LEITURA EM VOZ ALTA
   // ========================================
 
@@ -142,9 +244,7 @@ export class Home implements AfterViewInit {
 
 
     if (!secaoImpacto) {
-
       return;
-
     }
 
 
@@ -181,7 +281,7 @@ export class Home implements AfterViewInit {
 
 
   // ========================================
-  // CARREGAR VOZES DO NAVEGADOR
+  // CARREGAR VOZES
   // ========================================
 
   private carregarVozes(): void {
@@ -192,10 +292,6 @@ export class Home implements AfterViewInit {
         window.speechSynthesis.getVoices();
 
 
-      // ========================================
-      // PROCURA UMA VOZ FEMININA EM PT-BR
-      // ========================================
-
       this.vozSelecionada =
         this.vozesDisponiveis.find(
 
@@ -204,37 +300,19 @@ export class Home implements AfterViewInit {
             voz.lang.toLowerCase() === 'pt-br' &&
 
             (
-
               voz.name.toLowerCase().includes('female') ||
-
               voz.name.toLowerCase().includes('feminina') ||
-
-              voz.name.toLowerCase().includes('female') ||
-
               voz.name.toLowerCase().includes('francisca') ||
-
               voz.name.toLowerCase().includes('brenda') ||
-
               voz.name.toLowerCase().includes('elza') ||
-
               voz.name.toLowerCase().includes('giovanna') ||
-
               voz.name.toLowerCase().includes('leila') ||
-
               voz.name.toLowerCase().includes('manuela') ||
-
               voz.name.toLowerCase().includes('thalia') ||
-
               voz.name.toLowerCase().includes('yara')
-
             )
 
         )
-
-        // ========================================
-        // CASO NÃO ENCONTRE,
-        // PROCURA MICROSOFT / GOOGLE
-        // ========================================
 
         ??
 
@@ -245,26 +323,17 @@ export class Home implements AfterViewInit {
             voz.lang.toLowerCase() === 'pt-br' &&
 
             (
-
               voz.name.toLowerCase().includes('microsoft') ||
-
               voz.name.toLowerCase().includes('google')
-
             )
 
         )
-
-        // ========================================
-        // CASO NÃO ENCONTRE,
-        // PEGA QUALQUER PT-BR
-        // ========================================
 
         ??
 
         this.vozesDisponiveis.find(
 
           voz =>
-
             voz.lang.toLowerCase() === 'pt-br'
 
         )
@@ -276,11 +345,7 @@ export class Home implements AfterViewInit {
     };
 
 
-    // Algumas versões do navegador
-    // carregam as vozes depois
-
     carregar();
-
 
     window.speechSynthesis.onvoiceschanged =
       carregar;
@@ -289,33 +354,20 @@ export class Home implements AfterViewInit {
 
 
   // ========================================
-  // INICIAR LEITURA EM VOZ ALTA
+  // INICIAR LEITURA
   // ========================================
 
   lerTexto(texto: string): void {
 
-    // Cancela qualquer leitura anterior
     window.speechSynthesis.cancel();
 
-
-    // ========================================
-    // CRIA A FALA
-    // ========================================
 
     const fala =
       new SpeechSynthesisUtterance(texto);
 
 
-    // ========================================
-    // PORTUGUÊS DO BRASIL
-    // ========================================
-
     fala.lang = 'pt-BR';
 
-
-    // ========================================
-    // VOZ SELECIONADA
-    // ========================================
 
     if (this.vozSelecionada) {
 
@@ -325,35 +377,15 @@ export class Home implements AfterViewInit {
     }
 
 
-    // ========================================
-    // VELOCIDADE
-    // ========================================
-
     fala.rate = 0.88;
 
-
-    // ========================================
-    // TOM
-    // ========================================
-
     fala.pitch = 1.05;
-
-
-    // ========================================
-    // VOLUME
-    // ========================================
 
     fala.volume = 1;
 
 
-    // Guarda a fala atual
-
     this.falaAtual = fala;
 
-
-    // ========================================
-    // QUANDO COMEÇAR
-    // ========================================
 
     fala.onstart = () => {
 
@@ -363,10 +395,6 @@ export class Home implements AfterViewInit {
 
     };
 
-
-    // ========================================
-    // QUANDO TERMINAR
-    // ========================================
 
     fala.onend = () => {
 
@@ -379,10 +407,6 @@ export class Home implements AfterViewInit {
     };
 
 
-    // ========================================
-    // SE DER ERRO
-    // ========================================
-
     fala.onerror = () => {
 
       this.audioFalando = false;
@@ -394,34 +418,21 @@ export class Home implements AfterViewInit {
     };
 
 
-    // ========================================
-    // INICIA A LEITURA
-    // ========================================
-
     window.speechSynthesis.speak(fala);
 
   }
 
 
   // ========================================
-  // PAUSAR / CONTINUAR LEITURA
+  // PAUSAR / CONTINUAR
   // ========================================
 
   pausarOuContinuar(): void {
 
-    // Se não estiver lendo,
-    // não faz nada
-
     if (!this.audioFalando) {
-
       return;
-
     }
 
-
-    // ========================================
-    // CONTINUAR
-    // ========================================
 
     if (
       window.speechSynthesis.paused
@@ -432,11 +443,6 @@ export class Home implements AfterViewInit {
       this.audioPausado = false;
 
     }
-
-
-    // ========================================
-    // PAUSAR
-    // ========================================
 
     else {
 
@@ -461,17 +467,9 @@ export class Home implements AfterViewInit {
       window.scrollY;
 
 
-    // ========================================
-    // BOTÃO VOLTAR AO TOPO
-    // ========================================
-
     this.mostrarBotaoTopo =
       posicaoAtual > 400;
 
-
-    // ========================================
-    // HEADER
-    // ========================================
 
     if (posicaoAtual <= 50) {
 
@@ -494,8 +492,6 @@ export class Home implements AfterViewInit {
 
     }
 
-
-    // Guarda a posição atual
 
     this.ultimaPosicaoScroll =
       posicaoAtual;

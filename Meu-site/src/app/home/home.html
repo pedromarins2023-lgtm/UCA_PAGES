@@ -1282,9 +1282,137 @@ Atuamos no Geoprocessamento e Sensoriamento Remoto, utilizando Sistemas de Infor
         </div>
 
     </div>
+    
    </section>
 
   </section>
+
+  <section class="manguezal-interativo">
+
+  <div class="manguezal-titulo">
+    <span> EXPLORE O MANGUEZAL</span>
+
+    <h2>
+      Conheça a vida no manguezal
+    </h2>
+
+    <p>
+      Clique nos elementos da imagem para descobrir
+      mais sobre esse importante ecossistema.
+    </p>
+  </div>
+
+
+  <div class="imagem-interativa">
+
+    <!-- IMAGEM PRINCIPAL -->
+    <img
+      src="mangue.png"
+      alt="Infográfico sobre o manguezal"
+      class="imagem-manguezal"
+    />
+
+
+    <!-- PONTO CARANGUEJO -->
+    <button
+      class="ponto"
+      style="left: 28%; top: 72%;"
+      (click)="abrirInformacao('caranguejo')"
+      aria-label="Caranguejo"
+    >
+      🦀
+    </button>
+
+
+    <!-- PONTO ÁRVORES -->
+    <button
+      class="ponto"
+      style="left: 52%; top: 38%;"
+      (click)="abrirInformacao('arvores')"
+      aria-label="Árvores do manguezal"
+    >
+      🌳
+    </button>
+
+
+    <!-- PONTO PESCADOR -->
+    <button
+      class="ponto"
+      style="left: 73%; top: 58%;"
+      (click)="abrirInformacao('pescador')"
+      aria-label="Pescador"
+    >
+      🚣
+    </button>
+
+
+    <!-- PONTO AVES -->
+    <button
+      class="ponto"
+      style="left: 66%; top: 25%;"
+      (click)="abrirInformacao('aves')"
+      aria-label="Aves"
+    >
+      🐦
+    </button>
+
+
+    <!-- PONTO ÁGUA -->
+    <button
+      class="ponto"
+      style="left: 48%; top: 67%;"
+      (click)="abrirInformacao('agua')"
+      aria-label="Água do manguezal"
+    >
+      💧
+    </button>
+
+  </div>
+
+
+  <!-- JANELA DE INFORMAÇÃO -->
+
+  @if (informacaoSelecionada) {
+
+    <div
+      class="info-overlay"
+      (click)="fecharInformacao()"
+    >
+
+      <div
+        class="info-card"
+        (click)="$event.stopPropagation()"
+      >
+
+        <button
+          class="fechar-info"
+          (click)="fecharInformacao()"
+        >
+          ×
+        </button>
+
+
+        <div class="info-icone">
+          {{ informacaoSelecionada.icone }}
+        </div>
+
+
+        <h3>
+          {{ informacaoSelecionada.titulo }}
+        </h3>
+
+
+        <p>
+          {{ informacaoSelecionada.texto }}
+        </p>
+
+      </div>
+
+    </div>
+
+  }
+
+</section>
 
   
 <!-- ========================================
