@@ -47,6 +47,7 @@ a {
 
 .header {
   position: fixed;
+
   top: 0;
   left: 0;
 
@@ -72,6 +73,7 @@ a {
 .header-container {
   width: 100%;
   max-width: 1300px;
+
   height: 76px;
 
   margin: 0 auto;
@@ -205,7 +207,9 @@ a {
   font-size: 11px;
 
   overflow: hidden;
+
   text-overflow: ellipsis;
+
   white-space: nowrap;
 }
 
@@ -236,6 +240,7 @@ a {
   content: '';
 
   position: absolute;
+
   inset: 0;
 
   background:
@@ -250,14 +255,18 @@ a {
 
 .hero-fundo {
   position: absolute;
+
   inset: 0;
 
   width: 100%;
   height: 100%;
 
   background-image: url('../../assets/fundo.jpg');
+
   background-size: cover;
+
   background-position: center center;
+
   background-repeat: no-repeat;
 
   z-index: 0;
@@ -265,6 +274,7 @@ a {
 
 .hero-overlay {
   position: absolute;
+
   inset: 0;
 
   background:
@@ -307,6 +317,7 @@ a {
 
 .hero-content {
   max-width: 650px;
+
   min-width: 0;
 }
 
@@ -322,6 +333,7 @@ a {
   color: var(--verde-claro);
 
   font-size: 17px;
+
   font-weight: bold;
 
   letter-spacing: 0.5px;
@@ -359,6 +371,7 @@ a {
 
 .hero-botoes {
   display: flex;
+
   align-items: center;
 
   gap: 20px;
@@ -371,7 +384,9 @@ a {
   min-height: 50px;
 
   display: inline-flex;
+
   align-items: center;
+
   justify-content: center;
 
   text-align: center;
@@ -383,11 +398,13 @@ a {
   border-radius: 6px;
 
   background: var(--verde);
+
   color: #1b2e36;
 
   text-decoration: none;
 
   font-size: 14px;
+
   font-weight: bold;
 
   transition: 0.25s ease;
@@ -414,6 +431,7 @@ a {
   text-decoration: none;
 
   font-size: 14px;
+
   font-weight: bold;
 
   transition: 0.25s ease;
@@ -436,7 +454,9 @@ a {
   min-height: 520px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 }
 
@@ -592,8 +612,11 @@ a {
   padding: 100px 30px;
 
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   justify-content: center;
 
   gap: 50px;
@@ -626,6 +649,7 @@ a {
 
 .noticias {
   width: 100%;
+
   max-width: 1200px;
 
   margin: 50px auto;
@@ -662,6 +686,7 @@ a {
 
 .card-noticia img {
   width: 100%;
+
   height: 210px;
 
   object-fit: cover;
@@ -714,6 +739,7 @@ a {
 
 .card {
   width: 100%;
+
   max-width: 1200px;
 
   margin: 60px auto;
@@ -739,6 +765,7 @@ a {
 
 .card-imagem {
   width: 100%;
+
   height: 600px;
 
   overflow: hidden;
@@ -748,6 +775,7 @@ a {
 
 .card-imagem img {
   width: 100%;
+
   height: 100%;
 
   object-fit: cover;
@@ -800,10 +828,13 @@ a {
 
 .instagram-button {
   width: 50px;
+
   height: 50px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   border-radius: 50%;
@@ -817,6 +848,7 @@ a {
 
 .instagram-button img {
   width: 28px;
+
   height: 28px;
 
   object-fit: contain;
@@ -848,10 +880,13 @@ a {
   position: fixed;
 
   left: 25px;
+
   right: auto;
+
   bottom: 25px;
 
   width: 55px;
+
   height: 55px;
 
   border: none;
@@ -869,7 +904,9 @@ a {
   font-weight: bold;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   cursor: pointer;
@@ -877,6 +914,7 @@ a {
   z-index: 9500;
 
   opacity: 0;
+
   visibility: hidden;
 
   transform: translateY(20px);
@@ -926,6 +964,7 @@ a {
 
 .temas-titulo {
   width: 100%;
+
   max-width: 800px;
 
   margin: 0 auto 55px;
@@ -957,6 +996,7 @@ a {
 
 .cards-area {
   width: 1200px;
+
   max-width: 90%;
 
   height: 430px;
@@ -970,16 +1010,19 @@ a {
 
 .cards-loop {
   width: 100%;
+
   height: 100%;
 
   overflow: hidden;
 
   display: flex;
+
   align-items: center;
 }
 
 .cards-track {
   display: flex;
+
   align-items: center;
 
   gap: 25px;
@@ -1000,7 +1043,9 @@ a {
 
 .tema-card {
   width: 330px;
+
   min-width: 330px;
+
   height: 380px;
 
   flex-shrink: 0;
@@ -1028,6 +1073,7 @@ a {
 
 .tema-imagem {
   width: 100%;
+
   height: 190px;
 
   overflow: hidden;
@@ -1037,6 +1083,7 @@ a {
 
 .tema-imagem img {
   width: 100%;
+
   height: 100%;
 
   display: block;
@@ -1078,7 +1125,9 @@ a {
 
 .tema-botao {
   display: inline-flex;
+
   align-items: center;
+
   justify-content: center;
 
   padding: 10px 20px;
@@ -1107,6 +1156,7 @@ a {
 }
 
 @keyframes loop-mangue {
+
   0% {
     transform: translateX(0);
   }
@@ -1126,8 +1176,6 @@ a {
 
   padding: 100px 30px;
 
-  box-sizing: border-box;
-
   background: #054e5800;
 
   color: white;
@@ -1135,6 +1183,7 @@ a {
 
 .impacto-container {
   width: 100%;
+
   max-width: 1200px;
 
   margin: 0 auto;
@@ -1216,12 +1265,15 @@ a {
 
 .impacto-icone {
   width: 60px;
+
   height: 60px;
 
   margin: 0 auto 20px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   border-radius: 50%;
@@ -1272,7 +1324,9 @@ a {
   padding: 90px 20px;
 
   display: flex;
+
   justify-content: center;
+
   align-items: center;
 
   background: #050a0e;
@@ -1282,6 +1336,7 @@ a {
   position: relative;
 
   width: 100%;
+
   max-width: 1050px;
 
   padding: 15px;
@@ -1348,6 +1403,7 @@ a {
 
 .quiz-convite {
   width: 100%;
+
   max-width: 1000px;
 
   margin: 80px auto;
@@ -1394,7 +1450,9 @@ a {
 
 .btn-quiz {
   display: inline-flex;
+
   align-items: center;
+
   justify-content: center;
 
   padding: 15px 30px;
@@ -1429,7 +1487,9 @@ a {
   min-height: 420px;
 
   display: flex;
+
   justify-content: center;
+
   align-items: center;
 
   text-align: center;
@@ -1439,10 +1499,13 @@ a {
 
 .encerramento-conteudo {
   width: 100%;
+
   max-width: 700px;
 
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
 }
 
@@ -1470,6 +1533,7 @@ a {
 
 .logo-final {
   width: 1000px;
+
   max-width: 60%;
 
   height: auto;
@@ -1531,13 +1595,12 @@ a {
 
 .missao-visao-valores {
   width: 100%;
+
   max-width: 1300px;
 
   margin: 20px auto 60px;
 
   padding: 35px;
-
-  box-sizing: border-box;
 
   display: grid;
 
@@ -1553,8 +1616,6 @@ a {
   width: 100%;
 
   min-width: 0;
-
-  box-sizing: border-box;
 
   text-align: center;
 }
@@ -1583,6 +1644,7 @@ a {
   font-weight: 600;
 
   overflow-wrap: break-word;
+
   word-wrap: break-word;
 }
 
@@ -1620,7 +1682,9 @@ a {
 
 .botao-vida-manguezal {
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   gap: 10px;
@@ -1683,7 +1747,9 @@ a {
 
 .botao-galeria {
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   gap: 10px;
@@ -1730,6 +1796,7 @@ a {
 
 .texto-audio {
   display: flex;
+
   align-items: center;
 
   gap: 12px;
@@ -1739,6 +1806,7 @@ a {
 
 .botao-audio {
   display: flex;
+
   align-items: center;
 
   gap: 9px;
@@ -1778,6 +1846,7 @@ a {
 
 .botao-pause {
   display: flex;
+
   align-items: center;
 
   gap: 8px;
@@ -1817,10 +1886,13 @@ a {
 
 .icone-pause {
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   width: 25px;
+
   height: 25px;
 
   border-radius: 50%;
@@ -1891,6 +1963,7 @@ a {
 
 .manguezal-imagem {
   width: 100%;
+
   max-width: 1400px;
 
   height: auto;
@@ -1914,6 +1987,7 @@ a {
   transform: translate(-50%, -50%);
 
   width: 42px;
+
   height: 42px;
 
   border-radius: 50%;
@@ -1957,6 +2031,7 @@ a {
 }
 
 @keyframes pulsar {
+
   0% {
     transform: scale(0.8);
 
@@ -1980,6 +2055,7 @@ a {
   display: flex;
 
   justify-content: center;
+
   align-items: center;
 
   padding: 20px;
@@ -2007,6 +2083,7 @@ a {
 }
 
 @keyframes aparecer {
+
   from {
     opacity: 0;
 
@@ -2028,6 +2105,7 @@ a {
   position: absolute;
 
   top: 15px;
+
   right: 18px;
 
   border: none;
@@ -2072,8 +2150,6 @@ a {
   width: 100%;
 
   padding: 100px 7%;
-
-  box-sizing: border-box;
 
   background: #181f24;
 }
@@ -2122,6 +2198,7 @@ a {
 
 .biblioteca-grid {
   width: 100%;
+
   max-width: 1250px;
 
   margin: 0 auto;
@@ -2169,6 +2246,7 @@ a {
   position: relative;
 
   width: 100%;
+
   height: 390px;
 
   overflow: hidden;
@@ -2178,6 +2256,7 @@ a {
 
 .livro-capa img {
   width: 100%;
+
   height: 100%;
 
   display: block;
@@ -2248,13 +2327,12 @@ a {
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 
   width: 100%;
 
   min-height: 48px;
-
-  box-sizing: border-box;
 
   border-radius: 12px;
 
@@ -2308,6 +2386,7 @@ a {
 
   .imagem-moldura {
     width: 320px;
+
     height: 420px;
   }
 
@@ -2332,7 +2411,7 @@ a {
 
 
 /* =========================================================
-   TABLET PEQUENO
+   TABLET / BIBLIOTECA
 ========================================================= */
 
 @media (max-width: 1000px) {
@@ -2353,6 +2432,10 @@ a {
   }
 }
 
+
+/* =========================================================
+   TABLET PEQUENO
+========================================================= */
 
 @media (max-width: 900px) {
 
@@ -2377,7 +2460,7 @@ a {
   }
 
 
-  /* HERO TABLET */
+  /* HERO */
 
   .hero {
     min-height: auto;
@@ -2388,21 +2471,36 @@ a {
 
     grid-template-columns: 1fr;
 
-    text-align: left;
-
     padding: 120px 30px 180px;
 
     gap: 30px;
+
+    text-align: left;
   }
 
   .hero-content {
-    margin: 0 auto;
-
     width: 100%;
+
+    margin: 0;
+  }
+
+  .hero-titulo {
+    width: 100%;
+
+    text-align: left;
+  }
+
+  .hero-titulo h1 {
+    text-align: left;
+
+    font-size: clamp(45px, 7vw, 60px);
+
+    line-height: 1.05;
   }
 
   .hero-descricao {
     margin-left: 0;
+
     margin-right: auto;
   }
 
@@ -2416,6 +2514,7 @@ a {
 
   .imagem-moldura {
     width: 300px;
+
     height: 390px;
   }
 
@@ -2462,7 +2561,7 @@ a {
 
 
 /* =========================================================
-   BIBLIOTECA — CELULAR MÉDIO
+   BIBLIOTECA — CELULAR
 ========================================================= */
 
 @media (max-width: 650px) {
@@ -2503,7 +2602,7 @@ a {
    CELULAR
 ========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
   /* =======================================================
      HEADER
@@ -2521,6 +2620,7 @@ a {
 
   .logo {
     width: 38px;
+
     height: 38px;
   }
 
@@ -2536,9 +2636,11 @@ a {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     width: 45px;
+
     height: 45px;
 
     flex-shrink: 0;
@@ -2550,6 +2652,7 @@ a {
     order: 3;
 
     margin-left: auto;
+
     margin-right: 5px;
 
     align-items: flex-end;
@@ -2573,13 +2676,14 @@ a {
 
 
   /* =======================================================
-     MENU MOBILE ABERTO
+     MENU MOBILE
   ======================================================= */
 
   .menu-mobile {
     position: absolute;
 
     top: 65px;
+
     left: 0;
 
     width: 100%;
@@ -2627,8 +2731,6 @@ a {
 
     padding: 18px 25px;
 
-    box-sizing: border-box;
-
     color: white;
 
     text-decoration: none;
@@ -2663,6 +2765,8 @@ a {
   .hero-container {
     min-height: auto;
 
+    width: 100%;
+
     padding: 100px 18px 150px;
 
     gap: 25px;
@@ -2675,22 +2779,28 @@ a {
   .hero-content {
     width: 100%;
 
+    max-width: 100%;
+
     margin: 0;
   }
 
 
   /* =======================================================
-     TÍTULO DO HERO
+     TÍTULO HERO
   ======================================================= */
 
   .hero-titulo {
     width: 100%;
+
+    max-width: 100%;
 
     text-align: left;
   }
 
   .hero-titulo .hero-subtitulo {
     display: block;
+
+    width: 100%;
 
     text-align: left;
 
@@ -2702,19 +2812,26 @@ a {
   .hero-titulo h1 {
     width: 100%;
 
+    max-width: 100%;
+
     margin: 0 0 25px;
 
     text-align: left;
 
     /*
-      Mantém o título grande como no computador,
-      mas evita que ele ultrapasse a tela.
+      O título permanece grande no celular,
+      parecido com a versão desktop.
     */
+
     font-size: clamp(40px, 11vw, 48px);
 
     line-height: 1.05;
 
     font-weight: 800;
+
+    overflow-wrap: break-word;
+
+    word-break: normal;
   }
 
   .hero-titulo h1 strong {
@@ -2729,7 +2846,10 @@ a {
   .hero-descricao {
     width: 100%;
 
+    max-width: 100%;
+
     margin-left: 0;
+
     margin-right: 0;
 
     margin-bottom: 25px;
@@ -2769,9 +2889,9 @@ a {
   ======================================================= */
 
   .hero-imagem-container {
-    min-height: 330px;
-
     width: 100%;
+
+    min-height: 330px;
   }
 
   .imagem-moldura {
@@ -2793,17 +2913,21 @@ a {
 
   .bolinha-1 {
     width: 42px;
+
     height: 42px;
 
     right: 8px;
+
     top: 40px;
   }
 
   .bolinha-2 {
     width: 38px;
+
     height: 38px;
 
     left: 8px;
+
     bottom: 50px;
   }
 
@@ -2813,11 +2937,13 @@ a {
 
   .folha-1 {
     left: 5px;
+
     top: 40px;
   }
 
   .folha-2 {
     right: 5px;
+
     bottom: 50px;
   }
 
@@ -2936,6 +3062,7 @@ a {
 
   .card {
     width: 100%;
+
     max-width: 100%;
 
     margin: 30px 0;
@@ -3001,6 +3128,7 @@ a {
 
   .cards-area {
     width: 100%;
+
     max-width: 100%;
 
     height: 370px;
@@ -3008,6 +3136,7 @@ a {
 
   .tema-card {
     width: 275px;
+
     min-width: 275px;
 
     height: 345px;
@@ -3082,6 +3211,7 @@ a {
 
   .impacto-icone {
     width: 55px;
+
     height: 55px;
 
     font-size: 25px;
@@ -3176,16 +3306,13 @@ a {
   .botao-topo {
     left: 18px;
 
-    right: auto;
-
     bottom: 18px;
 
     width: 48px;
+
     height: 48px;
 
     font-size: 22px;
-
-    z-index: 9500;
   }
 
 
@@ -3238,6 +3365,7 @@ a {
 
   .missao-visao-valores {
     width: 100%;
+
     max-width: 100%;
 
     margin: 20px auto 40px;
@@ -3247,12 +3375,11 @@ a {
     grid-template-columns: 1fr;
 
     gap: 45px;
-
-    box-sizing: border-box;
   }
 
   .bloco-mvv {
     width: 100%;
+
     max-width: 100%;
 
     min-width: 0;
@@ -3309,6 +3436,7 @@ a {
 
   .ponto {
     width: 36px;
+
     height: 36px;
 
     font-size: 17px;
@@ -3334,7 +3462,7 @@ a {
    CELULARES MUITO PEQUENOS
 ========================================================= */
 
-@media (max-width: 380px) {
+@media (max-width: 580px) {
 
   .header-container {
     padding: 0 10px;
@@ -3342,6 +3470,7 @@ a {
 
   .logo {
     width: 34px;
+
     height: 34px;
   }
 
@@ -3362,20 +3491,28 @@ a {
   }
 
 
-  /* HERO */
+  /* =======================================================
+     HERO
+  ======================================================= */
 
   .hero-container {
     padding: 95px 15px 140px;
   }
 
-  /*
-    Mantém o título grande no celular pequeno,
-    mas reduz um pouco para evitar estouro lateral.
-  */
+  .hero-titulo {
+    width: 100%;
+  }
+
   .hero-titulo h1 {
+    width: 100%;
+
+    max-width: 100%;
+
     font-size: 38px;
 
     line-height: 1.05;
+
+    overflow-wrap: break-word;
   }
 
   .hero-descricao {
@@ -3383,7 +3520,9 @@ a {
   }
 
 
-  /* IMAGEM */
+  /* =======================================================
+     IMAGEM
+  ======================================================= */
 
   .imagem-moldura {
     width: 210px;
@@ -3392,7 +3531,9 @@ a {
   }
 
 
-  /* TEMAS */
+  /* =======================================================
+     TEMAS
+  ======================================================= */
 
   .tema-card {
     width: 260px;
@@ -3401,7 +3542,9 @@ a {
   }
 
 
-  /* CARD */
+  /* =======================================================
+     CARD
+  ======================================================= */
 
   .card {
     padding: 16px;
@@ -3412,21 +3555,27 @@ a {
   }
 
 
-  /* QUIZ */
+  /* =======================================================
+     QUIZ
+  ======================================================= */
 
   .quiz-convite h2 {
     font-size: 25px;
   }
 
 
-  /* IMPACTO */
+  /* =======================================================
+     IMPACTO
+  ======================================================= */
 
   .impacto-numero {
     font-size: 36px;
   }
 
 
-  /* BOTÃO TOPO */
+  /* =======================================================
+     BOTÃO TOPO
+  ======================================================= */
 
   .voltar-topo,
   .botao-topo {
@@ -3435,6 +3584,7 @@ a {
     bottom: 15px;
 
     width: 45px;
+
     height: 45px;
 
     font-size: 20px;
