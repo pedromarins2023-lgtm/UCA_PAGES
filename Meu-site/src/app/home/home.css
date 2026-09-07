@@ -19,13 +19,16 @@
 }
 
 
-
 /* =========================================================
    RESET
 ========================================================= */
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 img,
@@ -44,7 +47,6 @@ a {
 
 .header {
   position: fixed;
-
   top: 0;
   left: 0;
 
@@ -63,54 +65,34 @@ a {
     background 0.3s ease;
 }
 
-
-/* HEADER ESCONDIDO */
-
 .header-escondido {
   transform: translateY(-110%);
 }
 
-
-/* =========================================================
-   CONTAINER HEADER
-========================================================= */
-
 .header-container {
   width: 100%;
   max-width: 1300px;
-
   height: 76px;
 
   margin: 0 auto;
-
   padding: 0 40px;
 
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 }
 
-
-/* =========================================================
-   LOGO
-========================================================= */
-
 .logo-container {
   display: flex;
-
   align-items: center;
 
   gap: 12px;
 
   color: white;
-
   text-decoration: none;
 
   flex-shrink: 0;
 }
-
 
 .logo {
   width: 45px;
@@ -119,28 +101,19 @@ a {
   object-fit: contain;
 }
 
-
 .logo-nome {
   font-size: 15px;
-
   font-weight: bold;
 
   letter-spacing: 1.5px;
 }
 
-
-/* =========================================================
-   MENU
-========================================================= */
-
 .menu {
   display: flex;
-
   align-items: center;
 
   gap: 35px;
 }
-
 
 .menu a {
   position: relative;
@@ -150,17 +123,14 @@ a {
   text-decoration: none;
 
   font-size: 14px;
-
   font-weight: 600;
 
   transition: 0.25s ease;
 }
 
-
 .menu a:hover {
   color: var(--verde-claro);
 }
-
 
 .menu a::after {
   content: '';
@@ -168,11 +138,9 @@ a {
   position: absolute;
 
   left: 0;
-
   bottom: -8px;
 
   width: 0;
-
   height: 2px;
 
   background: var(--verde);
@@ -180,21 +148,13 @@ a {
   transition: width 0.25s ease;
 }
 
-
 .menu a:hover::after {
   width: 100%;
 }
 
-
-/* =========================================================
-   BOTÃO ENTRAR
-========================================================= */
-
 .header-button {
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
 
   padding: 10px 22px;
@@ -202,13 +162,11 @@ a {
   border-radius: 6px;
 
   background: var(--verde);
-
   color: #173500;
 
   text-decoration: none;
 
   font-size: 14px;
-
   font-weight: bold;
 
   white-space: nowrap;
@@ -216,23 +174,15 @@ a {
   transition: 0.25s ease;
 }
 
-
 .header-button:hover {
   transform: translateY(-2px);
 
   background: var(--verde-claro);
 }
 
-
-/* =========================================================
-   USUÁRIO
-========================================================= */
-
 .usuario-header {
   display: flex;
-
   flex-direction: column;
-
   align-items: flex-end;
 
   gap: 3px;
@@ -240,33 +190,28 @@ a {
   min-width: 0;
 }
 
-
 .usuario-ola {
   color: white;
 
   font-size: 14px;
-
   font-weight: bold;
 }
 
-
 .usuario-email {
+  max-width: 180px;
+
   color: rgba(255, 255, 255, 0.65);
 
   font-size: 11px;
 
-  max-width: 180px;
-
   overflow: hidden;
-
   text-overflow: ellipsis;
-
   white-space: nowrap;
 }
 
 
 /* =========================================================
-   HERO
+   HERO PRINCIPAL
 ========================================================= */
 
 .hero {
@@ -287,12 +232,10 @@ a {
   color: white;
 }
 
-
 .hero::before {
   content: '';
 
   position: absolute;
-
   inset: 0;
 
   background:
@@ -305,10 +248,37 @@ a {
   pointer-events: none;
 }
 
+.hero-fundo {
+  position: absolute;
+  inset: 0;
 
-/* =========================================================
-   CONTAINER HERO
-========================================================= */
+  width: 100%;
+  height: 100%;
+
+  background-image: url('../../assets/fundo.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 35, 45, 0.808) 0%,
+      rgba(0, 45, 55, 0.651) 45%,
+      rgba(0, 30, 28, 0.61) 100%
+    );
+
+  z-index: 1;
+
+  pointer-events: none;
+}
 
 .hero-container {
   position: relative;
@@ -335,64 +305,14 @@ a {
   gap: 50px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.hero-fundo {
-  position: absolute;
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  background-image: url('../../assets/fundo.jpg');
-
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-
-  z-index: 0;
-}
-
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(0, 35, 45, 0.808) 0%,
-      rgba(0, 45, 55, 0.651) 45%,
-      rgba(0, 30, 28, 0.61) 100%
-    );
-
-  z-index: 1;
-
-  pointer-events: none;
-}
-/* =========================================================
-   TEXTO HERO
-========================================================= */
-
 .hero-content {
   max-width: 650px;
-
   min-width: 0;
 }
 
+.hero-titulo {
+  width: 100%;
+}
 
 .hero-subtitulo {
   display: inline-block;
@@ -402,12 +322,10 @@ a {
   color: var(--verde-claro);
 
   font-size: 17px;
-
   font-weight: bold;
 
   letter-spacing: 0.5px;
 }
-
 
 .hero h1 {
   margin: 0 0 25px;
@@ -421,13 +339,11 @@ a {
   font-weight: 800;
 }
 
-
 .hero h1 strong {
   display: block;
 
   color: #ffffff;
 }
-
 
 .hero-descricao {
   max-width: 600px;
@@ -441,14 +357,8 @@ a {
   line-height: 1.7;
 }
 
-
-/* =========================================================
-   BOTÕES HERO
-========================================================= */
-
 .hero-botoes {
   display: flex;
-
   align-items: center;
 
   gap: 20px;
@@ -456,20 +366,16 @@ a {
   flex-wrap: wrap;
 }
 
-
 .botao-principal,
 .botao-secundario {
   min-height: 50px;
 
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
 
   text-align: center;
 }
-
 
 .botao-principal {
   padding: 17px 30px;
@@ -477,18 +383,15 @@ a {
   border-radius: 6px;
 
   background: var(--verde);
-
   color: #1b2e36;
 
   text-decoration: none;
 
   font-size: 14px;
-
   font-weight: bold;
 
   transition: 0.25s ease;
 }
-
 
 .botao-principal:hover {
   transform: translateY(-3px);
@@ -498,7 +401,6 @@ a {
   box-shadow:
     0 10px 30px rgba(0, 0, 0, 0.2);
 }
-
 
 .botao-secundario {
   padding: 16px 28px;
@@ -512,12 +414,10 @@ a {
   text-decoration: none;
 
   font-size: 14px;
-
   font-weight: bold;
 
   transition: 0.25s ease;
 }
-
 
 .botao-secundario:hover {
   background: rgba(255, 255, 255, 0.12);
@@ -527,7 +427,7 @@ a {
 
 
 /* =========================================================
-   IMAGEM HERO
+   IMAGEM DO HERO
 ========================================================= */
 
 .hero-imagem-container {
@@ -536,12 +436,9 @@ a {
   min-height: 520px;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 }
-
 
 .imagem-moldura {
   position: relative;
@@ -567,7 +464,6 @@ a {
   overflow: hidden;
 }
 
-
 .hero-imagem {
   width: 100%;
   height: 100%;
@@ -582,14 +478,8 @@ a {
 }
 
 
-
-
-
-
-
-
 /* =========================================================
-   ONDAS
+   ONDAS DO HERO
 ========================================================= */
 
 .ondas {
@@ -606,7 +496,6 @@ a {
   pointer-events: none;
 }
 
-
 .onda {
   position: absolute;
 
@@ -617,30 +506,25 @@ a {
   border-radius: 50% 50% 0 0;
 }
 
-
 .onda-1 {
   bottom: -130px;
 
   height: 270px;
 
-  background:
-    rgba(100, 197, 235, 0.45);
+  background: rgba(100, 197, 235, 0.45);
 
   transform: rotate(-4deg);
 }
-
 
 .onda-2 {
   bottom: -155px;
 
   height: 260px;
 
-  background:
-    rgba(7, 56, 88, 0.45);
+  background: rgba(7, 56, 88, 0.45);
 
   transform: rotate(3deg);
 }
-
 
 .onda-3 {
   bottom: -185px;
@@ -667,7 +551,6 @@ a {
   text-align: center;
 }
 
-
 .sobre-icon {
   display: block;
 
@@ -676,7 +559,6 @@ a {
   font-size: 40px;
 }
 
-
 .sobre h2 {
   margin: 0 0 20px;
 
@@ -684,7 +566,6 @@ a {
 
   color: var(--azul-escuro);
 }
-
 
 .sobre p {
   max-width: 650px;
@@ -711,11 +592,8 @@ a {
   padding: 100px 30px;
 
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
-
   justify-content: center;
 
   gap: 50px;
@@ -735,7 +613,6 @@ a {
   border-top: 1px solid #e5eee9;
 }
 
-
 .section h2 {
   margin: 0;
 
@@ -749,7 +626,6 @@ a {
 
 .noticias {
   width: 100%;
-
   max-width: 1200px;
 
   margin: 50px auto;
@@ -761,7 +637,6 @@ a {
 
   gap: 40px;
 }
-
 
 .card-noticia {
   min-width: 0;
@@ -778,14 +653,12 @@ a {
   transition: 0.3s;
 }
 
-
 .card-noticia:hover {
   transform: translateY(-8px);
 
   box-shadow:
     0 10px 30px rgba(0, 0, 0, 0.25);
 }
-
 
 .card-noticia img {
   width: 100%;
@@ -796,11 +669,9 @@ a {
   display: block;
 }
 
-
 .conteudo-noticia {
   padding: 25px;
 }
-
 
 .conteudo-noticia h2 {
   margin-top: 0;
@@ -812,7 +683,6 @@ a {
   color: #09465e;
 }
 
-
 .conteudo-noticia p {
   font-size: 17px;
 
@@ -820,7 +690,6 @@ a {
 
   color: #444;
 }
-
 
 .conteudo-noticia a {
   display: inline-block;
@@ -834,7 +703,6 @@ a {
   text-decoration: underline;
 }
 
-
 .conteudo-noticia a:hover {
   color: #003b78;
 }
@@ -846,7 +714,6 @@ a {
 
 .card {
   width: 100%;
-
   max-width: 1200px;
 
   margin: 60px auto;
@@ -870,17 +737,14 @@ a {
   overflow: hidden;
 }
 
-
 .card-imagem {
   width: 100%;
-
   height: 600px;
 
   overflow: hidden;
 
   border-radius: 20px;
 }
-
 
 .card-imagem img {
   width: 100%;
@@ -891,13 +755,11 @@ a {
   display: block;
 }
 
-
 .card-conteudo {
   min-width: 0;
 
   color: #064555d0;
 }
-
 
 .card-conteudo h1 {
   margin: 0 0 30px;
@@ -911,7 +773,6 @@ a {
   line-height: 1.15;
 }
 
-
 .card-conteudo h3 {
   color: #28545a;
 
@@ -921,7 +782,6 @@ a {
 
   font-weight: normal;
 }
-
 
 .card-conteudo p {
   margin: 0 0 20px;
@@ -943,9 +803,7 @@ a {
   height: 50px;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   border-radius: 50%;
@@ -956,7 +814,6 @@ a {
     background 0.3s ease,
     transform 0.3s ease;
 }
-
 
 .instagram-button img {
   width: 28px;
@@ -969,13 +826,11 @@ a {
     transform 0.3s ease;
 }
 
-
 .instagram-button:hover {
   background: #0a6e86;
 
   transform: translateY(-4px);
 }
-
 
 .instagram-button:hover img {
   filter: brightness(0) invert(1);
@@ -986,7 +841,6 @@ a {
 
 /* =========================================================
    BOTÃO VOLTAR AO TOPO
-   LADO ESQUERDO
 ========================================================= */
 
 .voltar-topo,
@@ -995,7 +849,6 @@ a {
 
   left: 25px;
   right: auto;
-
   bottom: 25px;
 
   width: 55px;
@@ -1016,9 +869,7 @@ a {
   font-weight: bold;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   cursor: pointer;
@@ -1026,7 +877,6 @@ a {
   z-index: 9500;
 
   opacity: 0;
-
   visibility: hidden;
 
   transform: translateY(20px);
@@ -1041,9 +891,6 @@ a {
     background 0.3s ease;
 }
 
-
-/* BOTÃO VISÍVEL */
-
 .voltar-topo.visivel,
 .botao-topo.visivel {
   opacity: 1;
@@ -1053,27 +900,12 @@ a {
   transform: translateY(0);
 }
 
-
-/* HOVER */
-
 .voltar-topo:hover,
 .botao-topo:hover {
   background: #0395a8;
 
   transform: translateY(-5px);
 }
-
-
-/* =========================================================
-   ESPAÇO RESERVADO PARA O GARRINHA
-========================================================= */
-
-/*
-   O Garrinha ficará no lado direito.
-
-   O CSS abaixo garante que o botão de voltar
-   ao topo fique separado dele.
-*/
 
 
 /* =========================================================
@@ -1092,10 +924,8 @@ a {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
 .temas-titulo {
   width: 100%;
-
   max-width: 800px;
 
   margin: 0 auto 55px;
@@ -1104,7 +934,6 @@ a {
 
   text-align: center;
 }
-
 
 .temas-titulo h2 {
   margin: 0 0 15px;
@@ -1116,7 +945,6 @@ a {
   font-weight: 700;
 }
 
-
 .temas-titulo p {
   margin: 0;
 
@@ -1127,14 +955,8 @@ a {
   line-height: 1.6;
 }
 
-
-/* =========================================================
-   ÁREA DOS CARDS
-========================================================= */
-
 .cards-area {
   width: 1200px;
-
   max-width: 90%;
 
   height: 430px;
@@ -1146,7 +968,6 @@ a {
   overflow: hidden;
 }
 
-
 .cards-loop {
   width: 100%;
   height: 100%;
@@ -1154,14 +975,11 @@ a {
   overflow: hidden;
 
   display: flex;
-
   align-items: center;
 }
 
-
 .cards-track {
   display: flex;
-
   align-items: center;
 
   gap: 25px;
@@ -1176,21 +994,13 @@ a {
   will-change: transform;
 }
 
-
 .cards-area:hover .cards-track {
   animation-play-state: paused;
 }
 
-
-/* =========================================================
-   CARD TEMA
-========================================================= */
-
 .tema-card {
   width: 330px;
-
   min-width: 330px;
-
   height: 380px;
 
   flex-shrink: 0;
@@ -1209,7 +1019,6 @@ a {
     box-shadow 0.3s ease;
 }
 
-
 .tema-card:hover {
   transform: translateY(-10px);
 
@@ -1217,21 +1026,14 @@ a {
     0 25px 55px rgba(0, 0, 0, 0.45);
 }
 
-
-/* =========================================================
-   IMAGEM TEMA
-========================================================= */
-
 .tema-imagem {
   width: 100%;
-
   height: 190px;
 
   overflow: hidden;
 
   background: #dfe8e3;
 }
-
 
 .tema-imagem img {
   width: 100%;
@@ -1241,24 +1043,16 @@ a {
 
   object-fit: cover;
 
-  transition:
-    transform 0.5s ease;
+  transition: transform 0.5s ease;
 }
-
 
 .tema-card:hover .tema-imagem img {
   transform: scale(1.08);
 }
 
-
-/* =========================================================
-   CONTEÚDO TEMA
-========================================================= */
-
 .tema-conteudo {
   padding: 22px;
 }
-
 
 .tema-conteudo h3 {
   margin: 0 0 10px;
@@ -1272,7 +1066,6 @@ a {
   line-height: 1.3;
 }
 
-
 .tema-conteudo p {
   margin: 0 0 18px;
 
@@ -1283,16 +1076,9 @@ a {
   line-height: 1.5;
 }
 
-
-/* =========================================================
-   BOTÃO SABER MAIS
-========================================================= */
-
 .tema-botao {
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
 
   padding: 10px 20px;
@@ -1314,20 +1100,13 @@ a {
     transform 0.25s ease;
 }
 
-
 .tema-botao:hover {
   background: #2f5d6b;
 
   transform: translateX(5px);
 }
 
-
-/* =========================================================
-   LOOP
-========================================================= */
-
 @keyframes loop-mangue {
-
   0% {
     transform: translateX(0);
   }
@@ -1335,12 +1114,11 @@ a {
   100% {
     transform: translateX(-50%);
   }
-
 }
 
 
 /* =========================================================
-   CONTADOR DE IMPACTO
+   IMPACTO
 ========================================================= */
 
 .impacto {
@@ -1355,15 +1133,12 @@ a {
   color: white;
 }
 
-
 .impacto-container {
   width: 100%;
-
   max-width: 1200px;
 
   margin: 0 auto;
 }
-
 
 .impacto-titulo {
   text-align: center;
@@ -1372,7 +1147,6 @@ a {
 
   margin: 0 auto 60px;
 }
-
 
 .impacto-subtitulo {
   display: inline-block;
@@ -1388,7 +1162,6 @@ a {
   letter-spacing: 2px;
 }
 
-
 .impacto-titulo h2 {
   margin: 0 0 18px;
 
@@ -1398,7 +1171,6 @@ a {
 
   font-weight: 700;
 }
-
 
 .impacto-titulo p {
   margin: 0;
@@ -1410,11 +1182,6 @@ a {
   line-height: 1.7;
 }
 
-
-/* =========================================================
-   CARDS IMPACTO
-========================================================= */
-
 .impacto-cards {
   display: grid;
 
@@ -1423,7 +1190,6 @@ a {
 
   gap: 20px;
 }
-
 
 .impacto-card {
   padding: 35px 25px;
@@ -1441,14 +1207,12 @@ a {
     box-shadow 0.3s ease;
 }
 
-
 .impacto-card:hover {
   transform: translateY(-10px);
 
   box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.25);
 }
-
 
 .impacto-icone {
   width: 60px;
@@ -1457,9 +1221,7 @@ a {
   margin: 0 auto 20px;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   border-radius: 50%;
@@ -1468,7 +1230,6 @@ a {
 
   font-size: 28px;
 }
-
 
 .impacto-numero {
   color: #398383;
@@ -1482,7 +1243,6 @@ a {
   margin-bottom: 12px;
 }
 
-
 .impacto-card h3 {
   margin: 0 0 12px;
 
@@ -1490,7 +1250,6 @@ a {
 
   font-size: 20px;
 }
-
 
 .impacto-card p {
   margin: 0;
@@ -1513,20 +1272,16 @@ a {
   padding: 90px 20px;
 
   display: flex;
-
   justify-content: center;
-
   align-items: center;
 
   background: #050a0e;
 }
 
-
 .video-container {
   position: relative;
 
   width: 100%;
-
   max-width: 1050px;
 
   padding: 15px;
@@ -1543,9 +1298,8 @@ a {
     box-shadow 0.3s ease;
 }
 
-
 .video-container::before {
-  content: "";
+  content: '';
 
   position: absolute;
 
@@ -1559,7 +1313,6 @@ a {
 
   pointer-events: none;
 }
-
 
 .video {
   position: relative;
@@ -1581,7 +1334,6 @@ a {
   background: #000;
 }
 
-
 .video-container:hover {
   transform: translateY(-6px);
 
@@ -1596,7 +1348,6 @@ a {
 
 .quiz-convite {
   width: 100%;
-
   max-width: 1000px;
 
   margin: 80px auto;
@@ -1615,7 +1366,6 @@ a {
     0 20px 50px rgba(0, 0, 0, 0.25);
 }
 
-
 .quiz-convite span {
   color: #31728c;
 
@@ -1626,13 +1376,11 @@ a {
   letter-spacing: 2px;
 }
 
-
 .quiz-convite h2 {
   margin: 12px 0;
 
   font-size: 36px;
 }
-
 
 .quiz-convite p {
   max-width: 650px;
@@ -1644,12 +1392,9 @@ a {
   line-height: 1.7;
 }
 
-
 .btn-quiz {
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
 
   padding: 15px 30px;
@@ -1666,7 +1411,6 @@ a {
 
   transition: 0.3s;
 }
-
 
 .btn-quiz:hover {
   background: #245e6d;
@@ -1685,9 +1429,7 @@ a {
   min-height: 420px;
 
   display: flex;
-
   justify-content: center;
-
   align-items: center;
 
   text-align: center;
@@ -1695,19 +1437,14 @@ a {
   padding: 80px 20px;
 }
 
-
 .encerramento-conteudo {
   width: 100%;
-
   max-width: 700px;
 
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
 }
-
 
 .encerramento h2 {
   margin: 0 0 18px;
@@ -1721,7 +1458,6 @@ a {
   line-height: 1.3;
 }
 
-
 .encerramento p {
   margin: 0;
 
@@ -1732,10 +1468,8 @@ a {
   line-height: 1.6;
 }
 
-
 .logo-final {
   width: 1000px;
-
   max-width: 60%;
 
   height: auto;
@@ -1744,15 +1478,12 @@ a {
 
   object-fit: contain;
 
-  transition:
-    transform 0.4s ease;
+  transition: transform 0.4s ease;
 }
-
 
 .logo-final:hover {
   transform: scale(1.06);
 }
-
 
 .mensagem-final {
   margin-bottom: 25px !important;
@@ -1761,7 +1492,6 @@ a {
 
   font-weight: 600;
 }
-
 
 .botao-inicio {
   border: none;
@@ -1786,7 +1516,6 @@ a {
     color 0.3s ease;
 }
 
-
 .botao-inicio:hover {
   transform: translateY(-4px);
 
@@ -1802,7 +1531,6 @@ a {
 
 .missao-visao-valores {
   width: 100%;
-
   max-width: 1300px;
 
   margin: 20px auto 60px;
@@ -1821,7 +1549,6 @@ a {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
 .bloco-mvv {
   width: 100%;
 
@@ -1831,7 +1558,6 @@ a {
 
   text-align: center;
 }
-
 
 .bloco-mvv h1 {
   margin: 0 0 15px;
@@ -1845,7 +1571,6 @@ a {
   font-weight: 700;
 }
 
-
 .bloco-mvv h3 {
   margin: 0;
 
@@ -1858,7 +1583,6 @@ a {
   font-weight: 600;
 
   overflow-wrap: break-word;
-
   word-wrap: break-word;
 }
 
@@ -1885,194 +1609,20 @@ a {
   padding: 5px;
 }
 
-
 .menu-mobile {
   display: none;
 }
 
 
 /* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 1100px) {
-
-  .header-container {
-    padding: 0 25px;
-  }
-
-
-  .menu {
-    gap: 22px;
-  }
-
-
-  .hero-container {
-    gap: 30px;
-  }
-
-
-  .imagem-moldura {
-    width: 320px;
-    height: 420px;
-  }
-
-
-  .card {
-    grid-template-columns:
-      minmax(250px, 330px)
-      minmax(0, 1fr);
-
-    padding: 35px;
-
-    gap: 35px;
-  }
-
-
-  .card-imagem {
-    height: 520px;
-  }
-
-
-  .noticias {
-    gap: 25px;
-  }
-
-}
-
-
-/* =========================================================
-   TABLET PEQUENO
-========================================================= */
-
-@media (max-width: 900px) {
-
-  .header-container {
-    height: 70px;
-
-    padding: 0 20px;
-  }
-
-
-  .menu {
-    gap: 15px;
-  }
-
-
-  .menu a {
-    font-size: 13px;
-  }
-
-
-  .header-button {
-    padding: 9px 15px;
-
-    font-size: 13px;
-  }
-
-
-  .hero {
-    min-height: auto;
-  }
-
-
-  .hero-container {
-    min-height: auto;
-
-    grid-template-columns: 1fr;
-
-    text-align: center;
-
-    padding:
-      120px
-      30px
-      180px;
-
-    gap: 30px;
-  }
-
-
-  .hero-content {
-    margin: 0 auto;
-  }
-
-
-  .hero-descricao {
-    margin-left: auto;
-
-    margin-right: auto;
-  }
-
-
-  .hero-botoes {
-    justify-content: center;
-  }
-
-
-  .hero-imagem-container {
-    min-height: 450px;
-  }
-
-
-  .imagem-moldura {
-    width: 300px;
-    height: 390px;
-  }
-
-
-  .noticias {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
-
-
-  .card {
-    grid-template-columns: 1fr;
-
-    max-width: 700px;
-  }
-
-
-  .card-imagem {
-    height: 400px;
-  }
-
-
-  .card-conteudo h1 {
-    font-size: 34px;
-  }
-
-
-  .impacto-cards {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
-
-
-  .missao-visao-valores {
-    grid-template-columns:
-      repeat(2, 1fr);
-
-    gap: 40px;
-
-    padding: 30px 25px;
-  }
-
-
-  .bloco-mvv h1 {
-    font-size: 34px;
-  }
-
-}
-
-/* ========================================
    BOTÃO VIDA NO MANGUEZAL
-======================================== */
+========================================================= */
 
 .botao-vida-manguezal {
   display: flex;
   align-items: center;
   justify-content: center;
+
   gap: 10px;
 
   width: fit-content;
@@ -2082,31 +1632,30 @@ a {
   padding: 14px 24px;
 
   background: #23537a;
+
   color: #ffffff;
 
   border: none;
+
   border-radius: 30px;
 
   text-decoration: none;
 
   font-family: Arial, sans-serif;
+
   font-size: 15px;
+
   font-weight: bold;
 
-  box-shadow: 0 8px 20px rgba(35, 122, 87, 0.25);
+  box-shadow:
+    0 8px 20px rgba(35, 122, 87, 0.25);
 
   transition: all 0.3s ease;
 }
 
-
-/* Ícone */
-
 .botao-vida-manguezal span:first-child {
   font-size: 18px;
 }
-
-
-/* Seta */
 
 .botao-vida-manguezal .seta {
   font-size: 18px;
@@ -2114,31 +1663,27 @@ a {
   transition: transform 0.3s ease;
 }
 
-
-/* EFEITO AO PASSAR O MOUSE */
-
 .botao-vida-manguezal:hover {
   background: #3f8aa8;
 
   transform: translateY(-3px);
 
-  box-shadow: 0 12px 25px rgba(35, 102, 122, 0.35);
+  box-shadow:
+    0 12px 25px rgba(35, 102, 122, 0.35);
 }
-
-
-/* Movimento da seta */
 
 .botao-vida-manguezal:hover .seta {
   transform: translateX(4px);
 }
 
 
+/* =========================================================
+   BOTÃO GALERIA
+========================================================= */
+
 .botao-galeria {
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   gap: 10px;
@@ -2169,46 +1714,31 @@ a {
   transition: 0.3s ease;
 }
 
-
 .botao-galeria:hover {
-
   background: #3f8aa8;
 
   transform: translateY(-3px);
 
   box-shadow:
     0 12px 28px rgba(35, 97, 122, 0.35);
-
 }
 
 
-
-
-/* ========================================
+/* =========================================================
    BOTÕES DE ÁUDIO
-======================================== */
+========================================================= */
 
 .texto-audio {
-
   display: flex;
-
   align-items: center;
 
   gap: 12px;
 
   margin: 20px 0 25px;
-
 }
 
-
-/* ========================================
-   BOTÃO OUVIR
-======================================== */
-
 .botao-audio {
-
   display: flex;
-
   align-items: center;
 
   gap: 9px;
@@ -2235,30 +1765,19 @@ a {
     0 6px 18px rgba(35, 112, 122, 0.25);
 
   transition: 0.3s ease;
-
 }
 
-
 .botao-audio:hover {
-
   transform: translateY(-3px);
 
   background: #3f82a8;
 
   box-shadow:
     0 10px 25px rgba(35, 105, 122, 0.3);
-
 }
 
-
-/* ========================================
-   BOTÃO PAUSAR
-======================================== */
-
 .botao-pause {
-
   display: flex;
-
   align-items: center;
 
   gap: 8px;
@@ -2282,42 +1801,26 @@ a {
   cursor: pointer;
 
   transition: 0.3s ease;
-
 }
 
-
 .botao-pause:hover:not(:disabled) {
-
   transform: translateY(-3px);
 
   background: #e9f5ef;
-
 }
 
-
 .botao-pause:disabled {
-
   opacity: 0.45;
 
   cursor: not-allowed;
-
 }
 
-
-/* ========================================
-   ÍCONE PAUSE
-======================================== */
-
 .icone-pause {
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   width: 25px;
-
   height: 25px;
 
   border-radius: 50%;
@@ -2329,118 +1832,81 @@ a {
   font-size: 11px;
 
   transition: 0.3s ease;
-
 }
-
 
 .botao-pause.pausado .icone-pause {
-
   transform: scale(1.12);
-
 }
 
 
-/* ========================================
-   MOBILE
-======================================== */
-
-@media (max-width: 600px) {
-
-  .texto-audio {
-
-    flex-wrap: wrap;
-
-  }
-
-  .botao-audio,
-  .botao-pause {
-
-    font-size: 12px;
-
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
+/* =========================================================
+   SEÇÃO INTERATIVA DO MANGUEZAL
+========================================================= */
 
 .manguezal-interativo {
   padding: 100px 5%;
+
   background: #ffffff;
+
   text-align: center;
 }
 
-
 .manguezal-titulo {
   max-width: 800px;
+
   margin: 0 auto 50px;
 }
 
-
 .manguezal-titulo span {
   color: #087f8c;
+
   font-size: 14px;
+
   font-weight: 700;
+
   letter-spacing: 2px;
 }
 
-
 .manguezal-titulo h2 {
   color: #073b4c;
+
   font-size: 42px;
+
   margin: 12px 0;
 }
 
-
 .manguezal-titulo p {
   color: #52666d;
+
   font-size: 17px;
 }
 
-
-/* IMAGEM */
-
 .imagem-interativa {
   position: relative;
+
   width: min(1200px, 100%);
+
   margin: auto;
 }
+
 .manguezal-imagem {
   width: 100%;
   max-width: 1400px;
+
   height: auto;
+
   display: block;
+
   margin: 0 auto;
 }
 
 .imagem-manguezal {
   width: 100%;
+
   height: auto;
+
   display: block;
 }
-
-
-/* PONTOS */
 
 .ponto {
   position: absolute;
@@ -2461,13 +1927,12 @@ a {
   font-size: 20px;
 
   box-shadow:
-    0 5px 15px rgba(0, 0, 0, .25);
+    0 5px 15px rgba(0, 0, 0, 0.25);
 
-  transition: .25s;
+  transition: 0.25s;
 
   z-index: 5;
 }
-
 
 .ponto:hover {
   transform:
@@ -2477,11 +1942,7 @@ a {
   background: #0b6570;
 }
 
-
-/* EFEITO PULSANDO */
-
 .ponto::after {
-
   content: '';
 
   position: absolute;
@@ -2493,39 +1954,32 @@ a {
   border: 2px solid #087f8c;
 
   animation: pulsar 1.8s infinite;
-
 }
 
-
 @keyframes pulsar {
-
   0% {
-    transform: scale(.8);
-    opacity: .8;
+    transform: scale(0.8);
+
+    opacity: 0.8;
   }
 
   100% {
     transform: scale(1.5);
+
     opacity: 0;
   }
-
 }
 
-
-/* OVERLAY */
-
 .info-overlay {
-
   position: fixed;
 
   inset: 0;
 
-  background: rgba(2, 35, 43, .72);
+  background: rgba(2, 35, 43, 0.72);
 
   display: flex;
 
   justify-content: center;
-
   align-items: center;
 
   padding: 20px;
@@ -2533,11 +1987,7 @@ a {
   z-index: 999;
 }
 
-
-/* CARD */
-
 .info-card {
-
   position: relative;
 
   width: min(500px, 100%);
@@ -2551,29 +2001,30 @@ a {
   text-align: left;
 
   box-shadow:
-    0 20px 60px rgba(0, 0, 0, .3);
+    0 20px 60px rgba(0, 0, 0, 0.3);
 
-  animation: aparecer .3s ease;
+  animation: aparecer 0.3s ease;
 }
 
-
 @keyframes aparecer {
-
   from {
     opacity: 0;
-    transform: translateY(20px) scale(.95);
+
+    transform:
+      translateY(20px)
+      scale(0.95);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
-  }
 
+    transform:
+      translateY(0)
+      scale(1);
+  }
 }
 
-
 .fechar-info {
-
   position: absolute;
 
   top: 15px;
@@ -2590,17 +2041,13 @@ a {
   color: #073b4c;
 }
 
-
 .info-icone {
-
   font-size: 50px;
 
   margin-bottom: 10px;
 }
 
-
 .info-card h3 {
-
   font-size: 28px;
 
   color: #073b4c;
@@ -2608,9 +2055,7 @@ a {
   margin-bottom: 15px;
 }
 
-
 .info-card p {
-
   color: #53666c;
 
   line-height: 1.7;
@@ -2619,84 +2064,439 @@ a {
 }
 
 
+/* =========================================================
+   BIBLIOTECA
+========================================================= */
 
+.biblioteca {
+  width: 100%;
 
+  padding: 100px 7%;
 
+  box-sizing: border-box;
 
+  background: #181f24;
+}
 
+.biblioteca-header {
+  max-width: 750px;
 
+  margin: 0 auto 55px;
 
+  text-align: center;
+}
 
+.biblioteca-label {
+  display: inline-block;
 
+  margin-bottom: 12px;
 
+  font-size: 13px;
 
+  font-weight: 700;
 
+  letter-spacing: 2px;
 
+  color: #ffffff;
+}
 
+.biblioteca-header h2 {
+  margin: 0 0 15px;
 
+  font-size: clamp(32px, 4vw, 48px);
 
+  font-weight: 800;
 
+  color: #ffffff;
+}
 
+.biblioteca-header p {
+  margin: 0;
 
+  font-size: 17px;
 
+  line-height: 1.7;
 
+  color: #ffffff;
+}
 
+.biblioteca-grid {
+  width: 100%;
+  max-width: 1250px;
 
+  margin: 0 auto;
 
+  display: grid;
 
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
 
+  gap: 35px;
+}
 
+.livro-card {
+  position: relative;
 
+  overflow: hidden;
 
+  background: #ffffff;
 
+  border:
+    1px solid rgba(18, 38, 60, 0.08);
 
+  border-radius: 22px;
 
+  box-shadow:
+    0 10px 30px rgba(20, 40, 50, 0.08);
 
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 
+  display: flex;
 
+  flex-direction: column;
+}
 
+.livro-card:hover {
+  transform: translateY(-10px);
 
+  box-shadow:
+    0 20px 45px rgba(20, 38, 50, 0.16);
+}
 
+.livro-capa {
+  position: relative;
 
+  width: 100%;
+  height: 390px;
 
+  overflow: hidden;
 
- 
+  background: #dfe5e9;
+}
 
+.livro-capa img {
+  width: 100%;
+  height: 100%;
 
+  display: block;
 
+  object-fit: cover;
 
+  transition: transform 0.5s ease;
+}
 
+.livro-card:hover .livro-capa img {
+  transform: scale(1.05);
+}
 
+.livro-capa::after {
+  content: '';
 
+  position: absolute;
 
+  left: 0;
+  right: 0;
+  bottom: 0;
 
+  height: 100px;
 
+  pointer-events: none;
 
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.35),
+      transparent
+    );
+}
 
+.livro-info {
+  padding: 25px 25px 28px;
 
+  display: flex;
 
+  flex-direction: column;
 
+  flex: 1;
+}
 
+.livro-info h3 {
+  margin: 0 0 10px;
 
+  font-size: 22px;
 
+  font-weight: 750;
 
+  color: #0c1f27;
+}
 
+.livro-info p {
+  margin: 0 0 22px;
 
+  font-size: 15px;
 
+  line-height: 1.6;
 
+  color: #202427;
 
+  flex: 1;
+}
 
+.livro-botao {
+  display: inline-flex;
 
+  align-items: center;
+  justify-content: center;
 
+  width: 100%;
 
+  min-height: 48px;
 
+  box-sizing: border-box;
 
+  border-radius: 12px;
 
+  background: #166280;
 
+  color: #ffffff;
 
+  text-decoration: none;
 
+  font-size: 15px;
 
+  font-weight: 700;
 
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.livro-botao:hover {
+  background: #0f5567;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(22, 107, 128, 0.25);
+}
+
+.livro-botao:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .header-container {
+    padding: 0 25px;
+  }
+
+  .menu {
+    gap: 22px;
+  }
+
+  .hero-container {
+    gap: 30px;
+  }
+
+  .imagem-moldura {
+    width: 320px;
+    height: 420px;
+  }
+
+  .card {
+    grid-template-columns:
+      minmax(250px, 330px)
+      minmax(0, 1fr);
+
+    padding: 35px;
+
+    gap: 35px;
+  }
+
+  .card-imagem {
+    height: 520px;
+  }
+
+  .noticias {
+    gap: 25px;
+  }
+}
+
+
+/* =========================================================
+   TABLET PEQUENO
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .biblioteca {
+    padding: 80px 5%;
+  }
+
+  .biblioteca-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+  }
+
+  .livro-capa {
+    height: 350px;
+  }
+}
+
+
+@media (max-width: 900px) {
+
+  .header-container {
+    height: 70px;
+
+    padding: 0 20px;
+  }
+
+  .menu {
+    gap: 15px;
+  }
+
+  .menu a {
+    font-size: 13px;
+  }
+
+  .header-button {
+    padding: 9px 15px;
+
+    font-size: 13px;
+  }
+
+
+  /* HERO TABLET */
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-container {
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+
+    text-align: left;
+
+    padding: 120px 30px 180px;
+
+    gap: 30px;
+  }
+
+  .hero-content {
+    margin: 0 auto;
+
+    width: 100%;
+  }
+
+  .hero-descricao {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .hero-botoes {
+    justify-content: flex-start;
+  }
+
+  .hero-imagem-container {
+    min-height: 450px;
+  }
+
+  .imagem-moldura {
+    width: 300px;
+    height: 390px;
+  }
+
+
+  /* OUTRAS SEÇÕES */
+
+  .noticias {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .card {
+    grid-template-columns: 1fr;
+
+    max-width: 700px;
+  }
+
+  .card-imagem {
+    height: 400px;
+  }
+
+  .card-conteudo h1 {
+    font-size: 34px;
+  }
+
+  .impacto-cards {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .missao-visao-valores {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 40px;
+
+    padding: 30px 25px;
+  }
+
+  .bloco-mvv h1 {
+    font-size: 34px;
+  }
+}
+
+
+/* =========================================================
+   BIBLIOTECA — CELULAR MÉDIO
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .biblioteca {
+    padding: 65px 20px;
+  }
+
+  .biblioteca-header {
+    margin-bottom: 40px;
+  }
+
+  .biblioteca-header h2 {
+    font-size: 32px;
+  }
+
+  .biblioteca-header p {
+    font-size: 15px;
+  }
+
+  .biblioteca-grid {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .livro-capa {
+    height: 400px;
+  }
+
+  .livro-info {
+    padding: 22px;
+  }
+}
 
 
 /* =========================================================
@@ -2705,9 +2505,9 @@ a {
 
 @media (max-width: 600px) {
 
-  /* =====================================================
+  /* =======================================================
      HEADER
-  ===================================================== */
+  ======================================================= */
 
   .header-container {
     height: 65px;
@@ -2719,28 +2519,23 @@ a {
     position: relative;
   }
 
-
   .logo {
     width: 38px;
     height: 38px;
   }
 
-
   .logo-nome {
     display: none;
   }
-
 
   .menu {
     display: none;
   }
 
-
   .menu-mobile-button {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     width: 45px;
@@ -2751,29 +2546,24 @@ a {
     order: 2;
   }
 
-
   .usuario-header {
     order: 3;
 
     margin-left: auto;
-
     margin-right: 5px;
 
     align-items: flex-end;
   }
 
-
   .usuario-ola {
     font-size: 12px;
   }
-
 
   .usuario-email {
     max-width: 125px;
 
     font-size: 9px;
   }
-
 
   .header-button {
     padding: 8px 13px;
@@ -2782,15 +2572,14 @@ a {
   }
 
 
-  /* =====================================================
-     MENU MOBILE
-  ===================================================== */
+  /* =======================================================
+     MENU MOBILE ABERTO
+  ======================================================= */
 
   .menu-mobile {
     position: absolute;
 
     top: 65px;
-
     left: 0;
 
     width: 100%;
@@ -2799,8 +2588,7 @@ a {
 
     flex-direction: column;
 
-    background:
-      rgba(14, 44, 59, 0.98);
+    background: rgba(14, 44, 59, 0.98);
 
     border-top:
       1px solid rgba(255, 255, 255, 0.12);
@@ -2824,7 +2612,6 @@ a {
     z-index: 999;
   }
 
-
   .menu-mobile.menu-mobile-aberto {
     transform: translateY(0);
 
@@ -2834,7 +2621,6 @@ a {
 
     pointer-events: auto;
   }
-
 
   .menu-mobile a {
     width: 100%;
@@ -2859,132 +2645,176 @@ a {
       padding-left 0.2s ease;
   }
 
-
   .menu-mobile a:hover {
-    background:
-      rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.08);
 
     padding-left: 32px;
   }
 
 
-  /* =====================================================
-     HERO
-  ===================================================== */
+  /* =======================================================
+     HERO MOBILE
+  ======================================================= */
 
   .hero {
     min-height: auto;
   }
 
-
   .hero-container {
     min-height: auto;
 
-    padding:
-      100px
-      18px
-      150px;
+    padding: 100px 18px 150px;
 
     gap: 25px;
+
+    grid-template-columns: 1fr;
+
+    text-align: left;
+  }
+
+  .hero-content {
+    width: 100%;
+
+    margin: 0;
   }
 
 
-  .hero-subtitulo {
-    margin-bottom: 14px;
+  /* =======================================================
+     TÍTULO DO HERO
+  ======================================================= */
 
-    font-size: 14px;
+  .hero-titulo {
+    width: 100%;
+
+    text-align: left;
+  }
+
+  .hero-titulo .hero-subtitulo {
+    display: block;
+
+    text-align: left;
+
+    margin-bottom: 18px;
+
+    font-size: 15px;
+  }
+
+  .hero-titulo h1 {
+    width: 100%;
+
+    margin: 0 0 25px;
+
+    text-align: left;
+
+    /*
+      Mantém o título grande como no computador,
+      mas evita que ele ultrapasse a tela.
+    */
+    font-size: clamp(40px, 11vw, 48px);
+
+    line-height: 1.05;
+
+    font-weight: 800;
+  }
+
+  .hero-titulo h1 strong {
+    display: block;
   }
 
 
-  .hero h1 {
-    margin-bottom: 20px;
-
-    font-size:
-      clamp(34px, 10vw, 42px);
-
-    line-height: 1.08;
-  }
-
+  /* =======================================================
+     DESCRIÇÃO HERO
+  ======================================================= */
 
   .hero-descricao {
+    width: 100%;
+
+    margin-left: 0;
+    margin-right: 0;
+
     margin-bottom: 25px;
 
     font-size: 15px;
 
     line-height: 1.6;
+
+    text-align: left;
   }
 
+
+  /* =======================================================
+     BOTÕES HERO
+  ======================================================= */
 
   .hero-botoes {
     width: 100%;
 
     flex-direction: column;
 
+    align-items: stretch;
+
     gap: 12px;
   }
-
 
   .botao-principal,
   .botao-secundario {
     width: 100%;
 
-    padding:
-      14px
-      20px;
+    padding: 14px 20px;
   }
 
+
+  /* =======================================================
+     IMAGEM HERO
+  ======================================================= */
 
   .hero-imagem-container {
     min-height: 330px;
+
+    width: 100%;
   }
 
-
   .imagem-moldura {
-    width:
-      min(240px, 70vw);
+    width: min(240px, 70vw);
 
-    height:
-      min(310px, 82vw);
+    height: min(310px, 82vw);
 
     border-radius: 23px;
   }
-
 
   .hero-imagem {
     border-radius: 17px;
   }
 
 
+  /* =======================================================
+     ELEMENTOS DECORATIVOS
+  ======================================================= */
+
   .bolinha-1 {
     width: 42px;
     height: 42px;
 
     right: 8px;
-
     top: 40px;
   }
-
 
   .bolinha-2 {
     width: 38px;
     height: 38px;
 
     left: 8px;
-
     bottom: 50px;
   }
-
 
   .folha {
     font-size: 34px;
   }
 
-
   .folha-1 {
     left: 5px;
     top: 40px;
   }
-
 
   .folha-2 {
     right: 5px;
@@ -2992,14 +2822,13 @@ a {
   }
 
 
-  /* =====================================================
+  /* =======================================================
      ONDAS
-  ===================================================== */
+  ======================================================= */
 
   .ondas {
     height: 130px;
   }
-
 
   .onda-1 {
     bottom: -75px;
@@ -3007,13 +2836,11 @@ a {
     height: 150px;
   }
 
-
   .onda-2 {
     bottom: -90px;
 
     height: 145px;
   }
-
 
   .onda-3 {
     bottom: -105px;
@@ -3022,28 +2849,23 @@ a {
   }
 
 
-  /* =====================================================
+  /* =======================================================
      SOBRE
-  ===================================================== */
+  ======================================================= */
 
   .sobre {
     min-height: auto;
 
-    padding:
-      65px
-      20px;
+    padding: 65px 20px;
   }
-
 
   .sobre-icon {
     font-size: 34px;
   }
 
-
   .sobre h2 {
     font-size: 30px;
   }
-
 
   .sobre p {
     font-size: 15px;
@@ -3052,20 +2874,17 @@ a {
   }
 
 
-  /* =====================================================
+  /* =======================================================
      SEÇÕES
-  ===================================================== */
+  ======================================================= */
 
   .section {
     min-height: auto;
 
-    padding:
-      65px
-      15px;
+    padding: 65px 15px;
 
     gap: 30px;
   }
-
 
   .section h2 {
     font-size: 30px;
@@ -3074,9 +2893,9 @@ a {
   }
 
 
-  /* =====================================================
+  /* =======================================================
      NOTÍCIAS
-  ===================================================== */
+  ======================================================= */
 
   .noticias {
     width: 100%;
@@ -3085,31 +2904,24 @@ a {
 
     gap: 22px;
 
-    margin:
-      30px
-      auto;
+    margin: 30px auto;
   }
-
 
   .card-noticia {
     width: 100%;
   }
 
-
   .card-noticia img {
     height: 200px;
   }
-
 
   .conteudo-noticia {
     padding: 20px;
   }
 
-
   .conteudo-noticia h2 {
     font-size: 21px;
   }
-
 
   .conteudo-noticia p {
     font-size: 15px;
@@ -3118,18 +2930,15 @@ a {
   }
 
 
-  /* =====================================================
+  /* =======================================================
      CARD
-  ===================================================== */
+  ======================================================= */
 
   .card {
     width: 100%;
-
     max-width: 100%;
 
-    margin:
-      30px
-      0;
+    margin: 30px 0;
 
     padding: 20px;
 
@@ -3139,7 +2948,6 @@ a {
 
     border-radius: 20px;
   }
-
 
   .card-imagem {
     width: 100%;
@@ -3149,7 +2957,6 @@ a {
     border-radius: 16px;
   }
 
-
   .card-conteudo h1 {
     margin-bottom: 20px;
 
@@ -3158,14 +2965,7 @@ a {
     line-height: 1.2;
   }
 
-
-  .card-conteudo h3 {
-    font-size: 15px;
-
-    line-height: 1.65;
-  }
-
-
+  .card-conteudo h3,
   .card-conteudo p {
     font-size: 15px;
 
@@ -3173,26 +2973,19 @@ a {
   }
 
 
-  /* =====================================================
+  /* =======================================================
      TEMAS
-  ===================================================== */
+  ======================================================= */
 
   .temas {
-    padding:
-      65px
-      0
-      75px;
+    padding: 65px 0 75px;
   }
 
-
   .temas-titulo {
-    padding:
-      0
-      18px;
+    padding: 0 18px;
 
     margin-bottom: 30px;
   }
-
 
   .temas-titulo h2 {
     font-size: 30px;
@@ -3200,26 +2993,21 @@ a {
     line-height: 1.2;
   }
 
-
   .temas-titulo p {
     font-size: 14px;
 
     line-height: 1.6;
   }
 
-
   .cards-area {
     width: 100%;
-
     max-width: 100%;
 
     height: 370px;
   }
 
-
   .tema-card {
     width: 275px;
-
     min-width: 275px;
 
     height: 345px;
@@ -3227,21 +3015,17 @@ a {
     border-radius: 19px;
   }
 
-
   .tema-imagem {
     height: 165px;
   }
-
 
   .tema-conteudo {
     padding: 17px;
   }
 
-
   .tema-conteudo h3 {
     font-size: 18px;
   }
-
 
   .tema-conteudo p {
     font-size: 13px;
@@ -3249,31 +3033,24 @@ a {
     line-height: 1.5;
   }
 
-
   .tema-botao {
-    padding:
-      9px
-      17px;
+    padding: 9px 17px;
 
     font-size: 12px;
   }
 
 
-  /* =====================================================
+  /* =======================================================
      IMPACTO
-  ===================================================== */
+  ======================================================= */
 
   .impacto {
-    padding:
-      70px
-      18px;
+    padding: 70px 18px;
   }
-
 
   .impacto-titulo {
     margin-bottom: 35px;
   }
-
 
   .impacto-subtitulo {
     font-size: 12px;
@@ -3281,13 +3058,11 @@ a {
     letter-spacing: 1.5px;
   }
 
-
   .impacto-titulo h2 {
     font-size: 30px;
 
     line-height: 1.2;
   }
-
 
   .impacto-titulo p {
     font-size: 14px;
@@ -3295,20 +3070,15 @@ a {
     line-height: 1.6;
   }
 
-
   .impacto-cards {
     grid-template-columns: 1fr;
 
     gap: 15px;
   }
 
-
   .impacto-card {
-    padding:
-      28px
-      18px;
+    padding: 28px 18px;
   }
-
 
   .impacto-icone {
     width: 55px;
@@ -3317,39 +3087,32 @@ a {
     font-size: 25px;
   }
 
-
   .impacto-numero {
     font-size: 40px;
   }
 
-
   .impacto-card h3 {
     font-size: 18px;
   }
-
 
   .impacto-card p {
     font-size: 13px;
   }
 
 
-  /* =====================================================
+  /* =======================================================
      VÍDEO
-  ===================================================== */
+  ======================================================= */
 
   .video-section {
-    padding:
-      50px
-      12px;
+    padding: 50px 12px;
   }
-
 
   .video-container {
     padding: 7px;
 
     border-radius: 18px;
   }
-
 
   .video-container::before {
     inset: -2px;
@@ -3359,7 +3122,6 @@ a {
     border-width: 2px;
   }
 
-
   .video {
     border-radius: 13px;
 
@@ -3367,24 +3129,19 @@ a {
   }
 
 
-  /* =====================================================
+  /* =======================================================
      QUIZ
-  ===================================================== */
+  ======================================================= */
 
   .quiz-convite {
     width: 100%;
 
-    margin:
-      45px
-      auto;
+    margin: 45px auto;
 
-    padding:
-      30px
-      20px;
+    padding: 30px 20px;
 
     border-radius: 20px;
   }
-
 
   .quiz-convite span {
     font-size: 11px;
@@ -3392,13 +3149,11 @@ a {
     letter-spacing: 1.5px;
   }
 
-
   .quiz-convite h2 {
     font-size: 28px;
 
     line-height: 1.2;
   }
-
 
   .quiz-convite p {
     font-size: 14px;
@@ -3406,24 +3161,19 @@ a {
     line-height: 1.6;
   }
 
-
   .btn-quiz {
     width: 100%;
 
-    padding:
-      14px
-      20px;
+    padding: 14px 20px;
   }
 
 
-  /* =====================================================
-     BOTÃO VOLTAR AO TOPO
-     ESQUERDA
-  ===================================================== */
+  /* =======================================================
+     BOTÃO TOPO
+  ======================================================= */
 
   .voltar-topo,
   .botao-topo {
-
     left: 18px;
 
     right: auto;
@@ -3431,7 +3181,6 @@ a {
     bottom: 18px;
 
     width: 48px;
-
     height: 48px;
 
     font-size: 22px;
@@ -3440,18 +3189,15 @@ a {
   }
 
 
-  /* =====================================================
+  /* =======================================================
      ENCERRAMENTO
-  ===================================================== */
+  ======================================================= */
 
   .encerramento {
     min-height: auto;
 
-    padding:
-      65px
-      20px;
+    padding: 65px 20px;
   }
-
 
   .encerramento h2 {
     font-size: 27px;
@@ -3459,55 +3205,42 @@ a {
     line-height: 1.25;
   }
 
-
   .encerramento p {
     font-size: 15px;
 
     line-height: 1.6;
   }
 
-
   .logo-final {
     width: 100%;
 
     max-width: 80%;
 
-    margin:
-      25px
-      0
-      15px;
+    margin: 25px 0 15px;
   }
-
 
   .mensagem-final {
     font-size: 15px;
   }
-
 
   .botao-inicio {
     width: 100%;
 
     max-width: 260px;
 
-    padding:
-      13px
-      20px;
+    padding: 13px 20px;
   }
 
 
-  /* =====================================================
+  /* =======================================================
      MISSÃO, VISÃO E VALORES
-  ===================================================== */
+  ======================================================= */
 
   .missao-visao-valores {
     width: 100%;
-
     max-width: 100%;
 
-    margin:
-      20px
-      auto
-      40px;
+    margin: 20px auto 40px;
 
     padding: 20px;
 
@@ -3518,22 +3251,18 @@ a {
     box-sizing: border-box;
   }
 
-
   .bloco-mvv {
     width: 100%;
-
     max-width: 100%;
 
     min-width: 0;
   }
-
 
   .bloco-mvv h1 {
     font-size: 32px;
 
     margin-bottom: 12px;
   }
-
 
   .bloco-mvv h3 {
     font-size: 16px;
@@ -3543,12 +3272,66 @@ a {
     overflow-wrap: anywhere;
   }
 
+
+  /* =======================================================
+     ÁUDIO
+  ======================================================= */
+
+  .texto-audio {
+    flex-wrap: wrap;
+  }
+
+  .botao-audio,
+  .botao-pause {
+    font-size: 12px;
+  }
+
+
+  /* =======================================================
+     MANGUEZAL INTERATIVO
+  ======================================================= */
+
+  .manguezal-interativo {
+    padding: 65px 20px;
+  }
+
+  .manguezal-titulo h2 {
+    font-size: 30px;
+
+    line-height: 1.2;
+  }
+
+  .manguezal-titulo p {
+    font-size: 15px;
+
+    line-height: 1.6;
+  }
+
+  .ponto {
+    width: 36px;
+    height: 36px;
+
+    font-size: 17px;
+  }
+
+  .info-card {
+    padding: 30px 22px;
+
+    border-radius: 20px;
+  }
+
+  .info-card h3 {
+    font-size: 24px;
+  }
+
+  .info-card p {
+    font-size: 15px;
+  }
 }
 
 
 /* =========================================================
    CELULARES MUITO PEQUENOS
-   320px - 380px
 ========================================================= */
 
 @media (max-width: 380px) {
@@ -3557,17 +3340,14 @@ a {
     padding: 0 10px;
   }
 
-
   .logo {
     width: 34px;
     height: 34px;
   }
 
-
   .usuario-ola {
     font-size: 11px;
   }
-
 
   .usuario-email {
     max-width: 105px;
@@ -3575,33 +3355,35 @@ a {
     font-size: 8px;
   }
 
-
   .header-button {
-    padding:
-      7px
-      10px;
+    padding: 7px 10px;
 
     font-size: 11px;
   }
 
 
+  /* HERO */
+
   .hero-container {
-    padding:
-      95px
-      15px
-      140px;
+    padding: 95px 15px 140px;
   }
 
+  /*
+    Mantém o título grande no celular pequeno,
+    mas reduz um pouco para evitar estouro lateral.
+  */
+  .hero-titulo h1 {
+    font-size: 38px;
 
-  .hero h1 {
-    font-size: 32px;
+    line-height: 1.05;
   }
-
 
   .hero-descricao {
     font-size: 14px;
   }
 
+
+  /* IMAGEM */
 
   .imagem-moldura {
     width: 210px;
@@ -3610,6 +3392,8 @@ a {
   }
 
 
+  /* TEMAS */
+
   .tema-card {
     width: 260px;
 
@@ -3617,20 +3401,25 @@ a {
   }
 
 
+  /* CARD */
+
   .card {
     padding: 16px;
   }
-
 
   .card-imagem {
     height: 260px;
   }
 
 
+  /* QUIZ */
+
   .quiz-convite h2 {
     font-size: 25px;
   }
 
+
+  /* IMPACTO */
 
   .impacto-numero {
     font-size: 36px;
@@ -3641,18 +3430,15 @@ a {
 
   .voltar-topo,
   .botao-topo {
-
     left: 14px;
 
     bottom: 15px;
 
     width: 45px;
-
     height: 45px;
 
     font-size: 20px;
   }
-
 }
 
 
@@ -3665,7 +3451,6 @@ a {
   *,
   *::before,
   *::after {
-
     scroll-behavior: auto !important;
 
     animation-duration: 0.01ms !important;
@@ -3674,5 +3459,4 @@ a {
 
     transition-duration: 0.01ms !important;
   }
-
 }
